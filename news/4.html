@@ -56,9 +56,8 @@
 <script>
     
 </script>
-
+     
     </head>
-
     <body>
         <!-- Header -->
 <div class="navbar navbar-light navbar-expand-lg navigation-clean-button" id="header-first">
@@ -83,7 +82,7 @@
                 </li>
               
                 <li class="dropdown nav-item">
-                    <a class="dropdown-toggle nav-link header-menu " data-toggle="dropdown" aria-expanded="false" href="news"> News </a>
+                    <a class="dropdown-toggle nav-link header-menu active-menu" data-toggle="dropdown" aria-expanded="false" href="news"> News </a>
                     <div class="dropdown-menu" role="menu">
                         <a class="dropdown-item header-menu header-pad" role="presentation" href="/news/news#news">News</a>
                         <a class="dropdown-item header-menu header-pad" role="presentation" href="/news/activity#activity">Activity</a>
@@ -91,7 +90,7 @@
                         <a class="dropdown-item header-menu header-pad" role="presentation" href="/news/hof#hof">Hall Of Fame</a>
                     </div>
                 </li>
-                <li class="nav-item" role="presentation"><a class="nav-link header-menu active-menu" href="/contact-us">Contact Us</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link header-menu " href="/contact-us">Contact Us</a></li>
             </ul>
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item" role="presentation"><a class="nav-link header-menu-login" href="/member/login">SIGN IN</a></li>
@@ -116,9 +115,10 @@
         border-bottom: 1px solid black;
     }
 </style>
-        <div id="section-single-page" style="background-image: url('/resources/assets/img/contact.jpg');">
+
+        <div id="section-single-page" style="background-image: url('/resources/assets/img/news.jpg')">
             <div class="container">
-                <h2 class="head-single-page"> Contact Us </h2>
+                <h2 class="head-single-page"> News </h2>
             </div>
         </div>
 
@@ -126,87 +126,121 @@
             <!-- Breadcrumb -->
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                    <li class="breadcrumb-item"><a href="\index">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">News</li>
                 </ol>
             </nav>
             <!-- Breadcrumb -->
             <div class="row">
-                <div class="col-12 col-lg-6 mb-5">
-                    <form id="form" name="form" action="/contact-us" method="post">
-                        <div class="row">
-                            <div class="col-12 col-lg-6">
-                                <p class="title-form-cu"> First Name</p>
-                                <input id="firstName" name="firstName" class="required form-cu" placeholder="First Name" type="text" value=""/>   
-                                <label for="firstName" generated="true" class="error"></label>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <p class="title-form-cu"> Last Name</p>
-                                <input id="lastName" name="lastName" class="required form-cu" placeholder="Last Name" type="text" value=""/>   
-                                <label for="lastName" generated="true" class="error"></label>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <p class="title-form-cu"> Email </p>
-                                <input id="email" name="email" class="required email form-cu" placeholder="Email" type="text" value=""/>   
-                                <label for="email" generated="true" class="error"></label>
-                            </div>
-                            <div class="col-12 col-lg-6">
-                                <p class="title-form-cu"> Phone </p>
-                                <input id="contactNumber" name="contactNumber" class="required number form-cu" placeholder="Phone" type="text" value=""/>
-                                <label for="contactNumber" generated="true" class="error"></label>
-                            </div>
-                            <div class="col-12 col-lg-12">
-                                <p class="title-form-cu"> Message </p>
-                                <textarea id="comments" name="comments" class="required form-textarea-cu" placeholder="Messages" rows="4" cols="30"></textarea>
-                                    <label for="comments" generated="true" class="error"></label>
-
-                                </div>
-                                <div class="col-12 col-lg-12">
-                                    <p class="title-form-msg-us"> Fill the code below *</p>
-                                    <p class="title-form-msg-us"> <img id="captchaimage" src="/kaptcha.jpg" onClick="$(this).attr('src', '/kaptcha.jpg?' + Math.random(10000))" /></p>                                
-                                    <input id="captcha" name="captcha" class="required input-cu" placeholder="Verification Code" type="text" value=""/>
-                                <label for="captcha" generated="true" class="error"></label>
-                                <br/><br/>
-
-
-                            </div>
-                            <div class="col-12 col-lg-12">
-                                <input type="submit" value="Submit" class="btn-form-cu"/>
-                            </div>
+                <div class="col-12 col-lg-4">
+                    <div id="accordion">
+                        <h3><a href="#news" class="left-menu-color" style="font-size: 14px;">Latest News</a></h3>
+                        <div id="accordion-resizer">
+                            <ul class="news02">
+                                
+                                    <li>
+                                        
+                                        <a href="/news/news/2#news" class="titleNews">NEWS</a>
+                                        
+                                        <p class="dateNews">
+                                            Jumat, 09 April 2021
+                                        </p>
+                                    </li>
+                                
+                            </ul>
                         </div>
-                    </form>
+
+                        <h3><a href="#activity" class="left-menu-color" style="font-size: 14px;">Upcoming Event</a></h3>
+                        <div id="accordion-resizer">
+                            <ul class="news02">
+                                
+                                    <li>
+                                        <u>
+                                        <a href="/news/activity/4#activity" class="titleNews">ACTIVITY</a>
+                                        </u>
+                                        <p class="dateNews">
+                                            Jumat, 09 April 2021
+                                        </p>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+
+                        <h3><a href="#promo" class="left-menu-color" style="font-size: 14px;">Outgoing Promotions</a></h3>
+                        <div id="accordion-resizer">
+                            <ul class="news02">
+                                
+                                    <li>
+                                        
+                                        <a href="/news/promo/3#promo" class=" titleNews">PROMO</a>
+                                        
+                                        <p class="dateNews">
+                                            Jumat, 09 April 2021
+                                        </p>
+                                    </li>
+                                
+                            </ul>
+                        </div>
+
+                        <h3><a href="#hof" class="left-menu-color" style="font-size: 14px;"> Hall Of Fame</a></h3>
+                        <div id="accordion-resizer">
+                            <ul class="news02">
+                                
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-12 col-lg-6">
-                    <h6 class="title-mini-cu"> Address </h6>
-                    <i class="fa fa-map-marker fa-cu"></i>&nbsp;&nbsp;
-                    <span class="desc-mini-cu-right">
-                        PT SUKSES INDONETWORK DIGITAL<br/>
-                        Gedung Graha Pena Lt.3 KAV 302 - 305, <br/>
-                        Jl. Urip Sumoharjo, Sinrijala, Kec. Panakkukang, <br/>
-                        Kota Makassar, Sulawesi Selatan 90231
-                    </span>
+                <div class="col-12 col-lg-8">
+                     <div class="title-page">
+                        
 
-                    <h6 class="title-mini-cu"> Phone </h6>
-                    <i class="fa fa-phone fa-cu"></i>&nbsp;&nbsp;
-                    <span class="desc-mini-cu-right">
-                        <a href="tel:081526093753" class="color-href-cu">+6281526093753</a>
-                    </span>
+                        
+                            Activity
+                            
+                        
 
-                    <h6 class="title-mini-cu"> Whatsapp </h6>
-                    <i class="fa fa-whatsapp fa-cu"></i>&nbsp;&nbsp;
-                    <span class="desc-mini-cu-right">
-                        <a href="https://api.whatsapp.com/send?phone=6281526093753" class="color-href-cu">+6281526093753</a>
-                    </span>
+                        
 
-                    <h6 class="title-mini-cu"> Email </h6>
-                    <i class="fa fa-envelope fa-cu"></i>&nbsp;&nbsp;
-                    <span class="desc-mini-cu-right">
-                        <a href="mailto:admin@sukses55id.co.id" class="color-href-cu" target="_blank">admin@sukses55id.co.id</a>
-                    </span>
+                        
+                    </div><br>
+                    <div class="isiDalam" style="line-height:18px">
+                        
+                            
+                                <h1 style="color:#000; font-family: 'Roboto', sans-serif; font-size: 22px; text-align:left; margin-bottom:15px;">ACTIVITY</h1>
+                                Jumat, 09 April 2021
+                            
+                        
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-top: 20px;">
+                            <tr>
+                                <td class="font-date hitam" style="padding:0 0">
+                                    
+                                        
+                                        
+                                            <div style="padding:15px 21px 0 0" class="newscontentfont"><html>
+<head>
+	<title></title>
+</head>
+<body>
+<p>UPCOMING EVENT ...</p>
+</body>
+</html></div>
+                                        
+                                    
+                                    <br /><br /><br />
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-        <!-- Body - Single Page -->
+
+
+
+
+       
+
+
         <!-- Footer -->
 <div class="footer-basic">
     <footer>
@@ -283,53 +317,23 @@
 </script>
     </body>
 </html>
-<script type="text/javascript" src="/resources/js/jquery-validation-1.9.0/jquery.validate.js"></script>
+<script type="text/javascript" src="/resources/js/jquery-1.4.2.min.js"></script>
+<link rel="stylesheet" href="/resources/css/jquery.ui.accordion.css">
+<script src="/resources/js/jquery.ui.core.js"></script>
+<script src="/resources/js/jquery.ui.widget.js"></script>
+<script src="/resources/js/jquery.ui.mouse.js"></script>
+<script src="/resources/js/jquery.ui.resizable.js"></script>
+<script src="/resources/js/jquery.ui.accordion.js"></script>
 <script>
-                                        $(function () {
-
-                                            $("form").validate({
-                                                errorPlacement: function (error, element) {
-                                                    //<![CDATA[
-                                                    //$('<tr></tr>').html($('<td></td>').attr('align','center').attr('colspan','7').html(error)).insertAfter(element.parent().parent().parent());
-                                                    $('<tr></tr>').html($('<td></td>').attr('colspan', '').html(error)).insertAfter(element.parent().parent().parent()).prepend('');
-                                                    //]]>
-                                                },
-                                                messages: {
-                                                    firstName: {
-                                                        required: "First name must be filled"
-                                                    },
-                                                    lastName: {
-                                                        required: "Last name must be filled"
-                                                    },
-                                                    email: {
-                                                        required: "Email must be filled",
-                                                        email: "Format email is invalid"
-                                                    },
-                                                    contactNumber: {
-                                                        required: "Phone number must be filled",
-                                                        number: "Format phone number is invalid"
-                                                    },
-                                                    comments: {
-                                                        required: "Messages must be filled"
-                                                    },
-                                                    captcha: {
-                                                        required: "Verification code must be filled"
-                                                    },
-                                                    department: {
-                                                        required: "Department must be filled"
-                                                    }
-                                                }
-                                            });
-                                        });
-
-                                        var q = '';
-                                        if (q != "") {
-                                            alert(q);
-                                        }
+    $(document).ready(function () {
+        $('#accordion').accordion({
+            collapsible: true,
+            animated: 'slide',
+            autoHeight: true,
+            navigation: true
+        });
+        var hash = window.location.hash;
+        var thash = hash.substring(hash.lastIndexOf('#'), hash.length);
+        $('#accordion').find('a[href*=' + thash + ']').closest('h3').trigger('click');
+    })
 </script>
-<style>
-    .error{
-        color: red;
-    }
-    .style1 {color: #0033FF}
-</style>
