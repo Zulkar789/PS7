@@ -1,0 +1,139 @@
+/*!
+ * jQuery UI Accordion 1.10.0
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Accordion#theming
+ */
+.ui-accordion .ui-accordion-header {
+  width: 100%;
+  font-size: 14px;
+  padding: 6px 4px 6px;
+  font-weight: bold;
+  margin: 5px 0 0 0;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+a.left-menu-color {
+  color: #282828;
+}
+
+.ui-widget-content {
+  padding-left: 15px;
+}
+
+/*atas tabel - menu kiri*/
+#sideLeft div #accordion h3 {
+  font: 12px Verdana, Arial;
+  width: 90%;
+}
+
+#accordion-resizer {
+  width: 100%%;
+  padding: 8px;
+  height: 220px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.ui-accordion .ui-accordion-icons {
+  padding-left: 1em;
+}
+.ui-accordion .ui-accordion-noicons {
+  padding-left: 0.7em;
+}
+.ui-accordion .ui-accordion-icons .ui-accordion-icons {
+  padding-left: 2.2em;
+}
+.ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+  position: absolute;
+  left: 0.5em;
+  top: 50%;
+  margin-top: -8px;
+}
+.ui-accordion .ui-accordion-content {
+  padding: 1em 2.2em;
+  border-top: 0;
+  overflow: auto;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  #accordion-resizer {
+    width: 89%;
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 768px) {
+  .ui-accordion .ui-accordion-header {
+    width: 96%;
+    display: block;
+  }
+  #accordion-resizer {
+    width: 96.3%;
+    padding: 8px;
+    height: 220px;
+    border: 1px solid #d8d8d8;
+    border-top: none;
+    padding-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 640px) {
+  .ui-accordion .ui-accordion-header {
+    width: 93.6%;
+  }
+  #accordion-resizer {
+    width: 94%;
+    padding: 8px;
+    height: 220px;
+    border: 1px solid #d8d8d8;
+    border-top: none;
+    padding-bottom: 10px;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 600px) {
+  .ui-accordion .ui-accordion-header {
+    width: 93.4%;
+  }
+  #accordion-resizer {
+    width: 93.7%;
+    padding: 8px;
+    height: 220px;
+    border: 1px solid #d8d8d8;
+    border-top: none;
+    padding-bottom: 10px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  .ui-accordion .ui-accordion-header {
+    width: 92%;
+  }
+  #accordion-resizer {
+    width: 92.6%;
+    padding: 8px;
+    height: 220px;
+    border: 1px solid #d8d8d8;
+    border-top: none;
+    padding-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .ui-accordion .ui-accordion-header {
+    width: 91%;
+  }
+  #accordion-resizer {
+    width: 90.2%;
+    padding: 8px;
+    height: 220px;
+    border: 1px solid #d8d8d8;
+    border-top: none;
+    padding-bottom: 10px;
+  }
+}
