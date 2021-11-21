@@ -1,23 +1,23 @@
 @font-face {
-    font-family: 'Montserrat-UltraLight';
-    src: url('assets/fonts/Montserrat-UltraLight.otf');
+  font-family: "Montserrat-UltraLight";
+  src: url("assets/fonts/Montserrat-UltraLight.otf");
 }
 
 @font-face {
-    font-family: 'Montserrat-Light';
-    src: url('assets/fonts/Montserrat-Light.otf');
+  font-family: "Montserrat-Light";
+  src: url("assets/fonts/Montserrat-Light.otf");
 }
 @font-face {
-    font-family: 'Montserrat';
-    src: url('assets/fonts/Montserrat-Regular.otf');
+  font-family: "Montserrat";
+  src: url("assets/fonts/Montserrat-Regular.otf");
 }
 @font-face {
-    font-family: 'Montserrat-Bold';
-    src: url('assets/fonts/Montserrat-Bold.otf');
+  font-family: "Montserrat-Bold";
+  src: url("assets/fonts/Montserrat-Bold.otf");
 }
 @font-face {
-    font-family: 'Montserrata-Black';
-    src: url('assets/fonts/Montserrat-Black.otf');
+  font-family: "Montserrata-Black";
+  src: url("assets/fonts/Montserrat-Black.otf");
 }
 
 /* ================================== media Header ======================================= */
@@ -58,17 +58,15 @@
         display:block !important;
     }
 } */
-@media (min-width: 1114px){
-.navbar-expand-lg {
+@media (min-width: 1114px) {
+  .navbar-expand-lg {
     -ms-flex-flow: row nowrap;
     flex-flow: row nowrap;
     -ms-flex-pack: start;
     justify-content: flex-start;
-    }
+  }
 }
 /* ================================== media Header ======================================= */
-
-
 
 /* @media screen and (min-width: 1331px){
     .container-fluid{
@@ -83,31 +81,34 @@
     }
 } */
 
-.breadcrumb{
-    background-color: unset;
-    font-family: 'Montserrat-Bold';
-    font-size: 14px;
-    font-weight: 600;
-    padding-left: 0px;
+.breadcrumb {
+  background-color: unset;
+  font-family: "Montserrat-Bold";
+  font-size: 14px;
+  font-weight: 600;
+  padding-left: 0px;
 }
-.breadcrumb-item, a{
-    color: #0FBCF9;
+.breadcrumb-item,
+a {
+  color: #0fbcf9;
 }
 /* Style to change separator  */
 .breadcrumb-item + .breadcrumb-item::before {
-    content: "|";
+  content: "|";
 }
-a:hover {text-decoration: none;}
+a:hover {
+  text-decoration: none;
+}
 
 /* =================================== Header =================================== */
 
 /* .navbar-nav{
     margin: auto;
 } */
-@media only screen and (max-width: 1111px){
-    .logo-header-img{
-        width: 80px;
-    }
+@media only screen and (max-width: 1111px) {
+  .logo-header-img {
+    width: 80px;
+  }
 }
 /* @media only screen and (min-width: 1112px){
     .logo-header-img{
@@ -115,556 +116,592 @@ a:hover {text-decoration: none;}
     }
 } */
 
-.logo-header-img{
-    width: 80px;
+.logo-header-img {
+  width: 80px;
 }
 
-#header-first{
-    background-color: #fff;
-    padding-top: 20px;
-    padding-bottom: 20px;
+#header-first {
+  background-color: #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
-a.header-menu{
-    font-family: 'Montserrat-Bold';
-    font-size: 14px !important;
-    font-weight: normal;
-    text-transform: uppercase;
-    padding-top: 30px;
+a.header-menu {
+  font-family: "Montserrat-Bold";
+  font-size: 14px !important;
+  font-weight: normal;
+  text-transform: uppercase;
+  padding-top: 30px;
 }
-.header-pad{padding-top:0px !important;}
-a.header-menu-login{
-    margin-top:20px;
-    border: 1px solid #0FBCF9;
-    /* border-radius: 30px; */
-    font-family: 'Montserrat-Bold';
-    font-size: 12px !important;
-    font-weight: normal;
-    text-transform: uppercase;
-    color: #0FBCF9 !important;
+.header-pad {
+  padding-top: 0px !important;
 }
-a.header-menu-register{
-    font-family: 'Montserrat-Bold';
-    font-size: 12px !important;
-    font-weight: normal;
-    text-transform: uppercase;
-    padding-top: 30px;
-    color: #0FBCF9 !important;
+a.header-menu-login {
+  margin-top: 20px;
+  border: 1px solid #0fbcf9;
+  /* border-radius: 30px; */
+  font-family: "Montserrat-Bold";
+  font-size: 12px !important;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #0fbcf9 !important;
 }
-a.dropdown-item{background-color: #fff}
+a.header-menu-register {
+  font-family: "Montserrat-Bold";
+  font-size: 12px !important;
+  font-weight: normal;
+  text-transform: uppercase;
+  padding-top: 30px;
+  color: #0fbcf9 !important;
+}
+a.dropdown-item {
+  background-color: #fff;
+}
 /* =================================== Header =================================== */
 
 /* =================================== Body =================================== */
-.col-lg-head-carousel{
-    padding-left: 0px;
-    padding-right: 0px;
+.col-lg-head-carousel {
+  padding-left: 0px;
+  padding-right: 0px;
 }
-.img-head-carousel{padding:0px;}
+.img-head-carousel {
+  padding: 0px;
+}
 /* ================== Owl Carousel Sec #1 ================== */
-.main-content {position: relative;}
+.main-content {
+  position: relative;
+}
 .main-content .owl-theme .custom-nav {
-    position: absolute;
-    top: 40%;
-    left: 0;
-    right: 0;
+  position: absolute;
+  top: 40%;
+  left: 0;
+  right: 0;
 }
-.main-content .owl-theme .custom-nav .owl-prev, 
+.main-content .owl-theme .custom-nav .owl-prev,
 .main-content .owl-theme .custom-nav .owl-next {
-    position: absolute;
-    height: 100px;
-    color: inherit;
-    background: none;
-    border: none;
-    z-index: 100;
+  position: absolute;
+  height: 100px;
+  color: inherit;
+  background: none;
+  border: none;
+  z-index: 100;
 }
-.main-content .owl-theme .custom-nav .owl-prev i, 
+.main-content .owl-theme .custom-nav .owl-prev i,
 .main-content .owl-theme .custom-nav .owl-next i {
-    font-size: 2.5rem;
-    color: #1a1a1a;
+  font-size: 2.5rem;
+  color: #1a1a1a;
 }
-.main-content .owl-theme .custom-nav .owl-prev {left: 3%;}
-.main-content .owl-theme .custom-nav .owl-next {right: 3%;}
-.fa-angle-left ,  .fa-angle-right{
-    font-size: 40px !important;
-    color: #1a1a1a !important;
-    background-color: #f2f2f200;
-    padding: 10px 20px 10px 20px;
+.main-content .owl-theme .custom-nav .owl-prev {
+  left: 3%;
+}
+.main-content .owl-theme .custom-nav .owl-next {
+  right: 3%;
+}
+.fa-angle-left,
+.fa-angle-right {
+  font-size: 40px !important;
+  color: #1a1a1a !important;
+  background-color: #f2f2f200;
+  padding: 10px 20px 10px 20px;
 }
 /* ================== Owl Carousel Sec #1 ================== */
 
 /* ================== Sec About Us ================== */
-#section-home-aboutus{
-    padding-top: 50px;
+#section-home-aboutus {
+  padding-top: 50px;
 }
-.title-header{
-     padding-top: 50px;
-     letter-spacing: 20px;
-     font-family: 'Montserrat-Light';
-     font-size: 14px;
- }
- .head-home-about{
-    font-family: 'Montserrat-Bold';
-    font-size: 40px;
-    /* width: 80%; */
- }
- .deskripsi-about{
-     margin-top: 5%;
-     margin-left: 0;
-     font-family: 'Montserrat';
-     font-size: 16px;
- }
- .deskripsi-about2{
-    margin-top: 5%;
-    margin-left: 0;
-    font-family: 'Montserrat-Light';
-    font-size: 16px;
+.title-header {
+  padding-top: 50px;
+  letter-spacing: 20px;
+  font-family: "Montserrat-Light";
+  font-size: 14px;
 }
-.row-kecil{
-    margin-left: 0;
+.head-home-about {
+  font-family: "Montserrat-Bold";
+  font-size: 40px;
+  /* width: 80%; */
 }
-.img-kecil{
-    width: auto;
-    height: 100px;
+.deskripsi-about {
+  margin-top: 5%;
+  margin-left: 0;
+  font-family: "Montserrat";
+  font-size: 16px;
 }
-.p-kecil{
-    font-family: 'Montserrat-Light';
-    font-size: 14px;
+.deskripsi-about2 {
+  margin-top: 5%;
+  margin-left: 0;
+  font-family: "Montserrat-Light";
+  font-size: 16px;
+}
+.row-kecil {
+  margin-left: 0;
+}
+.img-kecil {
+  width: auto;
+  height: 100px;
+}
+.p-kecil {
+  font-family: "Montserrat-Light";
+  font-size: 14px;
 }
 
-@media screen and (min-width: 1200px){
-    .deskripsi-about, .deskripsi-about2, .row-kecil{
-        margin-left: 10%;
-    }
+@media screen and (min-width: 1200px) {
+  .deskripsi-about,
+  .deskripsi-about2,
+  .row-kecil {
+    margin-left: 10%;
+  }
 }
 /* ================== Sec GrowingUp ================== */
 
-#GrowingUp{
-    padding-top: 50px;
+#GrowingUp {
+  padding-top: 50px;
 }
 
-.head-home-growing{
-    font-family: 'Montserrat-Bold';
-    font-size: 40px;
-    text-align: left;
-    margin-bottom: 50px;
+.head-home-growing {
+  font-family: "Montserrat-Bold";
+  font-size: 40px;
+  text-align: left;
+  margin-bottom: 50px;
 }
-.deskripsi-growing{
-    font-family: 'Montserrat-Light';
-    font-size: 16px;
-    text-align: left;
-    color: #000;
-    line-height: 200%;
+.deskripsi-growing {
+  font-family: "Montserrat-Light";
+  font-size: 16px;
+  text-align: left;
+  color: #000;
+  line-height: 200%;
 }
-.btn-square{
-    background-color: #fff; 
-    border-color: #0FBCF9;
-    font-family: 'Montserrat-Bold';
-    font-size: 16px;
-    color: #0FBCF9;
-    width: auto;
-    padding: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    float: left;
+.btn-square {
+  background-color: #fff;
+  border-color: #0fbcf9;
+  font-family: "Montserrat-Bold";
+  font-size: 16px;
+  color: #0fbcf9;
+  width: auto;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  float: left;
 }
-.btn-square:hover{
-    border-color: #fff;
-    background-color: #0FBCF9; 
-    color: #fff
+.btn-square:hover {
+  border-color: #fff;
+  background-color: #0fbcf9;
+  color: #fff;
 }
 
-@media screen and (min-width: 1200px){
-    .head-home-growing, .deskripsi-growing{
-        text-align: right;
-    }
-    .btn-square{
-        float: right;
-    }
+@media screen and (min-width: 1200px) {
+  .head-home-growing,
+  .deskripsi-growing {
+    text-align: right;
+  }
+  .btn-square {
+    float: right;
+  }
 }
 /* ================== Sec Products ================== */
-.bdr-prod{
-    border: 1px solid #000000;
-    margin-top: 20px;
+.bdr-prod {
+  border: 1px solid #000000;
+  margin-top: 20px;
 }
-.main-content-prod{
-    padding-top: 50px;
+.main-content-prod {
+  padding-top: 50px;
 }
 
-.carousel-homepage-prod{
-    padding-top: 50px;
+.carousel-homepage-prod {
+  padding-top: 50px;
 }
-.head-arivals{
-    font-family: 'Montserrat-Bold'!important;
-    font-size: 40px;
+.head-arivals {
+  font-family: "Montserrat-Bold" !important;
+  font-size: 40px;
 }
-.product-link{
-    font-family: 'Montserrat-Light';
-    font-size: 16px;
-    color: #000;
+.product-link {
+  font-family: "Montserrat-Light";
+  font-size: 16px;
+  color: #000;
 }
-.img-prod-home{
-    width: 100%;
-    height: 300px;
-    object-fit: contain;
-    margin-bottom: 15px;
+.img-prod-home {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  margin-bottom: 15px;
 }
-.title-home-prod{
-    font-family: 'Montserrat-Light';
-    color: #000;
-    font-size: 12px;
-    margin-bottom: 10px;
-    margin-left: 7px;
+.title-home-prod {
+  font-family: "Montserrat-Light";
+  color: #000;
+  font-size: 12px;
+  margin-bottom: 10px;
+  margin-left: 7px;
 }
-.price-home-prod{
-    font-family: 'Montserrat';
-    font-size: 14px;
-    font-weight: 300;
-    margin-bottom: 10px;
-    color: #000 !important;
+.price-home-prod {
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  color: #000 !important;
 }
-.title-desc-prod-det{
-    font-family: 'Montserrat-Light';
-    font-size: 17px;
-    color:#000;
-    font-weight: 600;
-    text-align:left;
-    /* margin-top:20px;
+.title-desc-prod-det {
+  font-family: "Montserrat-Light";
+  font-size: 17px;
+  color: #000;
+  font-weight: 600;
+  text-align: left;
+  /* margin-top:20px;
     margin-bottom: 10px; */
 }
-.desc-single-prod-det{
-    font-family: 'Montserrat-Light';
-    font-size: 14px;
-    font-weight: normal;
-    color: #000;
-    letter-spacing: 0.3px;
-    line-height: 25px;
+.desc-single-prod-det {
+  font-family: "Montserrat-Light";
+  font-size: 14px;
+  font-weight: normal;
+  color: #000;
+  letter-spacing: 0.3px;
+  line-height: 25px;
 }
-.card-header{
-    background-color: unset;
+.card-header {
+  background-color: unset;
 }
 .card {
-    border-left: unset;
-    border-right: unset;
+  border-left: unset;
+  border-right: unset;
 }
 
-@media only screen and (max-width:992px){
-    .head-arivals{
-        font-size: 16px;
-    }
-    .product-link{
-        font-size: 14px;
-    }
+@media only screen and (max-width: 992px) {
+  .head-arivals {
+    font-size: 16px;
+  }
+  .product-link {
+    font-size: 14px;
+  }
 }
 /* ================== Sec Products ================== */
 
 /* ================== Sec Shop ================== */
-#section-home-contact{
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 400px;
-    margin-top: 50px;
+#section-home-contact {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  margin-top: 50px;
 }
-h3.head-contact{
-    font-family: 'Montserrat-Bold';
-    font-size: 45px;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    padding-top: 80px;
-    width: 65%;
-    margin-bottom: 25px;
+h3.head-contact {
+  font-family: "Montserrat-Bold";
+  font-size: 45px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  padding-top: 80px;
+  width: 65%;
+  margin-bottom: 25px;
 }
-.btn-shop{
-    background-color: #fff; 
-    border-color: #0FBCF9;
-    font-family: 'Montserrat-Bold';
-    font-size: 16px;
-    color: #0FBCF9;
-    width: 130px;
-    padding: 10px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+.btn-shop {
+  background-color: #fff;
+  border-color: #0fbcf9;
+  font-family: "Montserrat-Bold";
+  font-size: 16px;
+  color: #0fbcf9;
+  width: 130px;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }
-.btn-shop:hover{
-    border-color: #fff;
-    background-color: #0FBCF9; 
-    color: #fff
+.btn-shop:hover {
+  border-color: #fff;
+  background-color: #0fbcf9;
+  color: #fff;
 }
 /* ================== Sec Shop ================== */
 
 /* ================== Sec News ================== */
-.img-line-home{
-    width: 200px;
-    margin-bottom: 10px;
+.img-line-home {
+  width: 200px;
+  margin-bottom: 10px;
 }
-.img-home-news{
-    height: 210px;
-    width: 100%;
-    object-fit: cover;
-    margin-bottom: 20px;
-    border-radius: 5px;
+.img-home-news {
+  height: 210px;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 5px;
 }
-h4.title-news-home{
-    font-family: 'Montserrat-Bold';
-    color: #0FBCF9;
-    font-size: 16px;
-    letter-spacing: 0.3px;
-    padding-top: 0px;
-    margin-bottom: 10px;
+h4.title-news-home {
+  font-family: "Montserrat-Bold";
+  color: #0fbcf9;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+  padding-top: 0px;
+  margin-bottom: 10px;
 }
-p.desc-home-news{
-    font-family: 'Montserrat';
-    color: #000;
-    font-size: 14px;
-    font-weight: normal;
-    letter-spacing: 0.3px;
-    line-height: 25px;
-    margin-bottom: 15px;
+p.desc-home-news {
+  font-family: "Montserrat";
+  color: #000;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 0.3px;
+  line-height: 25px;
+  margin-bottom: 15px;
 }
 /* ================== Sec News ================== */
 
-#section-home-news{
-    padding-top: 50px;
+#section-home-news {
+  padding-top: 50px;
 }
 /* =================================== Body =================================== */
 
 /* =================================== Single Page =================================== */
-#section-single-page{
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 300px;
+#section-single-page {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 300px;
 }
-.section-single-page-2{
-    padding-top: 30px;
-    padding-bottom: 30px;
+.section-single-page-2 {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
-h2.head-single-page{
-    font-family: 'Montserrat-Bold';
-    font-size: 60px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    padding-top: 100px;
+h2.head-single-page {
+  font-family: "Montserrat-Bold";
+  font-size: 60px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding-top: 100px;
 }
-h3.head-single-aboutus , h3.head-single-oppor{
-    font-family: 'Montserrat-Bold';
-    color: #000;
-    font-size: 30px;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    margin-bottom: 20px;
+h3.head-single-aboutus,
+h3.head-single-oppor {
+  font-family: "Montserrat-Bold";
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
 }
-.desc-single-aboutus , .desc-single-oppor{
-    font-family: 'Montserrat-Light';
-    color: #000;
-    font-size: 16px;
-    margin-bottom: 20px;
-    text-align: justify;
-    line-height: 28px;
+.desc-single-aboutus,
+.desc-single-oppor {
+  font-family: "Montserrat-Light";
+  color: #000;
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: justify;
+  line-height: 28px;
 }
-.img-single-oppor{
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-}
-
-.head-home-latest{
-    font-family: 'Montserrat-Bold';
-    color: #000;
-    font-size: 30px;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    margin-bottom: 20px;
+.img-single-oppor {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
 }
 
-.card-founder{
-    padding:10px;
-    margin-bottom: 20px;
-    box-shadow:  8px 12px 20px 0px #0fbcf96e, 7px 6px 20px rgb(0 0 0 / 23%);
-    height: 500px;
+.head-home-latest {
+  font-family: "Montserrat-Bold";
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
 }
-.img-founder{
-    border-radius: 75px !important;
-    margin-bottom: 15px;
-    width: 125px;
+
+.card-founder {
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 8px 12px 20px 0px #0fbcf96e, 7px 6px 20px rgb(0 0 0 / 23%);
+  height: 500px;
 }
-.name-founder{
-    font-family: 'Montserrat-Bold';
-    color: #000;
-    font-size: 20px;
-    margin-bottom: 10px;
+.img-founder {
+  border-radius: 75px !important;
+  margin-bottom: 15px;
+  width: 125px;
 }
-.status-founder{
-    font-family: 'Montserrat-Bold';
-    color: #0FBCF9;
-    font-size: 15px;
-    margin-bottom: 10px;
+.name-founder {
+  font-family: "Montserrat-Bold";
+  color: #000;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
-.desc-founder{
-    font-family: 'Montserrat-Light';
-    color: #000;
-    font-size: 17px;
-    margin-bottom: 10px;
+.status-founder {
+  font-family: "Montserrat-Bold";
+  color: #0fbcf9;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.desc-founder {
+  font-family: "Montserrat-Light";
+  color: #000;
+  font-size: 17px;
+  margin-bottom: 10px;
 }
 /* Single Prod */
-.img-single-prod{
-    width: 100%;
+.img-single-prod {
+  width: 100%;
 }
-.name-single-prod{
-    font-family: 'Montserrat-Bold';
-    font-size: 30px;
-    color:#000;
-    font-weight: 500;
-    margin-bottom: 10px;
+.name-single-prod {
+  font-family: "Montserrat-Bold";
+  font-size: 30px;
+  color: #000;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
-.price-single-prod{
-    font-family: 'Montserrat';
-    font-size: 18px;
-    color:#000;
-    font-weight: 500;
-    margin-bottom: 10px;
+.price-single-prod {
+  font-family: "Montserrat";
+  font-size: 18px;
+  color: #000;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
-.desc-single-prod{
-    font-family: 'Montserrat';
-    color: #000;
-    font-size: 15px;
-    margin-bottom: 10px;
-    line-height: 28px;
+.desc-single-prod {
+  font-family: "Montserrat";
+  color: #000;
+  font-size: 15px;
+  margin-bottom: 10px;
+  line-height: 28px;
 }
 /* Single Prod */
 /* Single Contact Us */
-.title-form-cu{
-    font-family: 'Montserrat-Bold';
-    color: #0FBCF9;
-    font-size: 15px;
-    font-weight: normal;
-    margin-bottom: 5px;
+.title-form-cu {
+  font-family: "Montserrat-Bold";
+  color: #0fbcf9;
+  font-size: 15px;
+  font-weight: normal;
+  margin-bottom: 5px;
 }
-.form-cu{
-    font-family: 'Montserrat';
-    font-size: 15px;
-    color:#000;
-    width: 100%;
-    height: 45px;
-    border-radius: 5px;
-    border:1px solid #0FBCF9;
-    margin-bottom: 20px;
-    padding:5px;
+.form-cu {
+  font-family: "Montserrat";
+  font-size: 15px;
+  color: #000;
+  width: 100%;
+  height: 45px;
+  border-radius: 5px;
+  border: 1px solid #0fbcf9;
+  margin-bottom: 20px;
+  padding: 5px;
 }
-.form-textarea-cu{
-    font-family: 'Montserrat';
-    font-size: 15px;
-    color:#000;
-    width: 100%;
-    height: 100px;
-    border-radius: 5px;
-    border:1px solid #0FBCF9;
-    margin-bottom: 10px;
-    padding:5px;
+.form-textarea-cu {
+  font-family: "Montserrat";
+  font-size: 15px;
+  color: #000;
+  width: 100%;
+  height: 100px;
+  border-radius: 5px;
+  border: 1px solid #0fbcf9;
+  margin-bottom: 10px;
+  padding: 5px;
 }
-.btn-form-cu{
-    font-family: 'Montserrat-Bold';
-    font-size: 14px;
-    color: #0FBCF9;
-    border:1px solid #0FBCF9;
-    width: 30%;
-    /* border-radius: 5px; */
-    height: 45px;
-    background-color: #ffffff;
+.btn-form-cu {
+  font-family: "Montserrat-Bold";
+  font-size: 14px;
+  color: #0fbcf9;
+  border: 1px solid #0fbcf9;
+  width: 30%;
+  /* border-radius: 5px; */
+  height: 45px;
+  background-color: #ffffff;
 }
-.btn-form-cu:hover{
-    border-color: #fff;
-    background-color: #0FBCF9; 
-    color: #fff
+.btn-form-cu:hover {
+  border-color: #fff;
+  background-color: #0fbcf9;
+  color: #fff;
 }
-.fa-cu{
-    color:#0FBCF9;
-    font-size: 13px;
+.fa-cu {
+  color: #0fbcf9;
+  font-size: 13px;
 }
-.title-mini-cu{
-    font-family: 'Montserrat-Bold';
-    font-size: 15px;
-    color:#0FBCF9;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-top:15px;
+.title-mini-cu {
+  font-family: "Montserrat-Bold";
+  font-size: 15px;
+  color: #0fbcf9;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 15px;
 }
-.desc-mini-cu-right{
-    font-family: 'Montserrat';
-    font-size: 13px;
-    color:#000;
-    font-weight: normal;
+.desc-mini-cu-right {
+  font-family: "Montserrat";
+  font-size: 13px;
+  color: #000;
+  font-weight: normal;
 }
-a.color-href-cu{color:#000;}
+a.color-href-cu {
+  color: #000;
+}
 /* Single Contact Us */
 /* =================================== Single Page =================================== */
 
 /* =================================== Footer =================================== */
-.footer-basic{
-    /* background-color: #0FBCF9; */
-    padding-top: 20px;
-    padding-bottom: 10px;
+.footer-basic {
+  /* background-color: #0FBCF9; */
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
-.logo-footer-img{
-    width: 100px;
+.logo-footer-img {
+  width: 100px;
 }
-li.menu-footer{
-    font-family: 'Montserrat';
-    color: #000;
-    font-size: 14px;
-    text-align: left;
-    letter-spacing: 0.6px;
-    padding-left: 0px;
-    padding-bottom: 10px;
+li.menu-footer {
+  font-family: "Montserrat";
+  color: #000;
+  font-size: 14px;
+  text-align: left;
+  letter-spacing: 0.6px;
+  padding-left: 0px;
+  padding-bottom: 10px;
 }
 li.menu-footer-img img {
-    fill: #000;
+  fill: #000;
 }
-li.menu-footer-img{
-    display: inline-block;
+li.menu-footer-img {
+  display: inline-block;
 }
-p.copyright-left{
-    font-family: 'Montserrat';
-    color: #000;
-    font-size: 12px;
-    font-weight: 300;
-    letter-spacing: 0.6px;
-    padding-top: 15px;
+p.copyright-left {
+  font-family: "Montserrat";
+  color: #000;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.6px;
+  padding-top: 15px;
 }
 /* =================================== Footer =================================== */
 
-@media screen and (min-width: 993px) and (max-width: 1199px) { 
-    a.header-menu{
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-    }
+@media screen and (min-width: 993px) and (max-width: 1199px) {
+  a.header-menu {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
 }
 
-@media screen and (min-width: 576px) and (max-width: 992px) { 
-    h3.head-contact{
-        padding-top: 60px;
-        font-size: 35px;
-    }
-    a.header-menu{padding-top: 10px;}
-    .bdr-strategi{
-        margin-bottom: 10px;
-        height: 225px;
-    }
-    .head-home-about, .head-home-products, .head-home-latest, .head-home-about-vito{font-size: 30px;}
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  h3.head-contact {
+    padding-top: 60px;
+    font-size: 35px;
+  }
+  a.header-menu {
+    padding-top: 10px;
+  }
+  .bdr-strategi {
+    margin-bottom: 10px;
+    height: 225px;
+  }
+  .head-home-about,
+  .head-home-products,
+  .head-home-latest,
+  .head-home-about-vito {
+    font-size: 30px;
+  }
 }
 
-@media only screen and (max-width:575px) {
-    h3.head-contact{
-        padding-top: 30px;
-        font-size: 35px;
-    }
-    .desc-home-shop{width: 100%;}
-    a.header-menu{padding-top: 10px;}
-    .bdr-strategi{
-        margin-bottom: 10px;
-        height: 200px;
-    }
-    .head-home-about, .head-home-products, .head-home-latest, .head-home-about-vito{font-size: 30px;}
+@media only screen and (max-width: 575px) {
+  h3.head-contact {
+    padding-top: 30px;
+    font-size: 35px;
+  }
+  .desc-home-shop {
+    width: 100%;
+  }
+  a.header-menu {
+    padding-top: 10px;
+  }
+  .bdr-strategi {
+    margin-bottom: 10px;
+    height: 200px;
+  }
+  .head-home-about,
+  .head-home-products,
+  .head-home-latest,
+  .head-home-about-vito {
+    font-size: 30px;
+  }
 }
