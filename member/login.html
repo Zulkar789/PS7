@@ -1,262 +1,281 @@
-
- 
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
     <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-<link rel="shortcut icon" href="/resources/assets/img/favicon.png" type="image/x-icon">
-<title>VITO</title> 
-   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/resources/assets/img/favicon.png" type="image/x-icon">
+    <title>VITO</title>
 
 
 
 
-<!-- <link rel="shortcut icon" href="/resources/images/icon/favicon.ico" type="image/x-icon" /> -->
-<link rel="icon" href="/resources/assets/img/favicon.png" type="image/x-icon" />
-<link rel="stylesheet" href="/resources/css/member.css" />
-<link rel="stylesheet" href="/resources/css-memberarea/memberarea-bs.css">   
-<link rel="stylesheet" href="/resources/css-memberarea/styleDropDown.css">  
-<link rel="stylesheet" href="/resources/css-memberarea/member.css">  
-<link rel="stylesheet" href="/resources/css-memberarea/mobilemenu/new-navigation-mobile.css" type="text/css" media="screen" /> 
-<script type="text/javascript" src="/resources/js/mobilemenu/jquery-1.7.2.js"></script>
-<script type="text/javascript" src="/resources/js/common.js"></script>
 
-<!--[if IE 6]>
+    <!-- <link rel="shortcut icon" href="/resources/images/icon/favicon.ico" type="image/x-icon" /> -->
+    <link rel="icon" href="/resources/assets/img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/resources/css/member.css" />
+    <link rel="stylesheet" href="/resources/css-memberarea/memberarea-bs.css">
+    <link rel="stylesheet" href="/resources/css-memberarea/styleDropDown.css">
+    <link rel="stylesheet" href="/resources/css-memberarea/member.css">
+    <link rel="stylesheet" href="/resources/css-memberarea/mobilemenu/new-navigation-mobile.css" type="text/css"
+        media="screen" />
+    <script type="text/javascript" src="/resources/js/mobilemenu/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="/resources/js/common.js"></script>
+
+    <!--[if IE 6]>
     <link rel="stylesheet" type="text/css" href="/resources/css-memberarea/ie6.css" />
     <![endif]-->
 
-<!--[if lte IE 8]>
+    <!--[if lte IE 8]>
     <link rel="stylesheet" type="text/css" href="/resources/css-memberarea/ie8.css" />
 <![endif]-->
 
-<!-- PNG FIX for IE6 -->
-<!--[if lte IE 6]>
+    <!-- PNG FIX for IE6 -->
+    <!--[if lte IE 6]>
         <script type="text/javascript" src="/resources/js/pngfix/supersleight-min.js"></script>
 <![endif]-->
 
-<script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/menu.js"></script>
-<script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/items1.js"></script>
-<script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/template1.js"></script>        
-<link rel="stylesheet" href="/resources/tigra/menu_files/menu.css" />
+    <script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/menu.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/items1.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/template1.js"></script>
+    <link rel="stylesheet" href="/resources/tigra/menu_files/menu.css" />
 
 
-<style>
-    .required{}
-    .numeric{}
-    .currency{}
-    .uppercase{}
-    .readonlySelect{}
-    span.error,label.error, span[id*="errors"]{
-        color: red;
-        font-size: 13px;
-        letter-spacing:.1px;
-        font-family:sanspro;
-        font-weight:100;
-        display:block;
-    }
-    .pointer{
-        cursor: pointer;
-    }
-    .pointer:hover{
-        color: #1a1a1a;
-    }
-    .underline{
-        text-decoration: underline;
-    }
-    .date{
-        padding-left: 4px;
-    }
-</style>
+    <style>
+        .required {}
 
-<script>
-    function showHide(){
-        $('.secret').slideToggle('slow');
-    }
-    function MM_findObj(n, d) { //v4.01
-  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
-    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
-  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
-  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
-  if(!x && d.getElementById) x=d.getElementById(n); return x;
-}
+        .numeric {}
 
-</script>
-<style>
-    td.secret {
-        display:none;
-    }
-</style>
+        .currency {}
 
-<!--[if lte IE 8]>
+        .uppercase {}
+
+        .readonlySelect {}
+
+        span.error,
+        label.error,
+        span[id*="errors"] {
+            color: red;
+            font-size: 13px;
+            letter-spacing: .1px;
+            font-family: sanspro;
+            font-weight: 100;
+            display: block;
+        }
+
+        .pointer {
+            cursor: pointer;
+        }
+
+        .pointer:hover {
+            color: #1a1a1a;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .date {
+            padding-left: 4px;
+        }
+    </style>
+
+    <script>
+        function showHide() {
+            $('.secret').slideToggle('slow');
+        }
+        function MM_findObj(n, d) { //v4.01
+            var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+                d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+            }
+            if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+            for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+            if (!x && d.getElementById) x = d.getElementById(n); return x;
+        }
+
+    </script>
+    <style>
+        td.secret {
+            display: none;
+        }
+    </style>
+
+    <!--[if lte IE 8]>
              <link rel="stylesheet" type="text/css" href="resources/css/ie/ie.css" />
      <![endif]-->
 
 
-     
-     <script type="text/javascript">
-         lang = window.location.pathname.substring(0, 3);
-         now = new Date(1637505413812);
-         window.setInterval(function() {
-             now.setSeconds(now.getSeconds() + 1);
-         }, 1000)
-         $(document).ready(function() {
-             $('a.paddingurl').each(
-             function(idx, itm) {
-                 var oldurl = $(itm).attr('href');
-                 $(itm).attr('href', lang + oldurl);
-             }
-         )
-     
-         
-             
-                
-             
-              
-                 $(".uppercase").keyup(function() {
-                     $(this).val($(this).val().toUpperCase());
-                 });
-                 $('.readonlySelect>option:not(:selected)').remove();
-                 //$('span[id$="errors"]').each(function(idx,itm){$('#'+itm.id.split('.')[0]).change(function(){$(itm).remove()}).keyup(function(){$(itm).remove()}).focus()});
-                 $('span[id$="errors"]').each(function(idx, itm) {
-                     $('#' + itm.id.split('.')[0]).change(function() {
-                         $(itm).remove()
-                     }).focus()
-                 });
-             });
-       function digit_format( expr, decplaces ) {
-                 var str = "" + Math.round( eval( expr) * Math.pow(10,decplaces ))
-                 while (str.length <= decplaces ) {
-                     str = "0" + str
-                 }
-                 var decpoint = str.length - decplaces
-                 return str.substring(0,decpoint) + "." + str.substring(decpoint,str.length);	  
-             }
-             
-             function number_format( expr, decplaces ) {
-                 var str = digit_format(removeNumberFormat(expr+""),decplaces);
-                 var decpoint = str.length - decplaces;
-     
-                 var valpart = str.substring(0,decpoint-1);
-                 var decpart = str.substring(decpoint,str.length);
-                 var retStr = "";
-                 var nI = 0;
-                 var awal = 0;
-                 var tmpStr = "";
-           
-                 if( valpart.length > 3 ) {
-                     for( nI = valpart.length; nI > 0; nI-=3) {
-                         awal = nI - 3;
-                         if(awal < 0 ) awal = 0;
-                         tmpStr = valpart.substring(awal,nI);
-                         if( nI == valpart.length) {
-                             retStr = tmpStr;
-                         } else {
-                             retStr = tmpStr + "," + retStr;
-                         }
-                     }
-                     retStr = retStr + "." + decpart;
-                 } else {
-                     return str;
-                 }
-                 return retStr;
-             }
-             
-             function removeNumberFormat( expr_par ) {	
-                 var retStr ="";
-                 var nI = 0; 
-                 var expr = "";
-         
-                 var expr = expr_par + "";
-                 if( expr.length <= 0 ) return "";
-         
-                 while( nI < expr.length ) {
-             if( expr.charAt( nI ) != ","  ) {
-                         retStr += expr.charAt(nI);
-             }
-             nI++;
-                 }
-         
-                 return retStr;
-             }
-             
-             function number_formatfield(idfield){            
-                 if (!document.getElementById) 	return;		
-                 var field = document.getElementById(idfield);	
-                 field.value = number_formatfieldvalue(field.value);
-             }
-             
-             function number_formatfieldvalue(idfield){
-                 //format field yang sudah diinput by value field		
-                 if (!document.getElementById) 	return;		
-                 var field = idfield;//document.getElementById(idfield);	
-                 var ret = number_format(0,2);
-         
-                 if (cekInputIsNum(str2num(removeNumberFormat(field)))) {
-             field = str2num(removeNumberFormat(field));
-             ret = number_format(field,2);
-                 }
-                 return ret;
-           
-             }
-             
-             
-     function MM_findObj(n, d) { //v4.01
-       var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
-         d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
-       if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
-       for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
-       if(!x && d.getElementById) x=d.getElementById(n); return x;
-     }
-     
-     </script>
-    
+
+    <script type="text/javascript">
+        lang = window.location.pathname.substring(0, 3);
+        now = new Date(1637505413812);
+        window.setInterval(function () {
+            now.setSeconds(now.getSeconds() + 1);
+        }, 1000)
+        $(document).ready(function () {
+            $('a.paddingurl').each(
+                function (idx, itm) {
+                    var oldurl = $(itm).attr('href');
+                    $(itm).attr('href', lang + oldurl);
+                }
+            )
+
+
+
+
+
+
+            $(".uppercase").keyup(function () {
+                $(this).val($(this).val().toUpperCase());
+            });
+            $('.readonlySelect>option:not(:selected)').remove();
+            //$('span[id$="errors"]').each(function(idx,itm){$('#'+itm.id.split('.')[0]).change(function(){$(itm).remove()}).keyup(function(){$(itm).remove()}).focus()});
+            $('span[id$="errors"]').each(function (idx, itm) {
+                $('#' + itm.id.split('.')[0]).change(function () {
+                    $(itm).remove()
+                }).focus()
+            });
+        });
+        function digit_format(expr, decplaces) {
+            var str = "" + Math.round(eval(expr) * Math.pow(10, decplaces))
+            while (str.length <= decplaces) {
+                str = "0" + str
+            }
+            var decpoint = str.length - decplaces
+            return str.substring(0, decpoint) + "." + str.substring(decpoint, str.length);
+        }
+
+        function number_format(expr, decplaces) {
+            var str = digit_format(removeNumberFormat(expr + ""), decplaces);
+            var decpoint = str.length - decplaces;
+
+            var valpart = str.substring(0, decpoint - 1);
+            var decpart = str.substring(decpoint, str.length);
+            var retStr = "";
+            var nI = 0;
+            var awal = 0;
+            var tmpStr = "";
+
+            if (valpart.length > 3) {
+                for (nI = valpart.length; nI > 0; nI -= 3) {
+                    awal = nI - 3;
+                    if (awal < 0) awal = 0;
+                    tmpStr = valpart.substring(awal, nI);
+                    if (nI == valpart.length) {
+                        retStr = tmpStr;
+                    } else {
+                        retStr = tmpStr + "," + retStr;
+                    }
+                }
+                retStr = retStr + "." + decpart;
+            } else {
+                return str;
+            }
+            return retStr;
+        }
+
+        function removeNumberFormat(expr_par) {
+            var retStr = "";
+            var nI = 0;
+            var expr = "";
+
+            var expr = expr_par + "";
+            if (expr.length <= 0) return "";
+
+            while (nI < expr.length) {
+                if (expr.charAt(nI) != ",") {
+                    retStr += expr.charAt(nI);
+                }
+                nI++;
+            }
+
+            return retStr;
+        }
+
+        function number_formatfield(idfield) {
+            if (!document.getElementById) return;
+            var field = document.getElementById(idfield);
+            field.value = number_formatfieldvalue(field.value);
+        }
+
+        function number_formatfieldvalue(idfield) {
+            //format field yang sudah diinput by value field		
+            if (!document.getElementById) return;
+            var field = idfield;//document.getElementById(idfield);	
+            var ret = number_format(0, 2);
+
+            if (cekInputIsNum(str2num(removeNumberFormat(field)))) {
+                field = str2num(removeNumberFormat(field));
+                ret = number_format(field, 2);
+            }
+            return ret;
+
+        }
+
+
+        function MM_findObj(n, d) { //v4.01
+            var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+                d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+            }
+            if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+            for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+            if (!x && d.getElementById) x = d.getElementById(n); return x;
+        }
+
+    </script>
+
     <script type="text/javascript" src="/resources/jquery-validation-1.9.0/jquery.validate.min.js"></script>
     <link rel="stylesheet" href="/resources/css/bootstrap.css" />
     <script>
-        $(function(){
+        $(function () {
             $('#username').focus();
             $("form").validate({
-                errorPlacement:function(error,element){
+                errorPlacement: function (error, element) {
                     //<![CDATA[
                     //$('<tr></tr>').html($('<td></td>').attr('align','center').attr('colspan','7').html(error)).insertAfter(element.parent().parent().parent());
-                    $('<tr></tr>').html($('<td></td>').attr('colspan','3').html(error)).insertAfter(element.parent().parent().parent()).prepend('<td colspan="4"></td>');
+                    $('<tr></tr>').html($('<td></td>').attr('colspan', '3').html(error)).insertAfter(element.parent().parent().parent()).prepend('<td colspan="4"></td>');
                     //]]>
                 },
-                messages:{
-                    username:{
-                        required:"Member ID must be filled"
+                messages: {
+                    username: {
+                        required: "Member ID must be filled"
                     },
-                    password:{
-                        required:"Password must be filled"
+                    password: {
+                        required: "Password must be filled"
                     },
-                    captcha:{
-                        required:"Verification Code must be filled"
+                    captcha: {
+                        required: "Verification Code must be filled"
                     }
                 }
             });
         })
 
     </script>
- 
+
     <style>
-        .width02{width:167px}
+        .width02 {
+            width: 167px
+        }
     </style>
 </head>
 
 <!--EDIT 22072019-->
-<body class="home-page" style="background:#fff">   
+
+<body class="home-page" style="background:#fff">
     <!--HEADER desktop-->
     <div class="container-fluid borderheaader-ma-1 bgcolor hidden-sm hidden-xs">
         <div class="container">
             <div class="row" style="margin-top:60px;">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4">
                     <a href="/">
-                        <img src="/resources/images/logo.png" align="left" alt="VITO" title="VITO" class="img-responsive leftlogo-memberarea" style="width:80px; margin-top:-25px; margin-bottom: 10px;"/>
+                        <img src="/resources/images/logo.png" align="left" alt="VITO" title="VITO"
+                            class="img-responsive leftlogo-memberarea"
+                            style="width:80px; margin-top:-25px; margin-bottom: 10px;" />
                     </a>
                 </div>
-                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8 signin text-right right-titlepagema" id="ijo" style="text-align:right">SIGN IN</div>
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-8 signin text-right right-titlepagema" id="ijo"
+                    style="text-align:right">SIGN IN</div>
             </div>
         </div>
     </div>
@@ -266,8 +285,11 @@
     <div class="container-fluid borderheaader-ma-1 bgcolor hidden-lg hidden-md">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><a href="/"><img src="/resources/images/logo.png" alt="VITO" title="VITO" align="left" class="leftlogo-memberarea" style="max-width:100px; width:80px; margin-top:10px; margin-bottom:10px;"/></a></div>
-                <div class="col-lg-9 col-md-3 col-sm-6 col-xs-6 signin text-right right-titlepagema" id="ijo">Sign In</div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6"><a href="/"><img src="/resources/images/logo.png"
+                            alt="VITO" title="VITO" align="left" class="leftlogo-memberarea"
+                            style="max-width:100px; width:80px; margin-top:10px; margin-bottom:10px;" /></a></div>
+                <div class="col-lg-9 col-md-3 col-sm-6 col-xs-6 signin text-right right-titlepagema" id="ijo">Sign In
+                </div>
             </div>
         </div>
     </div>
@@ -279,59 +301,71 @@
             <div class="container-signin">
                 <div class="widthform-signin bdr-form-signin" align="center">
                     <div class="textma text-left paddingbottom-textma">Member ID</div>
-                    <div class="txtfieldma text-left">                            
-                        <input id="username" name="username" tabindex="1" class="uppercase required textfield01 whitebg" type="text" value=""/>                                                  
-                        
-                        <br/>
-                        <label for="username" generated="true" class="error"></label>     
-                    </div>        	
-                    <div class="textma text-left paddingbottom-textma paddingtop-textma">Password 
+                    <div class="txtfieldma text-left">
+                        <input id="username" name="username" tabindex="1" class="uppercase required textfield01 whitebg"
+                            type="text" value="" />
+
+                        <br />
+                        <label for="username" generated="true" class="error"></label>
+                    </div>
+                    <div class="textma text-left paddingbottom-textma paddingtop-textma">Password
                         <a href="forgot-password.html" class="forgotpass">Forgot Password</a>
                     </div>
-                    <div class="txtfieldma text-left">                            
-                        <input id="password" name="password" tabindex="2" class="textfield01 required whitebg" type="password" value=""/>                            
-                        
-                        <br/>
-                        <label for="password" generated="true" class="error"></label>     
+                    <div class="txtfieldma text-left">
+                        <input id="password" name="password" tabindex="2" class="textfield01 required whitebg"
+                            type="password" value="" />
+
+                        <br />
+                        <label for="password" generated="true" class="error"></label>
                     </div>
                     <div class="textma text-left paddingbottom-textma paddingtop-textma">Verification Code</div>
-                    <div class="txtfieldma text-left">                            
-                        <input type="text" id="captcha" name="captcha" tabindex="3" class="textfield01 required " autocomplete="off"/>      
-                        <br/>
-                        <label for="captcha" generated="true" class="error"></label>                      
-                    </div>   
+                    <div class="txtfieldma text-left">
+                        <input type="text" id="captcha" name="captcha" tabindex="3" class="textfield01 required "
+                            autocomplete="off" />
+                        <br />
+                        <label for="captcha" generated="true" class="error"></label>
+                    </div>
 
                     <div class="row" style="margin-top:6px">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left">
-                            <img src="/kaptcha.jpg" onclick="$(this).attr('src', '/kaptcha.jpg?' + Math.random(10000))" name="captchaImg" id="captchaImg"  class="captchaImg" style="width:169px; height:60px"/>
+                            <img src="/kaptcha.jpg" onclick="$(this).attr('src', '/kaptcha.jpg?' + Math.random(10000))"
+                                name="captchaImg" id="captchaImg" class="captchaImg" style="width:169px; height:60px" />
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"><a href="#" class="captcha01"><i>Click to get new code </i></a></div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-left"><a href="#"
+                                class="captcha01"><i>Click to get new code </i></a></div>
                     </div>
 
                     <div class="row" style="margin-top:6px">
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left">
-                            <a href="/" class="button-ma" style="width:AUTO;"><span class="font-button-ma" >CANCEL</span></a>
+                            <a href="/" class="button-ma" style="width:AUTO;"><span
+                                    class="font-button-ma">CANCEL</span></a>
                         </div>
-                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">                                 
-                            <input type="submit" class="input-button-reg input-font-button-reg" value="SIGN IN" tabindex="4" />
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
+                            <input type="submit" class="input-button-reg input-font-button-reg" value="SIGN IN"
+                                tabindex="4" />
                         </div>
                     </div>
 
-                    <div class="textma2 text-right paddingbottom-textma" style="padding-top:7px">Not yet become a member ? <a href="/register.html" style="color:#9e9e9e">Register</a></div>
+                    <div class="textma2 text-right paddingbottom-textma" style="padding-top:7px">Not yet become a member
+                        ? <a href="/register.html" style="color:#9e9e9e">Register</a></div>
                 </div>
             </div>
         </div>
     </form>
-    <div align="center" class="textma2" style="padding-top:15px"><a href="/register/termncond.html" style="color:#727171" target="_blank">Terms of Agreement</a> <span style="color:#727171">|</span> <a href="#" style="color:#727171">Privacy Policy</a></a></div>
+    <div align="center" class="textma2" style="padding-top:15px"><a href="/register/termncond.html"
+            style="color:#727171" target="_blank">Terms of Agreement</a> <span style="color:#727171">|</span> <a
+            href="#" style="color:#727171">Privacy Policy</a></a></div>
     <!--end FORM SIGN IN-->
 
     <br /><br /><Br /><br /><Br /><br />
     <!--FOOTER desktop-->
-    <div class="container-fluid hidden-sm hidden-xs" style="background:#1A7DED">        
+    <div class="container-fluid hidden-sm hidden-xs" style="background:#1A7DED">
         <div class="container">
             <div class="col-lg-12 row">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left fontfooterma">&copy; Copyright 2021 - VITO - All Rights Reserved </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right fontfooterma">Powered By: <a href="/" target="_blank" style="color:#fff">PineappleTech</a></div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left fontfooterma">&copy; Copyright 2021 - VITO -
+                    All Rights Reserved </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right fontfooterma">Powered By: <a href="/"
+                        target="_blank" style="color:#fff">PineappleTech</a></div>
             </div>
         </div>
     </div>
@@ -341,12 +375,16 @@
     <div class="container-fluid hidden-lg hidden-md" style="background:#1A7DED; width:100%; display:block">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center fontfooterma marginpadingnull" style="padding-bottom:0">&copy; Copyright 2021 - VITO - All Rights Reserved </div>
-                <div class="col-lg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center fontfooterma marginpadingnull" style="padding:0 0 6px 0">Powered By: <a href="/" target="_blank" style="color:#fff">PineappleTech</a></div>
+                <div class="col-lg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center fontfooterma marginpadingnull"
+                    style="padding-bottom:0">&copy; Copyright 2021 - VITO - All Rights Reserved </div>
+                <div class="col-lg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center fontfooterma marginpadingnull"
+                    style="padding:0 0 6px 0">Powered By: <a href="/" target="_blank"
+                        style="color:#fff">PineappleTech</a></div>
             </div>
         </div>
     </div>
     <!--end FOOTER mobile-->
 
 </body>
+
 </html>
