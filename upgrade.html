@@ -1,252 +1,278 @@
-
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-<link rel="shortcut icon" href="/resources/assets/img/favicon.png" type="image/x-icon">
-<title>VITO</title> 
-        
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="shortcut icon" href="/resources/assets/img/favicon.png" type="image/x-icon">
+    <title>VITO</title>
 
 
 
 
-<!-- <link rel="shortcut icon" href="/resources/images/icon/favicon.ico" type="image/x-icon" /> -->
-<link rel="icon" href="/resources/assets/img/favicon.png" type="image/x-icon" />
-<link rel="stylesheet" href="/resources/css/member.css" />
-<link rel="stylesheet" href="/resources/css-memberarea/memberarea-bs.css">   
-<link rel="stylesheet" href="/resources/css-memberarea/styleDropDown.css">  
-<link rel="stylesheet" href="/resources/css-memberarea/member.css">  
-<link rel="stylesheet" href="/resources/css-memberarea/mobilemenu/new-navigation-mobile.css" type="text/css" media="screen" /> 
-<script type="text/javascript" src="/resources/js/mobilemenu/jquery-1.7.2.js"></script>
-<script type="text/javascript" src="/resources/js/common.js"></script>
 
-<!--[if IE 6]>
+    <!-- <link rel="shortcut icon" href="/resources/images/icon/favicon.ico" type="image/x-icon" /> -->
+    <link rel="icon" href="/resources/assets/img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="/resources/css/member.css" />
+    <link rel="stylesheet" href="/resources/css-memberarea/memberarea-bs.css">
+    <link rel="stylesheet" href="/resources/css-memberarea/styleDropDown.css">
+    <link rel="stylesheet" href="/resources/css-memberarea/member.css">
+    <link rel="stylesheet" href="/resources/css-memberarea/mobilemenu/new-navigation-mobile.css" type="text/css"
+        media="screen" />
+    <script type="text/javascript" src="/resources/js/mobilemenu/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="/resources/js/common.js"></script>
+
+    <!--[if IE 6]>
     <link rel="stylesheet" type="text/css" href="/resources/css-memberarea/ie6.css" />
     <![endif]-->
 
-<!--[if lte IE 8]>
+    <!--[if lte IE 8]>
     <link rel="stylesheet" type="text/css" href="/resources/css-memberarea/ie8.css" />
 <![endif]-->
 
-<!-- PNG FIX for IE6 -->
-<!--[if lte IE 6]>
+    <!-- PNG FIX for IE6 -->
+    <!--[if lte IE 6]>
         <script type="text/javascript" src="/resources/js/pngfix/supersleight-min.js"></script>
 <![endif]-->
 
-<script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/menu.js"></script>
-<script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/items1.js"></script>
-<script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/template1.js"></script>        
-<link rel="stylesheet" href="/resources/tigra/menu_files/menu.css" />
+    <script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/menu.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/items1.js"></script>
+    <script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/template1.js"></script>
+    <link rel="stylesheet" href="/resources/tigra/menu_files/menu.css" />
 
 
-<style>
-    .required{}
-    .numeric{}
-    .currency{}
-    .uppercase{}
-    .readonlySelect{}
-    span.error,label.error, span[id*="errors"]{
-        color: red;
-        font-size: 13px;
-        letter-spacing:.1px;
-        font-family:sanspro;
-        font-weight:100;
-        display:block;
-    }
-    .pointer{
-        cursor: pointer;
-    }
-    .pointer:hover{
-        color: #1a1a1a;
-    }
-    .underline{
-        text-decoration: underline;
-    }
-    .date{
-        padding-left: 4px;
-    }
-</style>
+    <style>
+        .required {}
 
-<script>
-    function showHide(){
-        $('.secret').slideToggle('slow');
-    }
-    function MM_findObj(n, d) { //v4.01
-  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
-    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
-  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
-  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
-  if(!x && d.getElementById) x=d.getElementById(n); return x;
-}
+        .numeric {}
 
-</script>
-<style>
-    td.secret {
-        display:none;
-    }
-</style>
+        .currency {}
 
-<!--[if lte IE 8]>
+        .uppercase {}
+
+        .readonlySelect {}
+
+        span.error,
+        label.error,
+        span[id*="errors"] {
+            color: red;
+            font-size: 13px;
+            letter-spacing: .1px;
+            font-family: sanspro;
+            font-weight: 100;
+            display: block;
+        }
+
+        .pointer {
+            cursor: pointer;
+        }
+
+        .pointer:hover {
+            color: #1a1a1a;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        .date {
+            padding-left: 4px;
+        }
+    </style>
+
+    <script>
+        function showHide() {
+            $('.secret').slideToggle('slow');
+        }
+        function MM_findObj(n, d) { //v4.01
+            var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+                d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+            }
+            if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+            for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+            if (!x && d.getElementById) x = d.getElementById(n); return x;
+        }
+
+    </script>
+    <style>
+        td.secret {
+            display: none;
+        }
+    </style>
+
+    <!--[if lte IE 8]>
              <link rel="stylesheet" type="text/css" href="resources/css/ie/ie.css" />
      <![endif]-->
 
 
-     
-     <script type="text/javascript">
-         lang = window.location.pathname.substring(0, 3);
-         now = new Date(1637505687596);
-         window.setInterval(function() {
-             now.setSeconds(now.getSeconds() + 1);
-         }, 1000)
-         $(document).ready(function() {
-             $('a.paddingurl').each(
-             function(idx, itm) {
-                 var oldurl = $(itm).attr('href');
-                 $(itm).attr('href', lang + oldurl);
-             }
-         )
-     
-         
-             
-                
-             
-              
-                 $(".uppercase").keyup(function() {
-                     $(this).val($(this).val().toUpperCase());
-                 });
-                 $('.readonlySelect>option:not(:selected)').remove();
-                 //$('span[id$="errors"]').each(function(idx,itm){$('#'+itm.id.split('.')[0]).change(function(){$(itm).remove()}).keyup(function(){$(itm).remove()}).focus()});
-                 $('span[id$="errors"]').each(function(idx, itm) {
-                     $('#' + itm.id.split('.')[0]).change(function() {
-                         $(itm).remove()
-                     }).focus()
-                 });
-             });
-       function digit_format( expr, decplaces ) {
-                 var str = "" + Math.round( eval( expr) * Math.pow(10,decplaces ))
-                 while (str.length <= decplaces ) {
-                     str = "0" + str
-                 }
-                 var decpoint = str.length - decplaces
-                 return str.substring(0,decpoint) + "." + str.substring(decpoint,str.length);	  
-             }
-             
-             function number_format( expr, decplaces ) {
-                 var str = digit_format(removeNumberFormat(expr+""),decplaces);
-                 var decpoint = str.length - decplaces;
-     
-                 var valpart = str.substring(0,decpoint-1);
-                 var decpart = str.substring(decpoint,str.length);
-                 var retStr = "";
-                 var nI = 0;
-                 var awal = 0;
-                 var tmpStr = "";
-           
-                 if( valpart.length > 3 ) {
-                     for( nI = valpart.length; nI > 0; nI-=3) {
-                         awal = nI - 3;
-                         if(awal < 0 ) awal = 0;
-                         tmpStr = valpart.substring(awal,nI);
-                         if( nI == valpart.length) {
-                             retStr = tmpStr;
-                         } else {
-                             retStr = tmpStr + "," + retStr;
-                         }
-                     }
-                     retStr = retStr + "." + decpart;
-                 } else {
-                     return str;
-                 }
-                 return retStr;
-             }
-             
-             function removeNumberFormat( expr_par ) {	
-                 var retStr ="";
-                 var nI = 0; 
-                 var expr = "";
-         
-                 var expr = expr_par + "";
-                 if( expr.length <= 0 ) return "";
-         
-                 while( nI < expr.length ) {
-             if( expr.charAt( nI ) != ","  ) {
-                         retStr += expr.charAt(nI);
-             }
-             nI++;
-                 }
-         
-                 return retStr;
-             }
-             
-             function number_formatfield(idfield){            
-                 if (!document.getElementById) 	return;		
-                 var field = document.getElementById(idfield);	
-                 field.value = number_formatfieldvalue(field.value);
-             }
-             
-             function number_formatfieldvalue(idfield){
-                 //format field yang sudah diinput by value field		
-                 if (!document.getElementById) 	return;		
-                 var field = idfield;//document.getElementById(idfield);	
-                 var ret = number_format(0,2);
-         
-                 if (cekInputIsNum(str2num(removeNumberFormat(field)))) {
-             field = str2num(removeNumberFormat(field));
-             ret = number_format(field,2);
-                 }
-                 return ret;
-           
-             }
-             
-             
-     function MM_findObj(n, d) { //v4.01
-       var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
-         d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
-       if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
-       for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
-       if(!x && d.getElementById) x=d.getElementById(n); return x;
-     }
-     
-     </script>
 
-        <script src="/resources/js/jquery-migrate-1.0.0.js"></script>
-        <!-- <link rel="stylesheet" href="/resources/css/register.css"/> -->
-        <link rel="stylesheet" href="/resources/css/bootstrap.css" />
-        <link rel="stylesheet" href="/resources/jquery-ui-1.8.18.custom/css/smoothness/jquery-ui-1.8.18.custom.css" />
-        <script type="text/javascript" src="/resources/jquery-ui-1.8.18.custom/js/jquery-ui-1.8.18.custom.min.js"></script>
-        <script type="text/javascript" src="/resources/jquery-validation-1.9.0/jquery.validate.js"></script>
-        <script type="text/javascript" src="/resources/jquery-validation-1.9.0/additional-methods.js"></script>
-        <script type="text/javascript" src="/resources/js/jquery.dateFormat-1.0.js"></script>
-        <script src="/resources/js/jquery-country-dropdown/jquery.ddslick.min.js"></script>
-        <script src="/resources/js/jquery-country-dropdown/phonenumber.js"></script>
-        <link rel="stylesheet" href="/resources/js/jquery-country-dropdown/phonenumber.css"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style>
-            .servertime2{    
-                font-size: 11px;
-                color: #9c9c9c;
-                text-transform: capitalize;
-                letter-spacing: 0.9px;
+    <script type="text/javascript">
+        lang = window.location.pathname.substring(0, 3);
+        now = new Date(1637505687596);
+        window.setInterval(function () {
+            now.setSeconds(now.getSeconds() + 1);
+        }, 1000)
+        $(document).ready(function () {
+            $('a.paddingurl').each(
+                function (idx, itm) {
+                    var oldurl = $(itm).attr('href');
+                    $(itm).attr('href', lang + oldurl);
+                }
+            )
+
+
+
+
+
+
+            $(".uppercase").keyup(function () {
+                $(this).val($(this).val().toUpperCase());
+            });
+            $('.readonlySelect>option:not(:selected)').remove();
+            //$('span[id$="errors"]').each(function(idx,itm){$('#'+itm.id.split('.')[0]).change(function(){$(itm).remove()}).keyup(function(){$(itm).remove()}).focus()});
+            $('span[id$="errors"]').each(function (idx, itm) {
+                $('#' + itm.id.split('.')[0]).change(function () {
+                    $(itm).remove()
+                }).focus()
+            });
+        });
+        function digit_format(expr, decplaces) {
+            var str = "" + Math.round(eval(expr) * Math.pow(10, decplaces))
+            while (str.length <= decplaces) {
+                str = "0" + str
             }
-            .signin{padding:16px 0}			
-            .leftpaddingdeskmob{padding-left:158px!important}	
-            ul.dd-options{overflow:auto!important}	
-            #bankid{
-                width:220px !important;
-                margin-left: 3px;
+            var decpoint = str.length - decplaces
+            return str.substring(0, decpoint) + "." + str.substring(decpoint, str.length);
+        }
+
+        function number_format(expr, decplaces) {
+            var str = digit_format(removeNumberFormat(expr + ""), decplaces);
+            var decpoint = str.length - decplaces;
+
+            var valpart = str.substring(0, decpoint - 1);
+            var decpart = str.substring(decpoint, str.length);
+            var retStr = "";
+            var nI = 0;
+            var awal = 0;
+            var tmpStr = "";
+
+            if (valpart.length > 3) {
+                for (nI = valpart.length; nI > 0; nI -= 3) {
+                    awal = nI - 3;
+                    if (awal < 0) awal = 0;
+                    tmpStr = valpart.substring(awal, nI);
+                    if (nI == valpart.length) {
+                        retStr = tmpStr;
+                    } else {
+                        retStr = tmpStr + "," + retStr;
+                    }
+                }
+                retStr = retStr + "." + decpart;
+            } else {
+                return str;
             }
-            .padd02{
-                padding-left:0px;
+            return retStr;
+        }
+
+        function removeNumberFormat(expr_par) {
+            var retStr = "";
+            var nI = 0;
+            var expr = "";
+
+            var expr = expr_par + "";
+            if (expr.length <= 0) return "";
+
+            while (nI < expr.length) {
+                if (expr.charAt(nI) != ",") {
+                    retStr += expr.charAt(nI);
+                }
+                nI++;
             }
-            .progressbarnew li {
-                width: 33%;
+
+            return retStr;
+        }
+
+        function number_formatfield(idfield) {
+            if (!document.getElementById) return;
+            var field = document.getElementById(idfield);
+            field.value = number_formatfieldvalue(field.value);
+        }
+
+        function number_formatfieldvalue(idfield) {
+            //format field yang sudah diinput by value field		
+            if (!document.getElementById) return;
+            var field = idfield;//document.getElementById(idfield);	
+            var ret = number_format(0, 2);
+
+            if (cekInputIsNum(str2num(removeNumberFormat(field)))) {
+                field = str2num(removeNumberFormat(field));
+                ret = number_format(field, 2);
             }
-            .vertical-menu {
+            return ret;
+
+        }
+
+
+        function MM_findObj(n, d) { //v4.01
+            var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+                d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+            }
+            if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+            for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+            if (!x && d.getElementById) x = d.getElementById(n); return x;
+        }
+
+    </script>
+
+    <script src="/resources/js/jquery-migrate-1.0.0.js"></script>
+    <!-- <link rel="stylesheet" href="/resources/css/register.css"/> -->
+    <link rel="stylesheet" href="/resources/css/bootstrap.css" />
+    <link rel="stylesheet" href="/resources/jquery-ui-1.8.18.custom/css/smoothness/jquery-ui-1.8.18.custom.css" />
+    <script type="text/javascript" src="/resources/jquery-ui-1.8.18.custom/js/jquery-ui-1.8.18.custom.min.js"></script>
+    <script type="text/javascript" src="/resources/jquery-validation-1.9.0/jquery.validate.js"></script>
+    <script type="text/javascript" src="/resources/jquery-validation-1.9.0/additional-methods.js"></script>
+    <script type="text/javascript" src="/resources/js/jquery.dateFormat-1.0.js"></script>
+    <script src="/resources/js/jquery-country-dropdown/jquery.ddslick.min.js"></script>
+    <script src="/resources/js/jquery-country-dropdown/phonenumber.js"></script>
+    <link rel="stylesheet" href="/resources/js/jquery-country-dropdown/phonenumber.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .servertime2 {
+            font-size: 11px;
+            color: #9c9c9c;
+            text-transform: capitalize;
+            letter-spacing: 0.9px;
+        }
+
+        .signin {
+            padding: 16px 0
+        }
+
+        .leftpaddingdeskmob {
+            padding-left: 158px !important
+        }
+
+        ul.dd-options {
+            overflow: auto !important
+        }
+
+        #bankid {
+            width: 220px !important;
+            margin-left: 3px;
+        }
+
+        .padd02 {
+            padding-left: 0px;
+        }
+
+        .progressbarnew li {
+            width: 33%;
+        }
+
+        .vertical-menu {
             width: 100%;
             height: 150px;
             overflow-y: auto;
@@ -254,321 +280,344 @@
             padding-right: 10px;
             padding-top: 10px;
             border: 1px solid lightgray;
-            }
-            /* width */
-            ::-webkit-scrollbar {
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
             width: 10px;
-            }
+        }
 
-            /* Track */
-            ::-webkit-scrollbar-track {
-            background: #1234; 
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #1234;
             border-radius: 10px;
-            }
-            
-            /* Handle */
-            ::-webkit-scrollbar-thumb {
-            background: #888; 
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
             border-radius: 10px;
-            }
+        }
 
-            /* Handle on hover */
-            ::-webkit-scrollbar-thumb:hover {
-            background: #555; 
-            }
-        </style>
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
 
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('form').submit(function () {
-                    if (!$(this).valid())
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('form').submit(function () {
+                if (!$(this).valid())
+                    return false;
+
+                var kittype = $('#kittype').val();
+                var ctr = 0;
+                for (var i = 1; i <= 50; i++) {
+                    if ($('#trxCode' + i).val() != "") {
+                        ctr++;
+                    }
+                }
+                if (kittype == "0") {
+                    if (ctr == 1) {
+                        alert("ePin must be filled");
                         return false;
-
-                    var kittype = $('#kittype').val();
-                    var ctr = 0;
-                    for (var i = 1; i <= 50; i++) {
-                        if ($('#trxCode'+i).val() != "") {
-                            ctr++;
-                        }
                     }
-                    if (kittype == "0") {
-                        if (ctr == 1) {
-                            alert("ePin must be filled");
-                            return false;
-                        }
-                    } else if (kittype == "1") {
-                        if (ctr == 1) {
-                            alert("ePin must be filled");
-                            return false;
-                        }
-                    } else if (kittype == "2") {
-                        if (ctr == 5) {
-                            alert("ePin must be filled");
-                            return false;
-                        }
-                    } else if (kittype == "3") {
-                        if (ctr == 10) {
-                            alert("ePin must be filled");
-                            return false;
-                        }
-                    } else if (kittype == "4") {
-                        if (ctr == 50) {
-                            alert("ePin must be filled");
-                            return false;
-                        }
+                } else if (kittype == "1") {
+                    if (ctr == 1) {
+                        alert("ePin must be filled");
+                        return false;
                     }
+                } else if (kittype == "2") {
+                    if (ctr == 5) {
+                        alert("ePin must be filled");
+                        return false;
+                    }
+                } else if (kittype == "3") {
+                    if (ctr == 10) {
+                        alert("ePin must be filled");
+                        return false;
+                    }
+                } else if (kittype == "4") {
+                    if (ctr == 50) {
+                        alert("ePin must be filled");
+                        return false;
+                    }
+                }
 
 
 
-                    return true;
-                })
-                $("form").validate({
-                    errorPlacement: function (error, element) {
-                        error.insertAfter(element);
+                return true;
+            })
+            $("form").validate({
+                errorPlacement: function (error, element) {
+                    error.insertAfter(element);
+                },
+                messages: {
+                    memberId: {
+                        required: "Member ID must be filled"
                     },
-                    messages: {
-                        memberId: {
-                            required: "Member ID must be filled"
-                        },
-                        trxCode: {
-                            required: "ePin must be filled"
-                        },
-                        captcha: {
-                            required: "Verification Code must be filled"
-                        }
+                    trxCode: {
+                        required: "ePin must be filled"
+                    },
+                    captcha: {
+                        required: "Verification Code must be filled"
                     }
-                });
+                }
             });
+        });
 
-            function getDataMember(from)
-            {
-                $('#divTrxCode').text("");
-                var memberId = $("#memberId").val();
-                var bc = "";
-                if (from == 'a') {
-                    bc = "01";
-                } else
-                {
-                    bc = from;
-                }
-
-                $.get('/remote/getDataMemberForUpgrade', {memberId: memberId, bc: bc}, function (data) {
-                    if (data.memberName != null)
-                    {
-                        $('#fullname').text(data.memberName);
-                        var temp = "";
-
-                        if (data.currentType == "0") {
-                            temp = "Member (" + data.noOfPin + " BV has been inputed)";
-                        } else if (data.currentType == "1") {
-                            temp = "Member (" + data.noOfPin + " BV has been inputed)";
-                        } else if (data.currentType == "2") {
-                            temp = "Silver (" + data.noOfPin + " BV has been inputed)";
-                        } else if (data.currentType == "3") {
-                            temp = "Gold (" + data.noOfPin + " BV has been inputed)";
-                        } else if (data.currentType == "4") {
-                            temp = "Platinum (" + data.noOfPin + "BV has been inputed)";
-                        } else if (data.currentType == "5") {
-                            temp = "Titanium (" + data.noOfPin + " BV has been inputed)";
-                        } else {
-
-                            temp = "";
-                        }
-                        $('#currentType').text(temp);
-                        $('#kittype').val(data.currentType);
-                        getTrxCode(data.appv, data.currentType);
-                    } else
-                    {
-                        alert("Member not found !");
-                        $('#fullname').text("");
-                        $('#currentType').text("");
-                        $('#divTrxCode').text("");
-                    }
-                });
+        function getDataMember(from) {
+            $('#divTrxCode').text("");
+            var memberId = $("#memberId").val();
+            var bc = "";
+            if (from == 'a') {
+                bc = "01";
+            } else {
+                bc = from;
             }
 
-            function getTrxCode(noOfPin, currentType) {
-                if (currentType == "5") {
-                    alert("You are already titanium, no need to upgrade");
-                } else {
+            $.get('/remote/getDataMemberForUpgrade', { memberId: memberId, bc: bc }, function (data) {
+                if (data.memberName != null) {
+                    $('#fullname').text(data.memberName);
                     var temp = "";
-                    var jum = 1;
-                    if (currentType == "0" || currentType == "1") {
-                        jum = 1;
-                    } else if (currentType == "2") {
-                        jum = 5;
-                    } else if (currentType == "3") {
-                        jum = 10;
-                    } else if (currentType == "4") {
-                        jum = 50;
+
+                    if (data.currentType == "0") {
+                        temp = "Member (" + data.noOfPin + " BV has been inputed)";
+                    } else if (data.currentType == "1") {
+                        temp = "Member (" + data.noOfPin + " BV has been inputed)";
+                    } else if (data.currentType == "2") {
+                        temp = "Silver (" + data.noOfPin + " BV has been inputed)";
+                    } else if (data.currentType == "3") {
+                        temp = "Gold (" + data.noOfPin + " BV has been inputed)";
+                    } else if (data.currentType == "4") {
+                        temp = "Platinum (" + data.noOfPin + "BV has been inputed)";
+                    } else if (data.currentType == "5") {
+                        temp = "Titanium (" + data.noOfPin + " BV has been inputed)";
+                    } else {
+
+                        temp = "";
                     }
-                    $('#jum').val(jum);
-                    for (var i = 1; i <= jum; i++) {
-                        temp += "<input type='text' id='trxCode" + i + "' name='trxCode' class=\"textfield01   \"  /> ";
-                        if (i != jum) {
-                            temp += "<br/><br/>";
-                        }
-                    }
-                    $('#divTrxCode').html(temp);
+                    $('#currentType').text(temp);
+                    $('#kittype').val(data.currentType);
+                    getTrxCode(data.appv, data.currentType);
+                } else {
+                    alert("Member not found !");
+                    $('#fullname').text("");
+                    $('#currentType').text("");
+                    $('#divTrxCode').text("");
                 }
+            });
+        }
+
+        function getTrxCode(noOfPin, currentType) {
+            if (currentType == "5") {
+                alert("You are already titanium, no need to upgrade");
+            } else {
+                var temp = "";
+                var jum = 1;
+                if (currentType == "0" || currentType == "1") {
+                    jum = 1;
+                } else if (currentType == "2") {
+                    jum = 5;
+                } else if (currentType == "3") {
+                    jum = 10;
+                } else if (currentType == "4") {
+                    jum = 50;
+                }
+                $('#jum').val(jum);
+                for (var i = 1; i <= jum; i++) {
+                    temp += "<input type='text' id='trxCode" + i + "' name='trxCode' class=\"textfield01   \"  /> ";
+                    if (i != jum) {
+                        temp += "<br/><br/>";
+                    }
+                }
+                $('#divTrxCode').html(temp);
             }
-            servertime = new Date(1637505687596);
-            window.setInterval(function () {
-                servertime.setSeconds(servertime.getSeconds() + 1);
-                $('#servertime').text($.format.date(servertime, 'dd MMMM yyyy HH:mm:ss'))
-            }, 1000)
+        }
+        servertime = new Date(1637505687596);
+        window.setInterval(function () {
+            servertime.setSeconds(servertime.getSeconds() + 1);
+            $('#servertime').text($.format.date(servertime, 'dd MMMM yyyy HH:mm:ss'))
+        }, 1000)
 
-        </script>
+    </script>
 
-    </head>
-    <body class="home-page">
-        <!--HEADER desktop-->
-        <div class="container-fluid borderheaader-ma-1 bgcolor ">
-            <div class="container">
-                <div class="row" style="margin-top:60px;">
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                        <a href="/">
-                            <img src="/resources/images/logo.png" align="left" alt="VITO" title="VITO" class="leftlogo-memberarea" style="width:100px; margin-top:-25px; margin-bottom: 10px;"/>
-                        </a>
-                    </div>
+</head>
 
-                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 signin text-right right-titlepagema" id="ijo">UPgrade<br />
-                        <span id="servertime" class="servertime2"></span></div>
+<body class="home-page">
+    <!--HEADER desktop-->
+    <div class="container-fluid borderheaader-ma-1 bgcolor ">
+        <div class="container">
+            <div class="row" style="margin-top:60px;">
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <a href="/">
+                        <img src="/resources/images/logo.png" align="left" alt="VITO" title="VITO"
+                            class="leftlogo-memberarea" style="width:100px; margin-top:-25px; margin-bottom: 10px;" />
+                    </a>
+                </div>
+
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 signin text-right right-titlepagema" id="ijo">
+                    UPgrade<br />
+                    <span id="servertime" class="servertime2"></span>
                 </div>
             </div>
         </div>
-        <!--end HEADER mobile-->
+    </div>
+    <!--end HEADER mobile-->
 
-        <form id="upgrade" action="/upgrade" method="post" autocomplete="off">
-            <input id="activateBy" name="activateBy" type="hidden" value="&#39;&#39;"/>
-            <input id="bc" name="bc" type="hidden" value="01"/>
-            <input type="hidden" name="kittype" id="kittype" />
-            <div class="container" style=""><br/><br/>
-                <!-- <div align="center" class="register-desktopnew"><img src="/resources/images/memberarea-bs/sambutan-1.png" class="img-responsive" /></div>
+    <form id="upgrade" action="/upgrade" method="post" autocomplete="off">
+        <input id="activateBy" name="activateBy" type="hidden" value="&#39;&#39;" />
+        <input id="bc" name="bc" type="hidden" value="01" />
+        <input type="hidden" name="kittype" id="kittype" />
+        <div class="container" style=""><br /><br />
+            <!-- <div align="center" class="register-desktopnew"><img src="/resources/images/memberarea-bs/sambutan-1.png" class="img-responsive" /></div>
                 <div align="left" class="register-mobilenew"><img src="/resources/images/memberarea-bs/sambutan-m-1.png" class="img-responsive" /></div> -->
 
-                <div align="center">
-                    <ul class="progressbarnew">
-                        <li class="active">Fill Data</li>
-                        <li>Confirmation</li>
-                        <li>Welcome Letter</li>
-                    </ul>
-                </div>
-                <br/><br/><br/><br/>
+            <div align="center">
+                <ul class="progressbarnew">
+                    <li class="active">Fill Data</li>
+                    <li>Confirmation</li>
+                    <li>Welcome Letter</li>
+                </ul>
+            </div>
+            <br /><br /><br /><br />
 
-                
-                    <div class="row" id="space02">
-                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Member ID <span class="merah">*</span></div>
-                        <div class="col-lg-5 col-md-7 col-sm-12 col-xs-12 text-left " id="marginpadingnull2">                        
-                            <input id="memberId" name="memberId" class="textfield01 widthtextfieldreg  required uppercase" tabindex="1" onblur="getDataMember(&#39;a&#39;)" type="text" value="" maxlength="20"/>
 
-                        </div>
-                    </div> 
-                
-                
+            <div class="row" id="space02">
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Member ID <span
+                        class="merah">*</span></div>
+                <div class="col-lg-5 col-md-7 col-sm-12 col-xs-12 text-left " id="marginpadingnull2">
+                    <input id="memberId" name="memberId" class="textfield01 widthtextfieldreg  required uppercase"
+                        tabindex="1" onblur="getDataMember(&#39;a&#39;)" type="text" value="" maxlength="20" />
 
-                <div class="row" id="space02">
-                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Member Name<span class="merah">*</span></div>
-                    <div class="col-lg-5 col-md-7 col-sm-12 col-xs-12 text-left opensans font13px marginreg-1 abuabu2" id="marginpadingnull2">                            
-                        <div id="fullname"></div>      
-                    </div>
-                </div>  
-                <div class="row" id="space02">
-                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Current Type<span class="merah">*</span></div>
-                    <div class="col-lg-5 col-md-7 col-sm-12 col-xs-12 text-left opensans font13px marginreg-1 abuabu2" id="marginpadingnull2">                            
-                        <div id="currentType"  >                           
-                            
-                        </div>     
-                    </div>
-                </div>                      
-                <br/>
-                <div class="row" id="space02">
-                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">ePin<span class="merah">*</span></div>
-                    <div class="col-lg-5 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">   
-
-                        <div class="vertical-menu" id="divTrxCode">
-                            
-                        </div>
-
-                           <table width="100%" cellpadding="0" cellspacing="0" style="font-size:11px; padding-top:11px">
-                            <tr>
-                                <td width="1%" valign="top"><span class="red">*</span></td>
-                                <td width="99%" class="textma4">Please input 1 RGG or 5 RGS For Upgrade   <strong>SILVER to GOLD</strong></td>
-                            </tr>
-                            <tr>
-                                <td width="1%" valign="top"><span class="red">*</span></td>
-                                <td width="99%" class="textma4">Please input 1 RGP or 2 RGG or 10 RGS For Upgrade  <strong>GOLD to  PLATINUM</strong></td>
-                            </tr>
-                             <tr>
-                                <td width="1%" valign="top"><span class="red">*</span></td>
-                                <td width="99%" class="textma4">Please input 1 RGT or 5 RGP or 10 RGG or 50 RGS For Upgrade  <strong> PLATINUM to TITANIUM</strong></td>
-                            </tr>
-                             
-                         
-                        </table>
-                        
-                    </div>
-                </div> 
-                <br/>
-                <div class="row" id="space02">
-                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Fill verification code below<span class="merah">*</span></div>
-                    <div class="col-lg-5 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">                        
-                        <input type="text" id="captcha" name="captcha" class="textfield01 widthtextfieldreg required" tabindex="2"  autocomplete="off"/>
-                    </div>
-                </div>
-                <br/>
-                <div class="row" id="space02">
-                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02" style="font-size:12px; color:#848484"><i>Click code to<br />get a new code</i></div>
-                    <div class="col-lg-5 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">                        
-                        <img class="img-responsive"  src="/kaptcha.jpg" onclick="$(this).attr('src', '/kaptcha.jpg?' + Math.random(10000))"/>
-                    </div>
-                </div>
-
-                <div align="center" class="datawajib"><span class="merah">*</span><i>This data is required</i> </div>
-
-                <br /><br />
-                <div class="row" id="space02">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right" id="marginpadingnull2">
-                        <a href="/member" class="button-reg" style="float:right"><span class="font-button-reg">CANCEL</span></a>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left" id="marginpadingnull2">
-                        <input type="submit" value="NEXT" class="input-button-ma input-font-button-ma" style="margin-left:9px; text-transform:uppercase"/>
-                    </div>
                 </div>
             </div>
 
+
+
+            <div class="row" id="space02">
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Member Name<span
+                        class="merah">*</span></div>
+                <div class="col-lg-5 col-md-7 col-sm-12 col-xs-12 text-left opensans font13px marginreg-1 abuabu2"
+                    id="marginpadingnull2">
+                    <div id="fullname"></div>
+                </div>
             </div>
-        </form>
-        <br/><Br/><br/>
-        
-<style>
-    .fontfooterma{color:#fff!important}
-</style>
+            <div class="row" id="space02">
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Current Type<span
+                        class="merah">*</span></div>
+                <div class="col-lg-5 col-md-7 col-sm-12 col-xs-12 text-left opensans font13px marginreg-1 abuabu2"
+                    id="marginpadingnull2">
+                    <div id="currentType">
 
-<!--FOOTER desktop-->
-<div class="container-fluid" style="background:#1A7DED">
-    <div class="container-footerma hidden-sm hidden-xs">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left fontfooterma">&copy; Copyright 2021 - VITO - All Rights Reserved </div>
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right fontfooterma">Powered By: <a href="http://www.pineappletech.com" target="_blank" style="color:#fff">PineappleTech</a></div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row" id="space02">
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">ePin<span
+                        class="merah">*</span></div>
+                <div class="col-lg-5 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">
+
+                    <div class="vertical-menu" id="divTrxCode">
+
+                    </div>
+
+                    <table width="100%" cellpadding="0" cellspacing="0" style="font-size:11px; padding-top:11px">
+                        <tr>
+                            <td width="1%" valign="top"><span class="red">*</span></td>
+                            <td width="99%" class="textma4">Please input 1 RGG or 5 RGS For Upgrade <strong>SILVER to
+                                    GOLD</strong></td>
+                        </tr>
+                        <tr>
+                            <td width="1%" valign="top"><span class="red">*</span></td>
+                            <td width="99%" class="textma4">Please input 1 RGP or 2 RGG or 10 RGS For Upgrade
+                                <strong>GOLD to PLATINUM</strong></td>
+                        </tr>
+                        <tr>
+                            <td width="1%" valign="top"><span class="red">*</span></td>
+                            <td width="99%" class="textma4">Please input 1 RGT or 5 RGP or 10 RGG or 50 RGS For Upgrade
+                                <strong> PLATINUM to TITANIUM</strong></td>
+                        </tr>
+
+
+                    </table>
+
+                </div>
+            </div>
+            <br />
+            <div class="row" id="space02">
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Fill verification
+                    code below<span class="merah">*</span></div>
+                <div class="col-lg-5 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">
+                    <input type="text" id="captcha" name="captcha" class="textfield01 widthtextfieldreg required"
+                        tabindex="2" autocomplete="off" />
+                </div>
+            </div>
+            <br />
+            <div class="row" id="space02">
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02"
+                    style="font-size:12px; color:#848484"><i>Click code to<br />get a new code</i></div>
+                <div class="col-lg-5 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">
+                    <img class="img-responsive" src="/kaptcha.jpg"
+                        onclick="$(this).attr('src', '/kaptcha.jpg?' + Math.random(10000))" />
+                </div>
+            </div>
+
+            <div align="center" class="datawajib"><span class="merah">*</span><i>This data is required</i> </div>
+
+            <br /><br />
+            <div class="row" id="space02">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-right" id="marginpadingnull2">
+                    <a href="/member" class="button-reg" style="float:right"><span
+                            class="font-button-reg">CANCEL</span></a>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-left" id="marginpadingnull2">
+                    <input type="submit" value="NEXT" class="input-button-ma input-font-button-ma"
+                        style="margin-left:9px; text-transform:uppercase" />
+                </div>
+            </div>
+        </div>
+
+        </div>
+    </form>
+    <br /><Br /><br />
+
+    <style>
+        .fontfooterma {
+            color: #fff !important
+        }
+    </style>
+
+    <!--FOOTER desktop-->
+    <div class="container-fluid" style="background:#1A7DED">
+        <div class="container-footerma hidden-sm hidden-xs">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left fontfooterma">&copy; Copyright 2021 - VITO -
+                    All Rights Reserved </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right fontfooterma">Powered By: <a
+                        href="http://www.pineappletech.com" target="_blank" style="color:#fff">PineappleTech</a></div>
+            </div>
         </div>
     </div>
-</div>
-<!--end FOOTER desktop-->
-    
-<!--FOOTER mobile-->    
-<div class="container-fluid" style="background:#1A7DED">
-    <div class="container-footerma hidden-lg hidden-md" style="width:100%; display:block">
-        <div class="row">
-            <div class="col-lg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center fontfooterma marginpadingnull" style="padding-bottom:0">&copy;  Copyright 2021 - VITO - All Rights Reserved </div>
-            <div class="col-lg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center fontfooterma marginpadingnull" style="padding:0 0 6px 0">Powered By: <a href="http://www.pineappletech.com" style="color:#fff" target="_blank">PineappleTech</a></div>
+    <!--end FOOTER desktop-->
+
+    <!--FOOTER mobile-->
+    <div class="container-fluid" style="background:#1A7DED">
+        <div class="container-footerma hidden-lg hidden-md" style="width:100%; display:block">
+            <div class="row">
+                <div class="col-lg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center fontfooterma marginpadingnull"
+                    style="padding-bottom:0">&copy; Copyright 2021 - VITO - All Rights Reserved </div>
+                <div class="col-lg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center fontfooterma marginpadingnull"
+                    style="padding:0 0 6px 0">Powered By: <a href="http://www.pineappletech.com" style="color:#fff"
+                        target="_blank">PineappleTech</a></div>
+            </div>
         </div>
     </div>
-</div>
-<!--end FOOTER mobile-->
-    
+    <!--end FOOTER mobile-->
 
-    </body>
+
+</body>
+
 </html>
-
-
