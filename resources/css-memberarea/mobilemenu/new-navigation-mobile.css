@@ -1,29 +1,24 @@
 /* Content wrapper */
-@font-face
-{
-	font-family:opensans;
-	src: url(/resources/font/OpenSans-Regular.ttf);
+@font-face {
+  font-family: opensans;
+  src: url(/resources/font/OpenSans-Regular.ttf);
 }
 
-@font-face
-{
-	font-family:opensans-semi;
-	src: url(/resources/font/OpenSans-Semibold.ttf);
+@font-face {
+  font-family: opensans-semi;
+  src: url(/resources/font/OpenSans-Semibold.ttf);
 }
-@font-face
-{
-	font-family:brandon;
-	src: url(/resources/font/BrandonText-Medium_0.ttf);
+@font-face {
+  font-family: brandon;
+  src: url(/resources/font/BrandonText-Medium_0.ttf);
 }
-@font-face
-{
-	font-family:sanspro;
-	src: url(/resources/font/SourceSansPro-Regular.ttf);
+@font-face {
+  font-family: sanspro;
+  src: url(/resources/font/SourceSansPro-Regular.ttf);
 }
-@font-face
-{
-	font-family:sanspro-semi;
-	src: url(/resources/font/SourceSansPro-Semibold.ttf);
+@font-face {
+  font-family: sanspro-semi;
+  src: url(/resources/font/SourceSansPro-Semibold.ttf);
 }
 
 .wrapper {
@@ -32,16 +27,20 @@
   margin: 0 auto;
 }
 
-.wrapper-small { max-width: 728px; }
+.wrapper-small {
+  max-width: 728px;
+}
 
-.wrapper-flush { width: 100%; /*border-bottom:1px solid #141413*/}
+.wrapper-flush {
+  width: 100%; /*border-bottom:1px solid #141413*/
+}
 
 /**
  * Navigation
  */
 
 .nav {
-  height:0;
+  height: 0;
   position: static;
   top: 0;
   left: 0;
@@ -58,7 +57,7 @@
 */
 
 .nav-container {
-  position:absolute !important;
+  position: absolute !important;
   top: 72px; /* 1 */
   left: 0;
   z-index: 9999;
@@ -85,13 +84,13 @@
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0); /* 1 */
-  overflow-y:hidden;
+  overflow-y: hidden;
 }
 
 /* Nav toggle */
 
 .nav-toggle {
-  float:right;
+  float: right;
   line-height: 1;
   display: inline-block;
   padding: 17px 1rem /*1.25rem 1rem*/;
@@ -116,16 +115,18 @@
   display: block;
   width: 100%;
   height: 4px;
-  -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1.000);
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1.000);
-  -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
-  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  -webkit-transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
   background-color: #fff;
 }
 
 /* Nav toggle icon line 1 */
 
-.icon-menu .line-1 { top: 0; }
+.icon-menu .line-1 {
+  top: 0;
+}
 
 /* When active, rotate line 1 to be lefthand part of X */
 
@@ -144,11 +145,15 @@
 
 /* When active, hide line 2 */
 
-.is-active .icon-menu .line-2 { opacity: 0; }
+.is-active .icon-menu .line-2 {
+  opacity: 0;
+}
 
 /* Nav toggle icon line 3 */
 
-.icon-menu .line-3 { bottom: 0; }
+.icon-menu .line-3 {
+  bottom: 0;
+}
 
 /* When active, rotate line 3 to be righthand part of X */
 
@@ -164,7 +169,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  z-index:1000000;
+  z-index: 1000000;
 }
 
 /** 
@@ -173,40 +178,48 @@
 */
 
 .nav-menu {
-	text-align:left;
+  text-align: left;
   background-color: #dedede; /* 1 */
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;         /* 2 */
-  z-index:1000000
+  user-select: none; /* 2 */
+  z-index: 1000000;
 }
 
 /* Give menu items a top border */
 
-.nav-menu .menu-item { background-color: #252525; border-top: 1px solid #545454; 
-  font-family:opensans;
+.nav-menu .menu-item {
+  background-color: #252525;
+  border-top: 1px solid #545454;
+  font-family: opensans;
 
-  letter-spacing:0.4px;
-  font-size:13px;
-  padding-left:3px;  
-  z-index:1000000;
+  letter-spacing: 0.4px;
+  font-size: 13px;
+  padding-left: 3px;
+  z-index: 1000000;
 }
 
-.nav-menu .menu-item2  { background-color: #c9c9c9; border-top: 1px solid #959595; 
-  font-family:opensans;
-  font-size:13px;
-  letter-spacing:0.4px
+.nav-menu .menu-item2 {
+  background-color: #c9c9c9;
+  border-top: 1px solid #959595;
+  font-family: opensans;
+  font-size: 13px;
+  letter-spacing: 0.4px;
 }
 
 /* Give last menu item a bottom border */
 
-.nav-menu > .menu-item:last-child {border-bottom: 1px solid #4c4c4c; }
+.nav-menu > .menu-item:last-child {
+  border-bottom: 1px solid #4c4c4c;
+}
 
 /* Darker background color on hover, and when toggled */
 
 .nav-menu > .menu-item:hover,
-.nav-menu > .menu-item.is-active { background-color: #3c3c3c; }
+.nav-menu > .menu-item.is-active {
+  background-color: #3c3c3c;
+}
 
 /* 1. Menu links are block level, by default */
 
@@ -217,7 +230,7 @@
   padding: 16px 1rem;
 }
 
-.nav-menu .submenu{
+.nav-menu .submenu {
   display: block; /* 1 */
   text-decoration: none;
   color: #000;
@@ -227,14 +240,16 @@
 /* 1. Menu items with dropdowns appear clickable */
 
 .has-dropdown {
-  z-index:1000000;
+  z-index: 1000000;
   position: relative;
   cursor: pointer; /* 1 */
 }
 
 /* 1. Parent menu links inlined so you can toggle the dropdown */
 
-.has-dropdown > .menu-link { display: inline-block; }
+.has-dropdown > .menu-link {
+  display: inline-block;
+}
 
 /* 1. Add an icon to menu items that have sub menus */
 
@@ -246,12 +261,14 @@
   bottom: 0;
   content: "+"; /* 1 */
   color: #787878;
-  z-index:1000000;
+  z-index: 1000000;
 }
 
 /* 1. Switch icon to n-dash when toggled */
 
-.has-dropdown.is-active:after { content: "\2013"; /* 1 */ }
+.has-dropdown.is-active:after {
+  content: "\2013"; /* 1 */
+}
 
 /**
  * Dropdowns
@@ -265,13 +282,20 @@
 
 /* 1. Show dropdown when toggled */
 
-.has-dropdown.is-active > .nav-dropdown { display: block; /* 1 */ }
+.has-dropdown.is-active > .nav-dropdown {
+  display: block; /* 1 */
+}
 
 /* 2nd level dropdown */
 
-.nav-dropdown .nav-dropdown { background-color: #aaa; }
+.nav-dropdown .nav-dropdown {
+  background-color: #aaa;
+}
 
-.nav-dropdown .menu-item { background:#c9c9c9; border-bottom:1px solid #848484; }
+.nav-dropdown .menu-item {
+  background: #c9c9c9;
+  border-bottom: 1px solid #848484;
+}
 
 .nav-dropdown .nav-dropdown .menu-item {
   background-color: #b0b0b0;
@@ -280,11 +304,15 @@
 
 /* Main content area */
 
-.content { margin-top: 60px; }
+.content {
+  margin-top: 60px;
+}
 
-.content .wrapper { padding: 1rem 0; }
+.content .wrapper {
+  padding: 1rem 0;
+}
 
- /* @media (min-width: 960px) {
+/* @media (min-width: 960px) {
 
 .nav { background-color: #dedede; }
 

@@ -1,34 +1,36 @@
-.cflag{
-    background: no-repeat url(/resources/images/flag-country.gif) 0 0;
-    width: 16px;
-    height: 11px;
-    overflow: hidden;
-    margin: 3px;
-    cursor: pointer;
-    border: 0;
-    display: inline-block;
+.cflag {
+  background: no-repeat url(/resources/images/flag-country.gif) 0 0;
+  width: 16px;
+  height: 11px;
+  overflow: hidden;
+  margin: 3px;
+  cursor: pointer;
+  border: 0;
+  display: inline-block;
 }
-.dd-option{
-    padding: 1px !important;
+.dd-option {
+  padding: 1px !important;
 }
-.dd-options{
-    height: 300px;
-    width: 410px !important;
+.dd-options {
+  height: 300px;
+  width: 410px !important;
 }
-.dd-selected-text .cname,.dd-selected-text .ccode,.dd-pointer-down{
-    display: none;
+.dd-selected-text .cname,
+.dd-selected-text .ccode,
+.dd-pointer-down {
+  display: none;
 }
-.dd-selected{
-    padding: 1px;
+.dd-selected {
+  padding: 1px;
 }
-.ccode{
-    color:gray;
+.ccode {
+  color: gray;
 }
-.dd-container{
-    padding-right: 4px;
-    float: left;
-    margin-left: 3px;
+.dd-container {
+  padding-right: 4px;
+  float: left;
+  margin-left: 3px;
 }
-.dd-container>div{
-    height: 19px;
+.dd-container > div {
+  height: 19px;
 }

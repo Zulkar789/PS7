@@ -1,90 +1,181 @@
-@font-face
-{
-	font-family:opensans;
-	src: url(/resources/fonts/OpenSans-Regular.ttf);
+@font-face {
+  font-family: opensans;
+  src: url(/resources/fonts/OpenSans-Regular.ttf);
 }
-@font-face
-{
-	font-family:opensans-semi;
-	src: url(/resources/fonts/OpenSans-Semibold.ttf);
+@font-face {
+  font-family: opensans-semi;
+  src: url(/resources/fonts/OpenSans-Semibold.ttf);
 }
-@font-face
-{
-	font-family:sanspro;
-	src: url(/resources/fonts/SourceSansPro-Regular_0.ttf);
+@font-face {
+  font-family: sanspro;
+  src: url(/resources/fonts/SourceSansPro-Regular_0.ttf);
 }
 
-
-ul.dropdown                         { float:left; position: relative; list-style:none; margin-top:64px; margin-bottom:0; margin-left: 0px; width:730px; text-decoration:none }
-ul.dropdown li                      { 
-	font-family:sanspro; 
-	font-weight: normal; 
-	float: left; zoom: 1; 
-/*	background: #050521; */
-border:0px solid #ffcb0d; margin-right:3px; /*height:25px;*/ margin-top:0;
-padding:1px 15px; text-align:left;text-decoration:none 
+ul.dropdown {
+  float: left;
+  position: relative;
+  list-style: none;
+  margin-top: 64px;
+  margin-bottom: 0;
+  margin-left: 0px;
+  width: 730px;
+  text-decoration: none;
+}
+ul.dropdown li {
+  font-family: sanspro;
+  font-weight: normal;
+  float: left;
+  zoom: 1;
+  /*	background: #050521; */
+  border: 0px solid #ffcb0d;
+  margin-right: 3px; /*height:25px;*/
+  margin-top: 0;
+  padding: 1px 15px;
+  text-align: left;
+  text-decoration: none;
 }
 
-ul.dropdown li:hover a		            { color: #1a1a1a; text-decoration:none; padding-bottom:10px;}
-ul.dropdown a:active                { color: #747474; text-decoration:none; }
-ul.dropdown li a                    { display: block; 
-/*	padding: 5px 8px; */
-	/*border-right: 1px solid #333;*/
-	 								  color: #000; text-decoration:none; font-family:opensans; font-size:14px; letter-spacing:.3px; font-weight:100; width:100%;}
-ul.dropdown li:last-child a         { border-right: none; text-decoration:none } /* Doesn't work in IE */
+ul.dropdown li:hover a {
+  color: #1a1a1a;
+  text-decoration: none;
+  padding-bottom: 10px;
+}
+ul.dropdown a:active {
+  color: #747474;
+  text-decoration: none;
+}
+ul.dropdown li a {
+  display: block;
+  /*	padding: 5px 8px; */
+  /*border-right: 1px solid #333;*/
+  color: #000;
+  text-decoration: none;
+  font-family: opensans;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  font-weight: 100;
+  width: 100%;
+}
+ul.dropdown li:last-child a {
+  border-right: none;
+  text-decoration: none;
+} /* Doesn't work in IE */
 ul.dropdown li.putArrow-icon.hover,
-ul.dropdown li.putArrow-icon:hover                { background: #eaeaea; /*url(/resources/images/arrow-down.png) no-repeat right;*/ background-position:84%; color:#fff; text-decoration:none; position:relative; border-radius:3px;
+ul.dropdown li.putArrow-icon:hover {
+  background: #eaeaea; /*url(/resources/images/arrow-down.png) no-repeat right;*/
+  background-position: 84%;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  border-radius: 3px;
 }
 
-ul.dropdown li.active{background: transparent; background-position:84%; color:#1a1a1a!important; text-decoration:none; position:relative; border-bottom:1px solid #1a1a1a;}
+ul.dropdown li.active {
+  background: transparent;
+  background-position: 84%;
+  color: #1a1a1a !important;
+  text-decoration: none;
+  position: relative;
+  border-bottom: 1px solid #1a1a1a;
+}
 /* ul.dropdown li a.active{color:#fff;} */
-ul.dropdown li a.active{color:#1a1a1a;font-weight: bold;font-family: opensans-semi;} 
+ul.dropdown li a.active {
+  color: #1a1a1a;
+  font-weight: bold;
+  font-family: opensans-semi;
+}
 
 ul.dropdown li.hover,
-ul.dropdown li:hover                { 
-	background: #eaeaea;
-    text-decoration:none; position:relative;
+ul.dropdown li:hover {
+  background: #eaeaea;
+  text-decoration: none;
+  position: relative;
 }
 
-a{text-decoration:none }
-ul.dropdown li.hover a              { color:#fff; text-decoration:none; }
+a {
+  text-decoration: none;
+}
+ul.dropdown li.hover a {
+  color: #fff;
+  text-decoration: none;
+}
 
-ul.dropdown li.putArrow-icon         { background: #fff; /*url(/resources/images/arrow-down.png) no-repeat right;*/ background-position:84%; position:relative;text-decoration:none }
-
+ul.dropdown li.putArrow-icon {
+  background: #fff; /*url(/resources/images/arrow-down.png) no-repeat right;*/
+  background-position: 84%;
+  position: relative;
+  text-decoration: none;
+}
 
 /* 
 	LEVEL TWO
 */
-ul.dropdown ul 						{ width: 100%; visibility: hidden; position: absolute; top:98%; left:-40px; list-style:none; margin-top:0; text-decoration:none }
-ul.dropdown ul li 					{ 
-	font-weight: normal; 
-	position:relative; 
-	z-index:2000; /*width:231px;*/
-                         
-/*	background:#050521; */
-	color: #fff; 
-	list-style:none;text-decoration:none;
-									  border-top:none; border-right:none; border-left:none; float: none; border-radius:0; padding-bottom:0 }
+ul.dropdown ul {
+  width: 100%;
+  visibility: hidden;
+  position: absolute;
+  top: 98%;
+  left: -40px;
+  list-style: none;
+  margin-top: 0;
+  text-decoration: none;
+}
+ul.dropdown ul li {
+  font-weight: normal;
+  position: relative;
+  z-index: 2000; /*width:231px;*/
 
-
-                                    /* IE 6 & 7 Needs Inline Block */
-ul.dropdown ul li a					{ border-right: none; width: 100%; list-style:none; color:#000; font-weight:normal; text-decoration:none; 
-									  margin-left:-8px;  /*border-bottom: 1px solid #ddc144;*/
+  /*	background:#050521; */
+  color: #fff;
+  list-style: none;
+  text-decoration: none;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  float: none;
+  border-radius: 0;
+  padding-bottom: 0;
 }
 
+/* IE 6 & 7 Needs Inline Block */
+ul.dropdown ul li a {
+  border-right: none;
+  width: 100%;
+  list-style: none;
+  color: #000;
+  font-weight: normal;
+  text-decoration: none;
+  margin-left: -8px; /*border-bottom: 1px solid #ddc144;*/
+}
 
-ul.dropdown ul li a:hover		            {text-decoration:none; font-weight: bold;font-family: opensans-semi;}
+ul.dropdown ul li a:hover {
+  text-decoration: none;
+  font-weight: bold;
+  font-family: opensans-semi;
+}
 
-ul.dropdown li ul.sub_menu li.sub{
-	background:#252525; color:#FFFF00; font-weight:bold; height:19px;
-} 
-#top-lama{padding-top:13px}
+ul.dropdown li ul.sub_menu li.sub {
+  background: #252525;
+  color: #ffff00;
+  font-weight: bold;
+  height: 19px;
+}
+#top-lama {
+  padding-top: 13px;
+}
 
-
-ul.dropdown li ul.sub_menu li.left-space{padding-left:16px}
+ul.dropdown li ul.sub_menu li.left-space {
+  padding-left: 16px;
+}
 
 /* 
 	LEVEL THREE
 */
-ul.dropdown ul ul 					{ left: 100%; top: 0; text-decoration:none }
-ul.dropdown li:hover > ul 			{ visibility: visible; }
+ul.dropdown ul ul {
+  left: 100%;
+  top: 0;
+  text-decoration: none;
+}
+ul.dropdown li:hover > ul {
+  visibility: visible;
+}

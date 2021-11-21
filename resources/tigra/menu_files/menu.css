@@ -1,59 +1,93 @@
 /* Style for a block - TABLE */
 .mtable {
-	background: #fff;
+  background: #fff;
 }
 /* Style for outer tag, mout (mouse out) state */
 .mouter {
-	background: transparent;
+  background: transparent;
 }
 /* Style for inner tag, mover (mouse over) state */
 .minner {
 }
 
 /* rollover effect for blue menu */
-.m1table2 { text-align: left;
+.m1table2 {
+  text-align: left;
 }
 .m1out2 {
-	/*background-image:url(../../images/blue2_mSub.gif); */
-	
-	background: #84AD31;
-	border-bottom: 1px solid #fff;
+  /*background-image:url(../../images/blue2_mSub.gif); */
 
+  background: #84ad31;
+  border-bottom: 1px solid #fff;
 }
 .m1over2 {
-	/*background-image:url(../../images/blue1_mSub.gif);*/
-	
-	background: #93C137;
-	border-bottom: 1px solid #fff;
-	
+  /*background-image:url(../../images/blue1_mSub.gif);*/
+
+  background: #93c137;
+  border-bottom: 1px solid #fff;
 }
 
 /* item text */
 .minner2 {
-	font: bold 11px tahoma, arial, verdana;
-	color: #ffffff;
-	padding: 5px 8px;
-
+  font: bold 11px tahoma, arial, verdana;
+  color: #ffffff;
+  padding: 5px 8px;
 }
 
 /*a, A:link, a:visited, a:active
 		{color: #0000aa; text-decoration: none; font-family: Tahoma, Verdana; font-size: 11px}*/
-	/*A:hover
+/*A:hover
 		{color: #ff0000; text-decoration: none; font-family: Tahoma, Verdana; font-size: 11px}*/
-ul, li
-		{
-	color: #000000;
+ul,
+li {
+  color: #000000;
 }
-	.header1, h1
-		{color: #ffffff; background: #4682B4; font-weight: bold; font-family: Tahoma, Verdana; font-size: 13px; margin: 0px; padding: 2px;}
-	.header2, h2
-		{color: #000000; background: #DBEAF5; font-weight: bold; font-family: Tahoma, Verdana; font-size: 12px;}
-	.intd
-		{color: #000000; font-family: Tahoma, Verdana; font-size: 11px; padding-left: 15px;}
-	.btn
-		{color: #000066; font-family: Tahoma, Verdana; font-size: 13px; background: #D6E7EF; border-bottom: 1px solid #7b1010; border-right: 1px solid #7b1010; border-left: 1px solid #d5afaf; border-top: 1px solid #d5afaf; text-decoration:none; cursor: hand;}
-	.a0,.a2
-		{font-family: Arial;font-size:12px;font-weight:bold;color:#000000}
-	.a1
-		{font-family: Arial;font-size:12px;font-weight:bold;color:#0033CC}
-		
+.header1,
+h1 {
+  color: #ffffff;
+  background: #4682b4;
+  font-weight: bold;
+  font-family: Tahoma, Verdana;
+  font-size: 13px;
+  margin: 0px;
+  padding: 2px;
+}
+.header2,
+h2 {
+  color: #000000;
+  background: #dbeaf5;
+  font-weight: bold;
+  font-family: Tahoma, Verdana;
+  font-size: 12px;
+}
+.intd {
+  color: #000000;
+  font-family: Tahoma, Verdana;
+  font-size: 11px;
+  padding-left: 15px;
+}
+.btn {
+  color: #000066;
+  font-family: Tahoma, Verdana;
+  font-size: 13px;
+  background: #d6e7ef;
+  border-bottom: 1px solid #7b1010;
+  border-right: 1px solid #7b1010;
+  border-left: 1px solid #d5afaf;
+  border-top: 1px solid #d5afaf;
+  text-decoration: none;
+  cursor: hand;
+}
+.a0,
+.a2 {
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: bold;
+  color: #000000;
+}
+.a1 {
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: bold;
+  color: #0033cc;
+}

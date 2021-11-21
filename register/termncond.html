@@ -1,0 +1,1353 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<link rel="shortcut icon" href="/resources/assets/img/favicon.png" type="image/x-icon">
+<title>VITO</title>
+	
+
+
+
+
+<!-- <link rel="shortcut icon" href="/resources/images/icon/favicon.ico" type="image/x-icon" /> -->
+<link rel="icon" href="/resources/assets/img/favicon.png" type="image/x-icon" />
+<link rel="stylesheet" href="/resources/css/member.css" />
+<link rel="stylesheet" href="/resources/css-memberarea/memberarea-bs.css">   
+<link rel="stylesheet" href="/resources/css-memberarea/styleDropDown.css">  
+<link rel="stylesheet" href="/resources/css-memberarea/member.css">  
+<link rel="stylesheet" href="/resources/css-memberarea/mobilemenu/new-navigation-mobile.css" type="text/css" media="screen" /> 
+<script type="text/javascript" src="/resources/js/mobilemenu/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="/resources/js/common.js"></script>
+
+<!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="/resources/css-memberarea/ie6.css" />
+    <![endif]-->
+
+<!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href="/resources/css-memberarea/ie8.css" />
+<![endif]-->
+
+<!-- PNG FIX for IE6 -->
+<!--[if lte IE 6]>
+        <script type="text/javascript" src="/resources/js/pngfix/supersleight-min.js"></script>
+<![endif]-->
+
+<script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/menu.js"></script>
+<script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/items1.js"></script>
+<script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/template1.js"></script>        
+<link rel="stylesheet" href="/resources/tigra/menu_files/menu.css" />
+
+
+<style>
+    .required{}
+    .numeric{}
+    .currency{}
+    .uppercase{}
+    .readonlySelect{}
+    span.error,label.error, span[id*="errors"]{
+        color: red;
+        font-size: 13px;
+        letter-spacing:.1px;
+        font-family:sanspro;
+        font-weight:100;
+        display:block;
+    }
+    .pointer{
+        cursor: pointer;
+    }
+    .pointer:hover{
+        color: #1a1a1a;
+    }
+    .underline{
+        text-decoration: underline;
+    }
+    .date{
+        padding-left: 4px;
+    }
+</style>
+
+<script>
+    function showHide(){
+        $('.secret').slideToggle('slow');
+    }
+    function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+</script>
+<style>
+    td.secret {
+        display:none;
+    }
+</style>
+
+<!--[if lte IE 8]>
+             <link rel="stylesheet" type="text/css" href="resources/css/ie/ie.css" />
+     <![endif]-->
+
+
+     
+     <script type="text/javascript">
+         lang = window.location.pathname.substring(0, 3);
+         now = new Date(1637518716436);
+         window.setInterval(function() {
+             now.setSeconds(now.getSeconds() + 1);
+         }, 1000)
+         $(document).ready(function() {
+             $('a.paddingurl').each(
+             function(idx, itm) {
+                 var oldurl = $(itm).attr('href');
+                 $(itm).attr('href', lang + oldurl);
+             }
+         )
+     
+         
+             
+                
+             
+              
+                 $(".uppercase").keyup(function() {
+                     $(this).val($(this).val().toUpperCase());
+                 });
+                 $('.readonlySelect>option:not(:selected)').remove();
+                 //$('span[id$="errors"]').each(function(idx,itm){$('#'+itm.id.split('.')[0]).change(function(){$(itm).remove()}).keyup(function(){$(itm).remove()}).focus()});
+                 $('span[id$="errors"]').each(function(idx, itm) {
+                     $('#' + itm.id.split('.')[0]).change(function() {
+                         $(itm).remove()
+                     }).focus()
+                 });
+             });
+       function digit_format( expr, decplaces ) {
+                 var str = "" + Math.round( eval( expr) * Math.pow(10,decplaces ))
+                 while (str.length <= decplaces ) {
+                     str = "0" + str
+                 }
+                 var decpoint = str.length - decplaces
+                 return str.substring(0,decpoint) + "." + str.substring(decpoint,str.length);	  
+             }
+             
+             function number_format( expr, decplaces ) {
+                 var str = digit_format(removeNumberFormat(expr+""),decplaces);
+                 var decpoint = str.length - decplaces;
+     
+                 var valpart = str.substring(0,decpoint-1);
+                 var decpart = str.substring(decpoint,str.length);
+                 var retStr = "";
+                 var nI = 0;
+                 var awal = 0;
+                 var tmpStr = "";
+           
+                 if( valpart.length > 3 ) {
+                     for( nI = valpart.length; nI > 0; nI-=3) {
+                         awal = nI - 3;
+                         if(awal < 0 ) awal = 0;
+                         tmpStr = valpart.substring(awal,nI);
+                         if( nI == valpart.length) {
+                             retStr = tmpStr;
+                         } else {
+                             retStr = tmpStr + "," + retStr;
+                         }
+                     }
+                     retStr = retStr + "." + decpart;
+                 } else {
+                     return str;
+                 }
+                 return retStr;
+             }
+             
+             function removeNumberFormat( expr_par ) {	
+                 var retStr ="";
+                 var nI = 0; 
+                 var expr = "";
+         
+                 var expr = expr_par + "";
+                 if( expr.length <= 0 ) return "";
+         
+                 while( nI < expr.length ) {
+             if( expr.charAt( nI ) != ","  ) {
+                         retStr += expr.charAt(nI);
+             }
+             nI++;
+                 }
+         
+                 return retStr;
+             }
+             
+             function number_formatfield(idfield){            
+                 if (!document.getElementById) 	return;		
+                 var field = document.getElementById(idfield);	
+                 field.value = number_formatfieldvalue(field.value);
+             }
+             
+             function number_formatfieldvalue(idfield){
+                 //format field yang sudah diinput by value field		
+                 if (!document.getElementById) 	return;		
+                 var field = idfield;//document.getElementById(idfield);	
+                 var ret = number_format(0,2);
+         
+                 if (cekInputIsNum(str2num(removeNumberFormat(field)))) {
+             field = str2num(removeNumberFormat(field));
+             ret = number_format(field,2);
+                 }
+                 return ret;
+           
+             }
+             
+             
+     function MM_findObj(n, d) { //v4.01
+       var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+         d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+       if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+       for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+       if(!x && d.getElementById) x=d.getElementById(n); return x;
+     }
+     
+     </script>
+
+	<link rel="stylesheet" href="/resources/css/bootstrap.css" />
+	<link rel="stylesheet" href="/resources/css/register.css" />
+	<script type="text/javascript" src="/resources/js/jquery.dateFormat-1.0.js"></script>
+	<script>
+		servertime = new Date( < %= new Date().getTime() % > );
+		window.setInterval(function() {
+			servertime.setSeconds(servertime.getSeconds() + 1);
+			$('#servertime').text($.format.date(servertime, 'MMMM dd, yyyy HH:mm:ss'))
+		}, 1000)
+
+	</script>
+	<style>
+		.color02 {
+			color: #696969
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: Verdana, sans-serif;
+		}
+
+		.mySlides {
+			display: none;
+		}
+
+		img {
+			vertical-align: middle;
+		}
+
+		/* Slideshow container */
+		.slideshow-container {
+			max-width: 1000px;
+			position: relative;
+			margin: auto;
+		}
+
+		/* Hide the images by default */
+		.mySlides {
+			display: none;
+		}
+
+		/* Next & previous buttons */
+		.prev,
+		.next {
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			width: auto;
+			margin-top: -22px;
+			padding: 16px;
+			color: white;
+			font-weight: bold;
+			font-size: 18px;
+			transition: 0.6s ease;
+			border-radius: 0 3px 3px 0;
+			user-select: none;
+		}
+
+		/* Position the "next button" to the right */
+		.next {
+			right: 0;
+			border-radius: 3px 0 0 3px;
+		}
+
+		/* On hover, add a black background color with a little bit see-through */
+		.prev:hover,
+		.next:hover {
+			background-color: rgba(0, 0, 0, 0.8);
+		}
+
+		/* Caption text */
+		.text {
+			color: #f2f2f2;
+			font-size: 15px;
+			padding: 8px 12px;
+			position: absolute;
+			bottom: 8px;
+			width: 100%;
+			text-align: center;
+		}
+
+		/* Number text (1/3 etc) */
+		.numbertext {
+			color: #f2f2f2;
+			font-size: 12px;
+			padding: 8px 12px;
+			position: absolute;
+			top: 0;
+		}
+
+		/* The dots/bullets/indicators */
+		.dot {
+			cursor: pointer;
+			height: 15px;
+			width: 15px;
+			margin: 0 2px;
+			background-color: #bbb;
+			border-radius: 50%;
+			display: inline-block;
+			transition: background-color 0.6s ease;
+		}
+
+		.active,
+		.dot:hover {
+			background-color: #717171;
+		}
+
+		/* Fading animation */
+		.fade {
+			-webkit-animation-name: fade;
+			-webkit-animation-duration: 1.5s;
+			animation-name: fade;
+			animation-duration: 1.5s;
+		}
+
+		@-webkit-keyframes fade {
+			from {
+				opacity: .4
+			}
+
+			to {
+				opacity: 1
+			}
+		}
+
+		@keyframes fade {
+			from {
+				opacity: .4
+			}
+
+			to {
+				opacity: 1
+			}
+		}
+
+		p{
+			font-family: 'Open Sans', sans-serif;
+		}
+		li{
+			font-family: 'Open Sans', sans-serif;
+		}
+	</style>
+</head>
+
+<body class="home-page">
+	<!--HEADER desktop-->
+	<div class="container-fluid borderheaader-ma-1 bgcolor hidden-sm hidden-xs">
+		<div class="container">
+			<div class="row" style="margin-top:60px;">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+					<a href="/">
+						<img src="/resources/images/logo.png" align="left" alt="VITO" title="VITO" class="img-responsive leftlogo-memberarea" style="width:100px; margin-top:-50px; margin-bottom: 10px;"/>
+					</a>
+				</div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 signin text-right right-titlepagema" id="ijo" style="text-align:center;">VITO </div>
+			</div>
+		</div>
+	</div>
+	<!--end HEADER mobile-->
+	<!--HEADER mobile-->
+	<div class="container-fluid borderheaader-ma-1 bgcolor hidden-lg hidden-md">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"><a href="/"><img src="/resources/images/logo.png" alt="VITO" title="VITO" align="left" class="leftlogo-memberarea" style="max-width:167px; width:80px; margin-top:10px; margin-bottom:10px;" /></a></div>
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 signin text-center right-titlepagema" id="ijo">VITO</div>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+			</div>
+		</div>
+	</div>
+	<!--end HEADER mobile-->
+
+	<div class="container contentfontinpage" style="background:white; font-size:14px; line-height:25px; text-align:justify">
+
+		<p class="p1" style="text-align: center;">
+			<span class="s1"><strong>KODE ETIK DAN PERATURAN MITRA USAHA<br />
+			PT SUKSES INDONETWORK DIGITAL </strong></span>		<br />
+		   
+		<br />
+
+		<p style="text-align: center;"><strong>KETENTUAN UMUM</strong></p>
+		<ol>
+			<li>
+			<p>PT. SUKSES INDONETWORK DIGITAL, suatu Perusahaan Perseroan Terbatas yang berdomisili hukum di Indonesia dan memiliki legalitas penjualan langsung dengan metode pemasaran direct selling (network marketing dan atau multi level marketing), yang beralamat di Gedung Graha Pena Lantai 3, Jalan Urip Sumoharjo Kav. 302-305, Makassar, Indonesia, yang selanjutnya akan disebut sebagai &ldquo;Perusahaan&rdquo;.</p>
+			</li>
+			<li>
+			<p>Penjualan langsung adalah sebuah metode penjualan barang-barang tertentu secara langsung melalui jaringan pemasaran yang dikembangkan oleh Member yang bekerja atas dasar komisi/bonus berdasarkan hasil penjualan kepada konsumen di luar eceran tetap.</p>
+			</li>
+			<li>
+			<p>Member adalah penjual langsung atau anggota yang telah memenuhi ketentuan untuk dapat memasarkan dan menjual barang dalam jaringan pemasaran yang telah dimiliki dan dikembangkan oleh perusahaan. Dalam kode Etik ini istilah &ldquo;anggota&rdquo; adalah sebutan lain bagi Member.</p>
+			</li>
+			<li>
+			<p>Konsumen adalah siapa saja yang bukan seorang Member perusahaan yang membeli barang perusahaan dengan harga konsumen.</p>
+			</li>
+			<li>
+			<p>Semua barang merek dagang VITO dapat diperdagangkan dan dikeluarkan oleh perusahaan untuk digunakan oleh Member serta dapat dipasarkan dan dijual oleh Member.</p>
+			</li>
+			<li>
+			<p>Perekrutan/Sponsor adalah Member yang secara langsung merekrut orang untuk menjadi Member dalam jaringan dibawahnya.</p>
+			</li>
+			<li>
+			<p>Sponsorisasi adalah satu jaringan yang terdiri dari himpunan Member berdasarkan urutan yang disponsorinya yang saling berhubungan satu sama lain dimana hasil penjualan barang akan saling terhubung untuk perhitungan bonus dalam program pemasaran perusahaan.</p>
+			</li>
+			<li>
+			<p>Peringkat adalah jenjang tingkatan Member yang dapat dicapai dengan kualifikasi tertentu.</p>
+			</li>
+			<li>
+			<p>Formulir pendaftaran adalah lembaran yang harus diisi oleh pemohon/perorangan sebelum diterima sebagai Member perusahaan yang berisi identitas diri, nomor telepon dan email yang bisa dihubungi serta nomor rekening untuk mentransfer komisi/bonus.</p>
+			</li>
+			<li>
+			<p>Perjanjian adalah kesepakatan tertulis antara perusahaan dan Member yang hanya berlaku di wilayah hukum Republik Indonesia dan dari waktu ke waktu dapat direvisi dan disempurnakan oleh perusahaan demi kepentingan bersama.</p>
+			</li>
+			<li>
+			<p>Tanggal penerimaan adalah tanggal ketika barang diterima oleh Member dalam pengiriman atau pengambilan.</p>
+			</li>
+			<li>
+			<p>Nomor membership atau keanggotaan adalah nomor identifikasi yang diberikan perusahaan kepada Member sebagai bukti dalam berhubungan dengan perusahaan, sesama Member dan konsumen.</p>
+			</li>
+			<li>
+			<p>Komitmen Member adalah pernyataan Member yang berisi janji terhadap perusahaan untuk mematuhi peraturan yang ada, Kode Etik dan tidak melakukan larangan yang telah ditentukan oleh perusahaan.</p>
+			</li>
+			<li>
+			<p>Stockist adalah suatu perpanjangan tangan perusahaan yang diberikan otoritas dan tanggung jawab untuk memberikan layanan dalam hal penjualan barang dan hal lainnya yang berkaitan dengan bisnis dilingkungan perusahaan.</p>
+			</li>
+			<li>
+			<p>Upline adalah Member yang secara garis sponsorisasi maupun struktur jaringan berada di atas baik secara langsung maupun tidak langsung.</p>
+			</li>
+			<li>
+			<p>Downline adalah Member yang secara garis sponsorisasi maupun struktur jaringan berada di bawah baik secara langsung maupun tidak langsung.</p>
+			</li>
+			<li>
+			<p>Keuntungan langsung adalah keuntungan Member dari menjual barang ke konsumen, dari selisih antara harga Member dengan harga konsumen.</p>
+			</li>
+			<li>
+			<p>Bisnis Value (BV) adalah nilai bisnis perhitungan penjualan produk.</p>
+			</li>
+			<li>
+			<p>Komisi/Bonus adalah imbalan yang diberikan perusahaan kepada Member yang besarnya dihitung berdasarkan hasil kerja nyata, sesuai nilai hasil penjualan baik secara pribadi maupun jaringannya.</p>
+			</li>
+			<li>
+			<p>Skema Pemasaran adalah program perusahaan dalam memasarkan barang yang akan dilaksanakan dan dikembangkan oleh Member melalui jaringan pemasaran dengan sistem penjualan langsung.</p>
+			</li>
+			<li>
+			<p>Buy back guarantee adalah jaminan pembelian barang kembali yang telah dibeli oleh Member jika kemasan produk dalam kondisi rusak.</p>
+			</li>
+			<li>
+			<p>Starter kit adalah paket panduan perusahaan yang dikeluarkan oleh perusahaan untuk Member yang berisi Skema Kompensasi. Kode etik dan peraturan perusahaan, formulir pendaftaran, Katalog barang, daftar harga, profil perusahaan.</p>
+			</li>
+			</ol><br />
+
+			<p style="text-align: center;"><strong>PASAL 1<br /> PERSYARATAN MENJADI MEMBER</strong></p>
+			<ol>
+				<li>Persyaratan menjadi Member PERORANGAN:
+					<ol style="list-style-type: lower-alpha;">
+						<li>Warga Negara Indonesia</li>
+						<li>Usia minimal 17 Tahun.</li>
+						<li>Memiliki KTP dan nomor rekening tabungan.</li>
+						<li>Memiliki Sponsor yang telah terdaftar keanggotaannya di perusahaan.</li>
+						<li>Mengisi formulir pendaftaran keanggotaan.</li>
+						<li>Pendaftaran untuk menjadi Member PT. Sukses Indonetwork Digital dengan membeli paket bisnis Silver, Gold, Platinum dan Titanium.</li>
+						<li>Member juga memperoleh Username &amp; Password yang dikirim via e-mail yang didaftarkan, untuk website resmi Perusahaan dan akses pendaftaran member: <a href="http://www.sukses55id.co.id">www.sukses55id.co.id</a>.</li>
+						<li>Bersedia mentaati Kode Etik dan Peraturan Perusahaan</li>
+					</ol>
+				</li>
+				<li><p>PT. Sukses Indonetwork Digital atas pertimbangan sendiri berhak menolak atau memberikan persetujuan atas permohonan aplikasi Member yang diajukan tanpa harus memberikan alasan.</p>
+				</li>
+			</ol><br />
+
+			<p style="text-align: center;"><strong>PASAL 2<br /> PROSEDUR PENDAFTARAN MEMBER</strong></p>
+			<ol>
+				<li><p>Setiap calon Member wajib mengisi formulir pendaftaran dan direferensikan oleh seorang Referral/Sponsor.</p>
+				</li>
+				<li><p>Formulir pendaftaran selain berupa pengisian data identitas calon Member, juga mencakup pencantuman:</p>
+					<ol style="list-style-type: lower-alpha;">
+						<li>
+						Nama Memberharus sama dengan nama yang tercantum di Bank untuk diajukan sebagai transfer dana sarana penerimaan Komisi;
+						</li>
+						<li>Apabila Nama Member di formulir pendaftaran berbeda dengan nama yang tercantum di Bank penerima komisi/reward, maka Member tersebut wajib menyertakan surat pernyataan dan kartu keluarga (KK) yang bersangkutan dengan syarat Suami/Istri/Anak;
+						</li>
+						<li>Apabila data Bank, Alamat atau Referral tidak lengkap, maka Perusahaan berhak untuk menolak keanggotaan Member tersebut.
+						</li>
+					</ol>
+				</li>
+			</ol><br />
+
+			<p style="text-align: center;"><strong>PASAL 3<br /> MASA TENGGANG (COOLING OF PERIOD)</strong></p>
+			<ol>
+				<li>Perusahaan memberikan tenggang waktu selama 1 (satu) hari kerja terhitung sejak downline melakukan pembelanjaan PV untuk mendapatkan reward.
+				</li>
+			</ol><br />
+
+			<p style="text-align: center;"><strong>PASAL 4<br /> TENTANG KEANGGOTAAN</strong></p>
+			<ol>
+				<li>
+				<p>Setiap Member PT. Sukses Indonetwork Digital hanya mendapatkan satu nomor KEANGGOTAAN yang dikeluarkan oleh perusahaan. Apabila ternyata Member memiliki lebih dari satu keanggotaan maka perusahaan hanya mengakui nomor keanggotaan pertama dan akan menghapus nomor keanggotaan yang lain.</p>
+				</li>
+				<li>
+				<p>Adapun suami istri bisa bergabung menjadi satu nomor registrasi ataupun berbeda no mor registrasinya asal masih dalam satu jaringan yang sama. Apabila melanggar, maka nomor registrasi terbaru akan dihapuskan oleh perusahaan tanpa terkecuali dan tanpa kompensasi apapun dari perusahaan.</p>
+				</li>
+				<li>
+				<p>Masa keanggotaan berlaku seumur hidup selama masih terdaftar sebagai Member dan dapat diwariskan kepada ahli waris sesuai dengan aturan hukum yang berlaku di Indonesia.</p>
+				</li>
+				<li>
+				<p>Keanggotaan Member hanya milik orang yang melakukan pendaftaran dan tidak dapat digunakan oleh pihak lain kecuali suami/istri yang bersangkutan. Segala hal terkait dengan keanggotaan menjadi tanggung jawab penuh pemilik keanggotaan.</p>
+				</li>
+				<li>
+				<p>Member dilarang menggunakan nama orang lain ataupun nama fiktif untuk pendaftaran keanggotaan.</p>
+				</li>
+				<li>
+				<p>Seorang Member bukan merupakan agen, pegawai ataupun kelompok dalam usaha patungan dari badan hukum PT. Sukses Indonetwork Digital, akan tetapi sebagai pribadi yang independen.</p>
+				</li>
+				<li>
+				<p>Jika terdapat dua orang Member dari garis sponsor berbeda melakukan pernikahan, maka mereka dapat memutuskan untuk memilih yaitu tetap meneruskan keanggotaan nya atau bergabung dengan Member pasangannya dengan posisi sebagai Member baru.</p>
+				</li>
+				<li>
+				<p>Dalam hal bergabung (mendaftar) kembali menjadi Member baru di posisi jaringan dan garis sponsorisasi berbeda dari sebelumnya dapat dilakukan dengan kondisi yaitu: telah mengundurkan diri dari keanggotaan sebelumnya dan tidak aktif menjalankan kegiatan usaha baik secara online atau offline selama minimal 1 (satu) bulan terhitung sejak tanggal mengundurkan diri.</p>
+				</li>
+				<li>
+				<p>Perubahan informasi keanggotaan dengan cara menghubungi Kantor Pusat PT. Sukses Indonetwork Digital bagian pelayanan pelanggan/customer service, melalui email ataupun media tertulis lainnya. Adapun hal-hal yang bisa diajukan perubahan adalah: Alamat Pengiriman, Nomor Rekening, Nomor Telepon dan Alamat Email. Akan tetapi tidak dapat melakukan perubahan nama kecuali ke ahli waris karena kematian.</p>
+				</li>
+			</ol><br />
+
+			
+			<p style="text-align: center;"><strong>PASAL 5<br /> PENGUNDURAN DIRI DAN PEMBATALAN KEANGGOTAAN</strong></p>
+			<ol>
+				<li>
+				<p>Dalam hal Member berkeinginan untuk membatalkan keanggotaannnya maka yang bersangkutan dapat mengirimkan permohonan pengunduran diri dari Keanggotaan dengan Perusahaan secara tertulis, dan Perusahaan akan memproses pengunduran diri tersebut selambat-lambatnya 7 (tujuh) hari kerja semenjak permohonan diterima.</p>
+				</li>
+				<li><p>Keanggotaan dapat Member berakhir dengan pemberitahuan tertulis dari Perusahaan, apabila:</p>
+					<ol style="list-style-type: lower-alpha;">
+					<li>Adanya putusan pengadilan yang ditetapkan terhadap Member yang akandilaksanakan dalam jangka waktu 30 hari karena masih menunggu penyelesaian
+					atau pembayaran, maupun karena masih harus menunggu putusan banding; atau
+					</li>
+					<li>
+					Member melakukan tindakan yang tidak jujur atau curang yang mengakibatkan Member dituduh dan dinyatakan bersalah melakukan tindak kejahatan atau jika Member telah terlibat di dalam tindakan yang menurut Perusahaan dianggap
+					merugikan kepentingan Perusahaan; atau
+					</li>
+					<li>
+					Member melanggar ketentuan dan persyaratan Kode Etik ini, atau gagal
+					mematuhi atau memenuhi instruksi-instruksi, aturan-aturan atau peraturan-
+					peraturan Perusahaan (baik lisan maupun tertulis); atau
+					</li>
+					<li>
+					Perusahaan menganggap Member tidak memenuhi kewajiban-kewajiban
+					Member sebagaimana diatur dalam Pasal ini pada khususnya dan kewajiban lain yang berlaku atau diatur dalam Kode Etik ini pada umumnya
+					</li>
+					</ol>
+				</li>
+				<li>Keanggotaan Member berakhir dengan sendirinya apabila Member meninggal dunia atau Member dijatuhi hukuman karena pelanggaran yang menurut pendapat Perusahaan akan mempengaruhi penunjukannya sebagai seorang Member.
+				</li>
+				<li>Perusahaan dan Member sepakat masing-masing melepaskan/mengesampingkan ketentuan Pasal 1266 dan 1267 Kitab Undang-Undang Hukum Perdata sepanjang yang mengatur tata cara pembatalan perjanjian, sehingga mengenai pemutusan Perjanjian Member ini tidak diperlukan putusan/ketetapan oleh siapapun juga.
+				</li>
+				<li>
+				<p>Dalam hal pengakhiran Perjanjian ini, seluruh data-data ataupun sarana dan prasarana adalah milik Perusahaan dan wajib dikembalikan oleh Member kepada Perusahaan.</p>
+				</li>
+				<li>
+				<p>Perusahaan tidak akan menyetujui pengunduran diri seorang Member dan bergabung dengan jaringan lain seketika, dengan alasan:</p>
+					<ol style="list-style-type: lower-alpha;">
+					<li>
+					<p>Tidak pernah dihubungi sponsornya,</p>
+					</li>
+					<li>
+					<p>Tidak bisa berkembang di jaringan yang sekarang,</p>
+					</li>
+					<li>
+					<p>Berselisih paham dengan Member dalam jaringannya atau alasan lain yang tidak ada hubungannya dengan kode etik perusahaan.</p>
+					</li>
+					</ol>
+				</li>
+				<li>
+				<p>Apabila Member ingin pindah ke jaringan lain, dipersilahkan, dengan cara mengundurkan diri dari keanggotaan yang sekarang dan bergabung kembali kejaringan baru, sekurang-kurangnya 1 (satu) bulan setelah pengunduran diri tersebut.</p>
+				</li>
+				<li>
+				<p>Member yang mengundurkan diri atau telah diberhentikan keanggotaanya, dapat bergabung (mendaftar) kembali menjadi Member baru di posisi jaringan dan garis sponsorisasi berbeda dari sebelumnya dengan kondisi yaitu: telah mengundurkan diri dari keanggotaan sebelumnya dan tidak aktif menjalankan kegiatan usaha baik secara online atau offline selama minimal 1 (satu) bulan terhitung sejak tanggal mengundurkan diri.</p>
+				</li>
+			</ol><br />
+
+			<p style="text-align: center;"><strong>PASAL 6<br /> PERUBAHAN PENEMPATAN MEMBER ATAU SPONSOR</strong></p>
+			<ol>
+				<li>Perpindahan keanggotaan dari satu jaringan ke jaringan lain tidak diperbolehkan dengan alasan apapun.</li>
+				<li>Seorang Member yang menginginkan sponsor baru atau mengubah posisi penempatan di dalam struktur organisasi penjualan downline, harus mengundurkan diri dari keanggotaan PT. Sukses Indonetwork Digital sekurang kurangnya 1 (satu) bulan sejak disetujui oleh PT. Sukses Indonetwork Digital dan dalam periode tersebut wajib menghentikan segala kegiatan yang berhubungan dengan PT. Sukses Indonetwork Digital.</li>
+				<li>Seorang Member tidak diperkenankan untuk menganjurkan atau membujuk Member dari garis pensponsoran lain untuk bergabung di garis sponsornya.</li>
+			</ol><br />
+
+			<p style="text-align: center;"><strong>PASAL 7<br /> STATUS KEMATIAN</strong></p>
+			<ol>
+				<li>Dalam hal kematian seorang Member, status keanggotaan dapat dialihkan melalui Surat Wasiat yang dilengkapi dengan Penetapan Pengadilan atau berdasarkan undang-undang yang berlaku kepada ahli waris Member yang meninggal tersebut, dengan menyertakan surat keterangan kematian, Salinan resmi dari surat wasiat serta aplikasi keanggotaan yang baru atas nama Member yang menerimanya kepada perusahaan.</li>
+			</ol><br />
+
+			<p style="text-align: center;"><strong>PASAL 8<br /> HAK MEMBER</strong></p>
+			<ol>
+				<li>Member berhak melakukan kegiatan presentasi tentang manfaat produk/barang dan program pemasaran perusahaan untuk menjual, mensponsori dalam rangka mengembangkan jaringan maupun menjual produk/barang dengan metode penjualan langsung di seluruh wilayah Indonesia.</li>
+				<li>Member berhak membeli barang-barang perusahaan dengan harga khusus untuk Member.</li>
+				<li>Member berhak mendapatkan keuntungan langsung darikegiatan penjualan secara penjualan langsung ke konsumen.</li>
+				<li>Member berhak melakukan kegiatan dalam rangka membangun, mengembangkan, membimbing, membina, dan melatih jaringannya.</li>
+				<li>Member berhak mendapatkan bonus sesuai ketentuan seperti yang tertuang dalam program pemasaran perusahaan.</li>
+				<li>Member berhak mengikuti promo-promo yang diselenggarakan oleh perusahaan.</li>
+				<li>Member berhak memperoleh peringkat tertentu setelah memenuhi persyaratannya.</li>
+				<li>Member berhak mengikuti pelatihan-pelatihan yang diselenggarakan oleh perusahaan.</li>
+				<li>Member berhak menghadiri acara-acara yang diselenggarakan oleh perusahaan.</li>
+				<li>Member berhak mewariskan keanggotaannya kepada ahli waris yang sah sesuai
+					dengan peraturan ahli waris di Indonesia.</li>
+				<li>Member berhak mendapatkan semua hak-haknya selama Member tidak melakukan
+					kegiatan yang melanggar kode etik dan peraturan perusahaan.</li>
+
+			</ol><br />
+
+			<p style="text-align: center;"><strong>PASAL 9<br /> KEWAJIBAN MEMBER</strong></p>
+			<ol>
+				<li>
+				<p>Member berkewajiban memberikan informasi pribadi yang dicantumkan pada saat registrasi adalah benar sesuai dengan data-data pribadi yang valid dan akan menginformasikan hal yang sama kepada semua tim Member yang ada di jaringan saya.</p>
+				</li>
+				<li>
+				<p>Adapun informasi yang diperlukan adalah: Nama dan Nomor Rekening, Nama sesuai KTP, alamat Email &amp; Nomor Telepon.</p>
+				</li>
+				<li>
+				<p>Member berkewajiban mengikuti semua prosedur yang ditetapkan PT. Sukses Indonetwork Digital baik dalam hal operasional ataupun yang berhubungan dengan pemasaran.</p>
+				</li>
+				<li>
+				<p>Member berkewajiban bersikap sopan, menghargai, menghormati dan menjunjung tinggi kejujuran, integritas serta tidak memihak dalam melaksanakan usaha ketika bertindak sebagai Member dari PT. Sukses Indonetwork Digital.</p>
+				</li>
+				<li>
+				<p>Memberberkewajibanmengikutiseluruhperaturandanketentuanyangberlakusejak penandatanganan kesepakatan sebagai Member serta menjelaskan hal ini dengan detail kepada semua tim Member yang ada di jaringannya.</p>
+				</li>
+				<li>
+				<p>Member berkewajiban mentaati kode etik dan peraturan perusahaan serta turut menjaga dan saling mengingatkan agar lingkungan usaha menjadi kondusif.</p>
+				</li>
+				<li>
+				<p>Member berkewajiban menghormati, menghargai, melindungi, menjaga dan memelihara citra, nilai, karakter, budaya dan personaliti dari perusahaan.</p>
+				</li>
+				<li>
+				<p>Member berkewajiban mentaati dan mematuhi segala peraturan dan perundang- undangan yang berlaku di Indonesia.</p>
+				</li>
+				<li>
+				<p>Member berkewajiban menjaga kerahasiaan login Member yaitu Username dan passwordnya.</p>
+				</li>
+				<li>
+				<p>Member berkewajiban membayar pajak penghasilan sesuai dengan ketentuan dan peraturan pemerintah.</p>
+				</li>
+			</ol><br />
+
+			<p style="text-align: center;"><strong>PASAL 10<br /> LARANGAN BAGI MEMBER</strong></p>
+			<ol>
+				<li>Member dilarang memperkenalkan atau mensponsori pegawai PT. Sukses Indonetwork Digital termasuk orang tuanya dan saudara sedarah dari pegawai tersebut.</li>
+				<li>Member dilarang memberikan keterangan berdasarkan asumsi pribadi terhadap semua produk/barang dan atau skema pemasaran yang sudah ditetapkan PT. Sukses Indonetwork Digital, kepada khalayak ramai, dimana keterangan tersebut nantinya bertentangan dengan kebijakan atau literatur resmi dari PT. Sukses Indonetwork Digital.</li>
+				<li>Member dilarang menjual produk-produk Perusahaan di lokasi eceran tetap seperti toko eceran, apotik, toko obat berizin, dan usaha sejenis yang termasuk penjualan tidak langsung.</li>
+				<li>Member dilarang menjual produk-produk Perusahaan di online market place seperti Shoopee, Lazada, Tokopedia, Bukalapak, OLX, Bli Bli, dan market place sejenisnya.</li>
+				<li>Member dilarang menggunakan jaringan kerja PT. Sukses Indonetwork Digital untuk
+					pemasaran barang-barang direct selling dari perusahaan lain.</li>
+				<li>Member dilarang mengganti kemasan barang ataupun mengurangi/menambah jumlah/isi dari paket barang resmi yang sudah ditetapkan oleh PT. Sukses Indonetwork Digital.</li>
+				<li>Member dilarang mengurangi/menambah kompensasi program diluar yang sudah ditetapkan oleh perusahaan. Apabila ingin membuat program sendiri dengan tujuan ingin meningkatkan penjualan/jaringannya sendiri, maka Member tersebut tidak boleh menggunakan logo/kata-kata VITO/VENS atau nama PT. Sukses Indonetwork Digital didalam programnya itu, baik itu dicantumkan di flyer, media sosial atau BBM sekalipun.</li>
+				<li>Member dilarang menjual barang dibawah harga yang sudah ditetapkan resmi oleh perusahaan</li>
+				<li>Member dilarang memesarkan produk-produk VITO di online marketplace seperti Tokopedia, Shoopee, Lazada, Bukalapak, OLX, BliBli, JD.ID, dan sejenisnya.</li>
+				<li>Member dilarang menjanjikan penambahan hak usaha.</li>
+				<li>Member dalam membuat dan menggunakan Website, Media Sosial, yang merujuk
+					pada perusahaan dilarang melakukan hal-hal sebagai berikut:
+					<ol style="list-style-type: lower-alpha;">
+						<li>menyampaikan klaim yang berlebihan dan tidak benar mengenai produk/barang,
+							skema pemasaran dan bonus/komisi yang akan didapatkan.</li>
+						<li>bertindak sehingga menimbul kankesan bahwa website dan mediasosail tersebut adalah milik dan atau dikelola oleh perusahaan.</li>
+						<li>menggunakan nama perusahaan dan nama barang perusahaan.</li>
+						<li>menggunakan logo perusahaan.</li>
+						<li>memasang link situs apapun tanpa mendapat persetujuan.</li>
+						<li>memasang penawaran yang menjual atau mencari barang atau jasa yang
+							bertentangan dengan hukum yang berlaku di Indonesia (narkoba, senjata api dan
+							obat-obatan terlarang) dan hal-hal yang berhubungan dengan SARA.</li>
+						<li>mempostinggambar/fotoyangmelanggarhakciptayangterdaftarsecarahukum,
+							paten, merek dagang maupun hak cipta intelektual dari pihak lain.</li>
+					</ol>
+				</li>
+				<li>Untuk Website yang dibuat sendiri oleh Member dilarang melakukan hal-hal sebagai
+					berikut:
+					<ol style="list-style-type: lower-alpha;">
+						<li>memposting materi atau link yang berisikan: Bisnis Online, Program Reseller, Program Affiliate atau Program Multi Level lainnya.</li>
+						<li>mencantumkan disclaimer (peringatan) bahwa website ini bukan milik perusahaan, dikelola mandiri oleh Member sehingga perusahaan dibebaskan dari tuntutan hukum.</li>
+						<li>melakukan penjualan diluar sistem penjualan langsung.</li>
+						<li>menggunakan menerima pembayaran secara online.</li>
+						<li>memposting dengan kata-kata tanpa kerja dapat uang, duduk diam manis dapat
+							uang yang atau sejenisnya yang menggunakan kata-kata memikat karena sukses hanya bisa diraih dengan kerja keras, sukses membutuhkan proses waktu, modal, kejujuran dan integritas.</li>
+						<li>memposting materi dengan menggunakan kata-kata atau gambar maupun penulisan yang sifatnya menyerang, mencemarkan individu maupun kelompok tertentu, mengandung SARA, politik, kasar, kotor atau yang terdapat unsur pornografi atau berisi link situs porno dan perjudian.</li>
+						<li>memalsukan,menutupidanmemanipulasiidentitasprofilataumateripenawaran yang mengarah kepada tindakan penipuan atau tindakan lainnya yang dapat merugikan pihak lain.</li>
+						<li>menyalahgunakan fasilitas-fasilitas yang disediakan PT. Sukses Indonetwork Digital untuk kegiatan-kegiatan yang dapat merugikan Member lain, pengunjung ataupun pengelola situs PT. Sukses Indonetwork Digital. Penggunaan seluruh fasilitas PT. Sukses Indonetwork Digital oleh Member adalah sepenuhnya merupakan tanggung jawab dan resiko Member. Penyalahgunaan fasilitas, pembobolan, pencurian data atau usaha apapun untuk menembus jaringan sistem PT. Sukses Indonetwork Digital merupakan tindakan yang melanggar hukum.</li>
+						<li>mengutip, menyalin sebagian atau seluruh isi yang terdapat di dalam situs resmi PT. Sukses Indonetwork Digital ke dalam bentuk apapun dan untuk kepentingan apapun tanpa ijin dari Perusahaan.</li>
+					</ol>
+				</li>
+				<li>Member dilarang mempengaruhi dan merekrut Member PT. Sukses Indonetwork Digital untuk bergabung di perusahaan direct selling/MLM lain.</li>
+				<li>Khusus untuk Member/leader/group leader yang minimum sudah Level Manager dan Director, dilarang untuk menjalankan bisnis penjualan langsung lainnya, apapun produknya, baik itu sebagai Member, presenter acara, motivator, pemegang saham, komisaris maupun produsen dari produk-produknya, untuk menghindari gejolak negatif atau fitnah terhadap dirinya maupun jaringannya. Bagi yang sudah terlanjur menjadi Member, presenter acara, motivator, pemegang saham, komisaris maupun produsen aktif di perusahaan yang dimaksud di atas, perusahaan akan mengirimkan surat melalui email kepada yang bersangkutan, apakah ingin tetap berkarir di PT. Sukses Indonetwork Digital atau memilih untuk bergabung dengan perusahaan lain tersebut. Apabila memilih berkarir di PT. Sukses Indonetwork Digital, yang bersangkutan harus membuat surat pernyataan dan perusahaan berhak mengupload surat tersebut di website resmi perusahaan sebagai bentuk pertanggungjawaban informasi kepada seluruh jaringannya.</li>
+			</ol><br />
+
+			<p style="text-align: center;"><strong>PASAL 11<br /> HAK PERUSAHAAN</strong></p>
+			<ol>
+				<li>Perusahaan berhak menjalankan usaha sesuai dengan Izin yang telah diterbitkan Pemerintah.</li>
+				<li>Perusahaan berhak menentukan harga jual kepada Member dan harga Member kepada Konsumen.</li>
+				<li>Perusahaan berhak menjalankan, menegakkan, mengatur, dan merubah skema kompensasi, kode etik dan peraturan perusahaan.</li>
+				<li>Perusahaan berhak untuk menyelenggarakan promo-promo tertentu untuk meningkatkan semangat dan penjualan.</li>
+				<li>Perusahaan berhak untuk menerima atau menolak setiap permohonan keanggotaan tanpa perlu menjelaskan alasan penolakannya.</li>
+				<li>Perusahaan berhak penuh dan mutlak setiap saat untuk menyetujui atau tidak terhadap permohonan-permohonan yang diajukan oleh Member.</li>
+				<li>Perusahaan berhak penuh dan mutlak untuk merubah, menambah atau mencabut hal -hal yang berkaitan dengan barang, baik kemasan, formula, harga, kualitas dan kuantitas barang tanpa penjelasan atau pemberitahuan sebelumnya.</li>
+				<li>Perusahaan berhak penuh dan mutlak setiap saat untuk mencabut, membekukan keanggotaan Member sementara dan atau menahan dan atau membatalkan memberikan keuntungan, bonus, insentif serta penghargaan dan hak-hak lainnya dalam hal:
+				<ol style="list-style-type: lower-alpha;">
+					<li>Kepada seorang Member yang telah dikeluarkan surat pemberitahuan pelanggaran terhadap kode etik dan peraturan perusahaan.</li>
+					<li>Kepada seorang Member yang dalam tahap diselidiki oleh perusahaan atas pelanggaran yang dilakukan terhadap kode etik dan peraturan perusahaan serta melakukan kecurangan.</li>
+					<li>Kepada seorang Member yang dalam tahap pemindahan keanggotaannya.</li>
+					<li>Kepada seorang member yang mengajak member VITO untuk pindah ke
+						perusahaan direct selling/MLM lain.
+						</li>
+				</ol></li>
+			</ol><br/>
+
+			<p style="text-align: center;"><strong>PASAL 12<br /> KEWAJIBAN PERUSAHAAN</strong></p>
+			<ol>
+				<li>
+				<p>Perusahaan berwajiban menyelenggarakan dan membuat program pelatihan- pelatihan untuk meningkatkan kompetensi Member untuk menjalankan usaha sesuai kode etik dan peraturan perusahaan.</p>
+				</li>
+				<li>
+				<p>Perusahaan berkewajiban menyediakan skema kompensasi dan barang yang dijual sesuai dengan yang dijanjikan dan izin dari Pemerintah.</p>
+				</li>
+				<li>
+				<p>Perusahaan berkewajiban memberikan pelayanan kepada Member sesuai dengan kode etik dan peraturan perusahaan.</p>
+				</li>
+				<li>
+				<p>Perusahaanberkewajibanmenjagasuasanakondusifdenganmenegakkankodeetik dan peraturan perusahaan.</p>
+				</li>
+				<li>
+				<p>Perusahaan berkewajiban mengedukasi Member dengan informasi-informasi yang benar.</p>
+				</li>
+				<li>
+				<p>Perusahaan berkewajiban memungut pajak pertambahan nilai (PPn) dan memotong pajak penghasilan (PPh) atas segala transaksi yang timbul di perusahaan sesuai dengan ketentuan dan peraturan yang berlaku di Indonesia.</p>
+				</li>
+			</ol><br/>
+
+			<p style="text-align: center;"><strong>PASAL 13<br /> PELATIHAN DAN PEMBINAAN</strong></p>
+			<ol>
+				<li>Perusahaan mengadakan Pelatihan dan Pembinaan bagi setiap Member yang dilaksanakan sebagai berikut:
+					<ol style="list-style-type: lower-alpha;">
+						<li>Pelatihan bagi Member yang dilakukan Perusahaan seperti:
+						<ol style="list-style-type: lower-roman;">
+							<li>Pelatihan Pengenalan Produkm diadakan di kantor pusat maupun di stockist, diadakan minimal sebulan sekali</li>
+							<li>Pendalaman Marketing Plan, diadakan di kantor pusat maupun stockist, diadakan minimal sebulan sekali.</li>
+						</ol>
+						</li>
+						<li>Pembinaan bagi Member yang dilakukan Perusahaan seperti:
+							<ol style="list-style-type: lower-roman;">
+								<li>Seminar Pembinaan Member Setiap hari Sabtu pada minggu kedua setiap
+									bulan.</li>
+								<li>Seminar Anniversary VITO diadakan setiap 1 tahun sekali.</li>
+							</ol>
+						</li>
+					</ol>
+				</li>
+			</ol><br/>
+
+
+			<p style="text-align: center;"><strong>PASAL 14<br /> PROMOSI</strong></p>
+			<ol>
+				<li>Seorang Member diperkenankan untuk mempromosikan produk-produk PT. Sukses Indonetwork Digital beserta program kompensasinya, disemua media yang tersedia, baik itu di website pribadi, blog, media sosial, email, sms, dengan syarat isi dari promosi tersebut tidak keluar dari informasi yang benar diberikan oleh perusahaan. Apabila menyimpang, maka perusahaan tidak bertanggung jawab apapun apabila terjadi keluhan dari pihak luar. Dan Member tersebut, wajib mencantumkan dirinya sebagai Member independen, bukan sebagai perusahaan atau agen yang mewakili PT. Sukses Indonetwork Digital.</li>
+				<li>Khusus bagi seorang Member dan grupnya, yang melakukan penyebaran informasi melalui pesan teks, dengan tujuan ingin memberi inspirasi dan motivasi kepada
+					grupnya sendiri, tanpa ada unsur-unsur menjelekkan dengan mencantumkan nama seseorang atau nama grup lain, tidak bisa dilaporkan ke manajemen. Yang bisa diproses oleh manajemen adalah penyebaran informasi dengan menjatuhkan, menjelekjelekkan, mencemarkan grup/jaringan lain dan juga yang mengandung unsur-unsur perpecahan.</li>
+				<li>SeorangMemberataugroupdariMemberyangtelahberhasilmerekrutseorangdan atau sekumpulan Public Figure kedalam jaringan kerjanya, yang telah dikenal oleh masyarakat luas, dilarang untuk mempublikasikan dan atau mempromosikan seorang dan atau sekumpulan Public Figure tersebut ke masyarakat luas tanpa seijin tertulis dari yang bersangkutan. Apabila hal ini terjadi, perusahaan tidak bertanggung- jawab apabila suatu hari terjadi perselisihan/permintaan fee dari yang bersangkutan.</li>
+				<li>Seorang Member tidak diperbolehkan untuk memproduksi alat bantu atau item tambahan promosi untuk disebarluaskan melalui media apapun tanpa ijin tertulis dari perusahaan. Apabila itu dilakukan, maka perusahaan tidak bertanggung jawab apapun apabila terjadi keluhan dari pihak luar, termasuk misalnya keluhan dari figure terkenal di publik yang identitasnya disebarluaskan tanpa ijin yang bersangkutan.
+				</li>
+			</ol><br/>
+
+
+			<p style="text-align: center;"><strong>PASAL 15<br /> STOCKIST</strong></p>
+			<ol>
+				<li>
+				<p>Stockist merupakan perpanjangan tangan perusahaan. Apabila ada Member,baikitu di dalam jaringannya ataupun di luar jaringannya, yang telah menipu dan atau mempermainkan stockist, maka perusahaan akan memberikan sanksi memutuskan keanggotaan dengan yang bersangkutan tanpa terkecuali.</p>
+				</li>
+				<li>
+					<p>Persyaratan umum menjadi Stokist adalah sebagai berikut:</p>
+					<ol style="list-style-type: lower-alpha;">
+						<li>
+							<p>Pemohon Stokist adalah Member dengan kualifikasi minimal paket Platinum.</p>
+						</li>
+						<li>
+							<p>Bersedia mematuhi Kode Etik Perusahaan dan peraturan stokist dari perusahaan, dan bersedia diberikan teguran atau sanksi apabila melanggar aturan.</p>
+						</li>
+						<li>
+							<p>Bersedia memberikan layanan kepada semua Member tanpa membedakan jaringan.</p>
+						</li>
+						<li>
+							<p>Siap melayani komplain produk dan layanan dari semua Member.</p>
+						</li>
+						<li>
+							<p>Bersedia dilibatkan oleh perusahaan dalam acara-acara resmi perusahaan di wilayahnya.</p>
+						</li>
+						<li>
+							<p>Besaran deposit awal sebagai Stokist VITO adalah 100 BV = Rp.35.000.000,- (tiga puluh lima juta rupiah).</p>
+						</li>
+					</ol>
+				</li>
+				<li>Keuntungan menjadi Stokist:
+					<ol style="list-style-type: lower-alpha;">
+						<li>
+							<p>Mendapatkan pembinaan khusus dari perusahaan dalam acara tahunan khusus stokist. (semua pembinaan tahunan dengan akomodasi di tanggung perusahaan).</p>
+						</li>
+						<li>
+							<p>Mendapatkan bantuan alat peraga baik brosur, pamflet, flyer, form kwitansi standar dari perusahaan secara berkala.</p>
+						</li>
+						<li>
+							<p>Mendapatkan ongkos kirim gratis dengan pembelian nominal tertentu.</p>
+						</li>
+						<li>
+							<p>Mendapatkan potongan harga atau komisi sebesar 2% dari harga produk setiap kali melakukan order ke perusahaan.</p>
+						</li>
+					</ol>
+				</li>
+				<li>Kewajiban bagi Stokist VITO:
+					<ol style="list-style-type: lower-alpha;">
+						<li>Stockist VITO wajib melayani setiap order dari perseorangan di area pemasarannya masing-masing tanpa terkecuali dan melakukan transaksi melalui sistem web VITO.</li>
+						<li>Stokist wajib memberikan bukti transaksi yang kepada Member yang membeli produk, ataupun yang bergabung sebagai Member baru.</li>
+						<li>Untuk order perseorangan yang memerlukan jasa kurir, Stokist VITO wajib menambahkan ongkos pengiriman, agar adil dan tidak terjadi penjualan dibawah harga resmi Perusahaan.<br /><br /></li>
+					</ol>
+				</li>
+				<li>Perusahaan bisa menerima order langsung dari setiap Member dari kota-kota yang sudah ada stockist di satu provinsi, jika:
+					<ol style="list-style-type: lower-alpha;">
+						<li>
+							<p>Tidak bisa dihubungi dalam waktu 1x24 jam.</p>
+						</li>
+						<li>
+							<p>Berbisnis dengan perusahaan Direct Selling atau MLM dari perusahaan lain.</p>
+						</li>
+						<li>
+							<p>Stockist berselisih dengan Member tersebut tanpa penyelesaian dari dalam selama 2x24 jam.</p>
+						</li>
+						<li>
+							<p>Stockist tersebut hanya ingin melayani jaringannya sendiri.</p>
+						</li>
+					</ol>
+				</li>
+			</ol><br />
+
+			<p style="text-align: center;"><strong>PASAL 16<br /> BONUS</strong></p>
+			<p>1. Marketing Plan PT. Sukses Indonetwork Digital menggunakan sistem binari, dengan jenis bonus sebagai berikut:</p>
+			<ol style="list-style-type: lower-alpha;">
+				<li>
+				<p>Reference Bonus adalah bonus yang diberikan kepada Member yang telah melakukan perekrutan berdasarkan paket join member tersebut.</p>
+				</li>
+				<li>
+				<p>Development Bonus, Perusahaan akan mengalokasikan 10% omset BV dari pertumbuhan grup kiri dan grup kanan kaki kecil, dihitung dari pembelanjaan jaringan jalur kanan dan kiri.</p>
+				</li>
+				<li>
+				<p>Development Bonus didapatkan ketika terjadi pertumbuhan grup kiri dan grup kanan dihitung dari BV.</p>
+				</li>
+				<li>
+				<p>FlushBonusdibayarkanolehperusahaansetiapterjadiflushpasangandanAnda akan mendapatkan flush bonus 10% dihitung dari Development Bonus pada hari tersebut dengan ketentuan Development Bonus minimal paket join Gold.</p>
+				</li>
+				<li>
+				<p>Up Bonus adalah bonus yang didapatkan dari Development Bonus Upline Anda dua level ke atas minimal 5% level pertama dan 5% level kedua dengan syarat paket Gold dan mensponsori dua Member paket Gold dan pertumbuhan omset 5BV kiri dan kanan tiap bulan tersebut.</p>
+				</li>
+				<li>
+				<p>Leadership Bonus adalah bonus yang didapatkan dari Development Bonus member yang anda sponsori langsung.</p>
+					<ul>
+						<li>
+						<p>Gold, satu generasi 10%,</p>
+						</li>
+						<li>
+						<p>Platinum, dua generasi 10% + 5%</p>
+						</li>
+						<li>
+						<p>Titanium, tiga generasi 10% + 5% + 5%</p>
+						</li>
+					</ul>
+				</li>
+				<li>
+				<p>Bonus Pool Tahunan adalah bonus yang diberikan dari omset internasional 1% kepada member yang berprestasi dihutung dari keuntungan bersih perushaan.</p>
+					<ul>
+						<li>
+						<p>Start Director,</p>
+						</li>
+						<li>
+						<p>Executive Director,</p>
+						</li>
+						<li>
+						<p>Crown Executive Directur.</p>
+						</li>
+					</ul>
+				</li>
+			</ol><br />
+
+			<p style="text-align: center;"><strong>PASAL 17<br /> REWARD</strong></p>
+			<ol>
+				<li>
+				<p>Sistem Reward Plan PT. Sukses Indonetwork Digital menggunakan system binary dengan pertumbuhan omset Prize Value (PV) kiri kanan.</p>
+				</li>
+				<li>
+				<p>Perhitungan 1 Prize Value (PV) senilai Rp.1.750.000.</p>
+					<ol style="list-style-type: lower-alpha;">
+						<li>
+							<p>75 PV Kiri Kanan (Star Manager) mendapatkan reward sepeda motor senilai Rp.25.000.000</p>
+						</li>
+						<li>
+							<p>350 PV Kiri Kanan (Executive Manager) mendapatkan reward mobil senilai Rp.150.000.000</p>
+						</li>
+						<li>
+							<p>1750 PV Kiri Kanan (Star Director) mendapatkan reward mobil senilai Rp.500.000.000</p>
+						</li>
+						<li>
+							<p>3500 PV Kiri Kanan (Executive Director) mendapatkan reward mobil senilai Rp.750.000.000</p>
+						</li>
+						<li>
+						<p>7500 PV Kiri Kanan (Crown Executive Director) mendapatkan reward senilai Rp.1.000.000.000</p>
+						</li>
+					</ol>
+				</li>
+				<li>
+				<p>Pembelanjaan PV bisa dilakukan berulang tanpa adanya batasan.</p>
+				</li>
+			</ol><br />
+
+			<p style="text-align: center;"><strong>PASAL 18<br /> PERSELISIHAN ANTAR MEMBER</strong></p>
+			<ol>
+				<li>PT. Sukses Indonetwork Digital tidak akan ikut menengahi perselisihan antar Member, yang berasal dari satu atau beberapa individu yang menghubungi calon Member (prospek) yang sama, agar tercipta situasi yang kondusif diantar sponsor pada khususnya dan atau diantara Member pada umumnya.</li>
+				<li>Seorang Member yang melaporkan Member yang lain, dikarenakan dugaan pelanggaran kode etik, wajib menyertakan bukti otentik dengan melaporkan melalui email atau media lain secara tertulis dan ditujukan kepada customer service. Pengaduan via telepon atau pembicaraan langsung tanpa bukti, tidak akan diproses, termasuk pengaduan secara pribadi kepada manajemen.</li>
+				<li>Sebaliknya, pelaporan palsu oleh si pelapor, dengan tujuan ingin menjatuhkan/merugikan Member atau grup lain, akan dikenakan sanksi berupa surat
+					peringatan 1. Apabila melanggar untuk ke-2 kalinya, maka perusahaan akan menghapuskan nomor registrasi keanggotaannya.</li>
+			</ol><br />
+
+			<p style="text-align: center;"><strong>PASAL 19<br /> PERSELISIHAN DENGAN PERUSAHAAN</strong></p>
+			<ol>
+				<li>Segala bentuk perselisihan dengan perusahaan akan diselesaikan dengan mengutamakan prinsip musyawarah dan kekeluargaan. Namun apabila perselesihan tidak dapat terselesaikan dengan baik, maka penyelesaian akan dilakukan sesuai dengan hukum yang berlaku di Negara Kesatuan Republik Indonesia.<v/li>
+				<li>Penyelesaian secara hukum akan dilakukan diPengadilan Negeri dimana kedudukan PT. Sukses Indonetwork Digital berada, yakni Kota Makassar, Sulawesi Selatan.</li>
+			</ol><br />
+
+			<p style="text-align: center;"><strong>PASAL 20<br /> PELANGGARAN DAN SANKSI</strong></p>
+			<ol>
+
+				<li>Member yang melakukan perbuatan melanggar Kode Etik ini ataupun hukum, dan Perusahaan mendapatkan laporan secara tertulis dengan bukti yang cukup, maka perusahaan berhak menjatuhkan Surat Peringatan 1. Apabila melanggar untuk yang ke-2 kalinya, maka perusahaan berhak untuk memberhentikan/menghapus keanggotaan Member tersebut.</li>
+				<li>Pelanggaran yang terjadi akan diberi surat peringatan atau dapat mengakibatkan diberhentikannya keanggotaan Member tersebut, atau dilakukan penundaan pembayaran bonus sementara selama masa investigasi.</li>
+				<li>Apabila berdasarkan hasil investigasi, Member yang bersangkutan terbukti melanggar ketentuan sebagaimana yang sudah ditetapkan, maka bonus yang bersangkutan akan dibayarkan dan setelah itu keanggotaannya langsung dibatalkan. Sebaliknya apabila ia tidak terbukti melakukan pelanggaran, maka bonus yang bersangkutan akan kembali diproses dan keanggotaannya tetap dilanjutkan.</li>
+				<li>Member yang keberatan terhadap pemberian sanksi dapat mengajukan surat keberatan dengan menyebutkan alasan-alasannya dalam waktu 7 (tujuh) hari sejak menerima surat pemberitahuan pemberian sanksi.</li>
+				<li>Apabila dalam waktu 7 (tujuh) hari tersebut Member tidak mengajukan surat keberatan, maka perusahaan akan menganggap bahwa Member telah menerima.</li>
+				<li>Setiap keputusan perusahaan bersifat final dan mengikat terhadap seluruh Member.</li>
+			</ol><br />
+
+			<p style="text-align: center;"><strong>PASAL 21<br /> PENUTUP</strong></p>
+			<p>Kode Etik dan Peraturan Perusahaan ini dibuat sebagai norma dan perjanjian antara PT. Sukses Indonetwork Digital dan Member VITO yang secara resmi telah diterima keanggotaannya. Setiap perubahan dalam Kode Etik dan Peraturan Perusahaan ini akan diberitahukan kepada seluruh Member selambatnya 30 (tiga puluh) hari sebelum diberlakukan dengan persetujuan terlebih dahulu dari Kementerian Perdagangan Republik Indonesia.</p>
+			<br /><br />
+
+			<p style="text-align: center;">Makassar, 10 Desember 2020 <br />
+				<strong>PT. SUKSES INDONETWORK DIGITAL</strong></p>
+
+		<!-- <p style="text-align: center;"><strong>BAB I<br /> PENDAHULUAN</strong></p>
+		<ol>
+			<li>Tujuan Umum<br />
+				<p>Kode Etik dan Peraturan Mitra Usaha ini dibuat dengan tujuan untuk mengatur hubungan hukum dan persetujuan atau kesepakatan antara PT SUKSES INDONETWORK DIGITAL (selanjutnya disebut &ldquo;<strong>Perusahaan</strong>&rdquo;) dengan para Mitra Usaha Perusahaan. Kode Etik dan Peraturan Mitra Usaha ini dibuat sebagai pedoman bagi Mitra Usaha dan Perusahaan dalam menjalankan kegiatan usaha di Perusahaan, sehingga pihak Mitra Usaha dan pihak Perusahaan dapat memahami dan bertindak sesuai dengan fungsi dan tanggung jawabnya masing-masing.</p>
+			</li>
+			<li>Tujuan Khusus<br />
+				<p>Kode Etik dan Peraturan Mitra Usaha ini bertujuan untuk memperjelas hak dan kewajiban dari pihak Perusahaan dan pihak Mitra Usaha, dalam hal-hal sebagai berikut dan dibuat dengan maksud untuk:</p>
+				<ol  type="a">
+					<li >Menyamakan persepsi tentang kode etik, tanggung jawab dan etika diantara Mitra Usaha dalam menjalankan kegiatan kemitrausahaannya di Perusahaan.</li>
+					<li>Mengatur dan melindungi kepentingan hukum Perusahaan dan Mitra Usaha dari tindakan-tindakan yang dapat merugikan Mitra Usaha lain dan/atau Perusahaan.</li>
+					<li>Menyatakan hak, tugas, tanggung jawab dan kewajiban kepada Mitra Usaha dalam menjalankan kegiatan kemitrausahaannya di Perusahaan.</li>
+					<li>Memberikan kesempatan yang sama di dalam sistem usaha yang jelas, transparasi dan rasional bagi semua Mitra Usaha.</li>
+					<li>Menjaga, memlihara dan melindungi kepentingan semua Mitra Usaha yang bergabung dalam kegiatan usaha Perusahaan.</li>
+					<li>Menegaskan hubungan antara sesama Mitra Usaha demi meningkatkan kerukunan.</li>
+					<li>Menegaskan hubungan antara Perusahaan dan Mitra Usaha.</li>
+				</ol>
+				<p>Kode Etik dan Peraturan Mitra Usaha ini wajib dilaksanakan bersama-sama dengan penuh tanggung jawab antara Perusahaan dan seluru Mitra Usaha dalam rangka mewujudkan iklim usaha yang saling menguntungkan satu dengan yang lainnya.</p>
+			</li>
+		</ol><br /> -->
+
+		<!--p style="text-align: center;"><strong>BAB II<br /> ISTILAH DAN DEFINISI</strong></p>
+		<p >Dalam Kode Etik dan Peraturan Mitra Usaha ini yang dimaksud dengan:</p>
+		<ol>
+			<li><strong>Perusahaan</strong> adalah PT SUKSES INDONETWORK DIGITAL  								atau dengan nama VITO, merupakan perusahaan yang melakukan kegiatan usaha dengan sistem penjualan langsung di Indonesia.</li>
+			<li><strong>Mitra Usaha</strong> adalah perorangan yang telah memenuhi syarat dan ketentuan menjadi Mitra Usaha di Perusahaan serta terdaftar secara resmi dan diberikan kewenangan oleh Perusahaan untuk membeli dan menjual produk, mensponsori para Mitra Usaha lain dan menerima bonus sesuai dengan ketentuan dan persyaratan resmi dari perusahaan.</li>
+			<li><strong>Konsumen</strong> adalah setiap orang pemakai produk yang tersedia di Perusahaan baik untuk kepentingan diri sendiri, keluarga, orang lain dan tidak untuk diperdagangkan.</li>
+			<li><strong>Sponsor</strong> adalah perorangan yang mensponsori perorangan lain (downline) untuk bergabung dalam satu jaringan yang sama dalam hirarki atau garis sponsor.</li>
+			<li><strong><em>Down Line </em></strong> adalah perorangan yang direkrut menjadi Mitra Usaha baik yang ditempatkan langsung di bawah Sponsor atau <em>Up Line </em>atau yang ditempatkan beberapa level di bawah Sponsor atau <em>Up Line</em>.</li>
+			<li><strong><em>Marketing Plan</em></strong> adalah sistem rencana pengembangan kegiatan usaha Perusahaan yang telah ditetapkan oleh manajemen Perusahaan.</li>
+			<li><strong>Produk</strong> adalah barang atau produk yang dapat diperjualbelikan dan dikeluarkan secara resmi oleh PT VITO GLOBAL INDONESIA untuk dijual dan dipasarkan oleh Mitra Usaha.</li>
+			<li><strong>Manajemen</strong> adalah serangkaian unsur atau orang-orang di dalam Perusahaan yang ditetapkan secara sah dan tertulis oleh Perusahaan untuk memimpin, mengarahkan dan mengadminstrasikan sumber daya yang dimiliki oleh Perusahaan.</li>
+			<li><strong>Karyawan</strong> adalah orang yang bekerja untuk Perusahaan dan bukan merupakan Mitra Usaha serta tidak berhak untuk menjalankan kegiatan kemitrausahaan Perusahaan.</li>
+			<li><strong><em>Support Sistem</em></strong> adalah sistem atau wadah yang dibentuk oleh Perusahaan dan Mitra Usaha yang berfungsi sebagai sarana dan fasilitas untuk mendukung pengembangan kegiatan usaha Perusahaan.</li>
+			<li><strong>PV <em>(Point Value) </em></strong>adalah nilai poin yang diberikan oleh Perusahaan terhadap suatu Produk yang dipasarkan oleh Mitra Usaha.</li>
+			<li><strong>Bonus</strong> adalah kompensasi yang dbayarkan oleh Perusahaan kepada seseorang Mitra Usaha berdasarkan perhitungan <em>Marketing Plan</em>.</li>
+		</ol>
+		<br />
+
+		<p style="text-align: center;"><strong>BAB III<br /> SYARAT DAN KETENTUAN MENJADI MITRA USAHA</strong></p>
+		<ol>
+			<li>Persyaratan menjadi Mitra Usaha di Perusahaan adalah sebagai berikut:<br />
+				<ol type="a">
+					<li>Warga Negara Indonesia yang berusia minimal 18 (depan belas) tahun (yang dapat dibuktikan dengan dokumen identitas diri yang sah) tanpa membedakan jenis kelamin, suku ras, golongan, politik maupun agama tertentu.</li>
+					<li>Mengisi Formulir Permohonan Keanggotaan Mitra Usaha Perusahaan (selanjutnya disebut &ldquo;Formulir Permohonan&rdquo;) secara <em>online</em> dengan benar dan lengkap kepada Perusahaan. Selanjutnya melakukan verifikasi data di <em>website </em><a href="http://www.vito.co.id">www.vito.co.id</a> syarat dan ketentuan untuk melakukan verifikasi dapat dilihat di web tersebut.</li>
+					<li>Membayar biaya pendaftaran sebesar Rp 150.000,- (seratus lima puluh ribu rupiah) kepada Perusahaan dan memperoleh Alat Bantu Penjualan (Starter Kit yang terdiri dari Profil Perusahaan, Informasi produk, <em>Marketing Plan</em>, Kode Etik Perusahaan dan Daftar Harga Produk) serta produk VITO <em></em> dari Perusahaan.</li>
+					<li>Melampirkan bukti identitas diri yang sah</li>
+					<li>Bukan merupakan Karyawan Perusahaan atau perusahaan lain yang terafiliasi dengan Perusahaan.</li>
+					<li>Tidak sedang tersangkut erkara pidana di Wilayah Hukum Negara Kesatuan Republik Indonesia.</li>
+				</ol>
+			</li>
+			<li>Ketentuan menjadi Mitra Usaha di Perusahaan adalah sebagai berikut:<br />
+				<ol type="a">
+					<li>Bersedia mematuhi Kode Etik dan Peraturan Mitra Usaha ini serta ketentuan lain yang ditetapkan oleh Perusahaan dan telah disetujui Kementrian Perdagangan dikemudian hari.</li>
+					<li>Mitra Usaha tidak dibenarkan menggunakan nama orang lain atau nama yang tdak sesuai dengan kartu identitas diri, saat melakukan pendaftran sebagai Mitra Usaha di Perusahaan.</li>
+					<li>Seorang Mitra Usaha hanya diperbolehkan mempunyai maksimal 1 (satu) titik usaha (nomor keanggotaan) di Perusahaan.</li>
+					<li>Apabila Mitra Usaha memilik titik usaha (nomor kenggotaan) lebih dari 1 (satu), maka yang berlaku adalah nomor titik usaha (keanggotaan) yang paling awal terdaftar. Perusahaan berhak membatalkan nomor keanggotaan yang terdaftar belakangan.</li>
+					<li>Bagi Mitra Usaha yang memutuskan bekerjasama dengan pihak lain dalam mengelola kegiatan usaha, Perusahaan tidak bertanggung jawab dan tidak akan bertindak sebagai penengah apabila terjadi perselisihan antara Mitra Usaha dengan pihak lain tersebut. Perusahaan menyarankan kepada Mitra Usaha untuk mencari bantuan hukum guna membuat perjanjian kerjasama yang jelas dan terperinci.</li>
+					<li>Perusahaan berhak untuk menempuh jalur hukum guna menyelesaikan permasalahan dengan Mitra Usaha, apabila Mitra Usaha membuat klaim yang tidak sesuai mengenai Perusahaan yang dapat merusak reputasi dan menghambat kelangsungan kegiatan usaha Peusahaan serta berpotensi dan/atau mengalibatkan kerugian bagi Perusahaan.</li>
+					<li>Kesalahan penempatan <em>Down Line </em>tidak dapat dilakukan perubahan posisi. Pastikan data Sponsor Anda sudah benar. Informasi pokok (User Name, Nama, Sponsor) dan penempatan letak posisi Down Line tidak dapat diubah dengan alasan apapun.</li>
+					<li>Perusahaan berhak untuk menolak suatu permohonan pendaftaran keanggotaan Mitra Usaha ataupun permohonan pendaftaran kembali jika tidak memenuhi syarat dan ketentuan yang berlaku pada kode etik dan peraturan Mitra Usaha ini.</li>
+				</ol>
+			</li>
+			<li>Pengembalian barang.<br />
+			<ol type="a">
+			<li>Setiap produk VITO memiliki jaminan kepuasan pelanggan yaitu pengembalian produk yang telah dibeli member maupun konsumen apabila manfaat produk tidak sesuai seperti yang telah dijanjikan dalam jangka waktu 10 (sepuluh) dari tanggal pembelian.</li>
+			<li>Jaminan ini tidak berlaku untuk produk yang dirusak dengan sengaja, disalahgunakan atau disimpan di tempat yang salah (tidak sesuai dengan ketentuan yang berlaku seperti menyimpan produk di tempat yang terkena sinar matahari secara langsung).</li>
+			<li>Berlaku untuk member yang diberhentikan, apabila seorang member berhenti, member yang bertindak sebagai member dapat mengembalikan sisa produk yang dimilikinya.<br />
+			- Sisa produk yang dikembalikan harus dalam kondisi  layak jual.<br />
+			- Pembelian kembali akan dilakukan setelah mengurangi biaya administrasi 10% dan manfaat yang sudah dinikmati<br />.</li>
+
+			
+			  </ol>
+			</li><br />
+
+		<p style="text-align: center;"><strong>BAB IV<br /> JANJI MITRA USAHA</strong></p>
+		<p>Mitra Usaha berjanji dan setuju untuk:</p>
+		<ol>
+			<li>Menjunjung tinggi segala peraturan yang ditetapkan oleh pemerintah Republik Indonesia, berlaku jujur tulus dan ikhlas dalam menjalankan kegiatan usaha di perusahaan serta mematuhi Kode Etik dan Peraturan Mitra Usaha dan aturan-aturan lain yang diterapkan oleh Perusahaan.</li>
+			<li>Melakukan kegiatan usaha Perusahaan dengan cara yang akan meningkatkan reputasi Mitra Usaha sendiri dan reputasi yang positif bagi Perusahaan.</li>
+			<li>Mematuhi syarat dan ketentuan yang telah ditetapkan oleh perusahaan terhadap Mitra Usaha.</li>
+		</ol><br />
+
+		<p style="text-align: center;"><strong>BAB V<br /> HAK MITRA USAHA</strong></p>
+		<ol>
+			<li>Setiap Mitra Usaha berhak untuk mendapatkan kesempatan yang sama tanpa diPerlakukan berbeda dari Perusahaan.</li>
+			<li>Mitra Usaha berhak untuk mengembangkan kegiatan usaha ini ke seluruh Indonesia.</li>
+			<li>Mitra Usaha berhak mendapatkan bonus sesuai dengan perhitungan <em>Marketing Plan</em>.</li>
+			<li>Setiap Mitra Usaha berhak mengikuti training, pelatihan, acara dan kegiatan perusahaan lainnya, baik secara cuma-cuma maupun dengan membayar pada perusahaan.</li>
+			<li>Seorang Mitra Usaha berhak untuk menempatkan <em>Down Line </em> sesuai dengan keinginan Mitra Usaha tersebut.</li>
+		</ol><br />
+
+		<p style="text-align: center;"><strong>BAB VI<br /> KEWAJIBAN MITRA USAHA</strong></p>
+		<p>Untuk kemajuan bersama Oma seorang wirausaha memiliki kewajiban sebagai berikut:</p>
+		<ol>
+			<li>Jujur atas segala tindakan yang berhubungan dengan kemitrausahaan dan <em>support sistem</em> dengan mematuhi hal-hal sebagai berikut:</li>
+			<ol type="a">
+				<li>Mengisi formulir permohonan dengan benar dan lengkap.</li>
+				<li>Mematuhi segala peraturan yang telah ditetapkan oleh Perusahaan dan <em>support sistem. </em></li>
+				<li>Menjelaskan dengan baik dan benar kepada calon <em>Down Line </em> mengenai rencana pemasaran, kompensasi atau sistem bonus yang telah ditetapkan oleh Manajemen dan/atau Perusahaan.&nbsp;</li>
+				<li>Menjelaskan dengan baik dan benar tentang Produk Perusahaan, hak dan kewajiban, serta rencana pemasaran sesuai denga yang telah diterapkan oleh Perusahaan dengan cara yang tidak berlebihan.</li>
+			</ol>
+			<li>Bertanggung jawab kepada:</li>
+			<ol type="a">
+				<li>Perusahaan, dengan taat menjalankan peraturan-peraturan dan ketentuan-ketentuan, serta Kode Etik dan Peraturan Mitra Usaha yang ditetapkan oleh Perusahaan.</li>
+				<li><em>Support sistem</em>, dengan menjadi anggota tim yang mudah di ajar, tidak mengganggu kegiatan jaringan lain, bisa diajak bekerja sama, saling mendukung kemajuan bersama.</li>
+				<li><em>Down Line </em>, dengan memberikan pelatihan, pengetahuan dan membantu kesuksesan <em>Down Line </em>.</li>
+				<li>Sponsor atau <em>Up Line</em>, dengan mendukung strategi untuk kemajuan bersama.</li>
+				<li>Diri sendiri, dengan terus belajar, mengikuti seminar yang dianjurkan, disiplin dan semangat yang tinggi.</li>
+				<li>Konsumen, dengan memberikan pelayanan yang terbaik demi kepuasan Konsumen.</li>
+			</ol>
+			<li>Adil dalam hal:<br />
+				<ol type="a">
+					<li>Membantu <em>Down Line </em> untuk kemajuan usaha bersama.</li>
+					<li>Memberikan penghargaan kepada <em>Down Line </em> yang berhasil melakukan penjualan terbanyak.</li>
+					<li>Melayani konsumen dengan sebaik-baiknya.</li>
+					<li>Menyelesaikan masalah yang terjadi di jaringan Mitra Usaha.</li>
+				</ol>
+			</li>
+			<li>Loyal Terhadap:<br />
+				<ol type="a">
+					<li>Sponsor atau <em>Up Line</em>, dengan tidak menyebarkan isu-isu yang tidak benar atau berita bohong.</li>
+					<li><em>Down Line </em>, dengan memberikan pelatihan, pelayanan dan konsultasi yang benar.</li>
+				</ol>
+			</li>
+			<li>Semangat Untuk:<br />
+				<ol type="a">
+					<li>Membina diri sendiri.</li>
+					<li>Memasarkan produk.</li>
+				</ol>
+			</li>
+			<li>Mitra Usaha wajib mengikuti pendidikan dan training yang diadakan oleh perusahaan maupun oleh <em>Support Sistem</em> di masing-masing jaringannya.</li>
+			<li>Mitra Usaha wajib menjaga dan memelihara hubungan baik dengan orang-orang yang disponsorinya.</li>
+			<li>Mitra Usaha wajib menjaga hubungan baik terhadap sesama Mitra Usaha dan juga Karyawan di Perusahaan.</li>
+			<li>Mitra Usaha wajib mematuhi semua peraturan, persyaratan, sistem prosedur dan kebijakan yang ditetapkan oleh Perusahaan baik dalam kode Etik ini maupun dalam kebijakan lain yang sifatnya sementara.</li>
+		</ol><br />
+
+		<p style="text-align: center;"><strong>BAB VII<br /> KEWAJIBAN PERUSHAAN</strong></p>
+		<ol>
+			<li>Perusahaan mempunyai kewajiban sebagai berikut:</li>
+		</ol>
+		<ol>
+			<ol type="a">
+				<li>Menerbitkan harga jual produk dalam mata uang Rupiah yang berlaku untuk Mitra Usaha dan konsumen.</li>
+				<li>Memiliki produk yang nyata dan jelas dengan harga yang layak dan wajar.</li>
+				<li>Memenuhi kebutuhan standar mutu produk yang berlaku.</li>
+				<li>Memberikan jaminan atas mutu dan pelayanan purna jual kepada konsumen atas produk yang dijual.</li>
+				<li>Melaksanakan pembinaan dan pelatihan untuk meningkatkan kemampuan dan pengetahuan kepada Mitra Usaha agar bertindak dengan benar, jujur dan bertanggung jawab.</li>
+				<li>Memberikan kesempatan yang sama kepada semua Mitra Usaha untuk memasarkan produk.</li>
+				<li>Memberikan Bonus berdasarkan hasil kegiatan penjualan Produk yang dilakukan oleh Mitra Usaha dan jaringannya sesuai dengan kompensasi dari <em>Marketing Plan</em> Perusahaan.</li>
+				<li>Memberikan informasi yang benar, jelas dan jujur mengenai kondisi dan jaminan Produk serta memberi penjelasan penggunaan, perbaikan dan pemeliharaannya.</li>
+				<li>Memberikan alat bantu penjualan atau StarterKit kepada setiap Mitra Usaha, minimal memberikan keterangan mengenai produk, program pemasaran, kode etik dan atau peraturan perusahaan.</li>
+			</ol>
+		</ol><br />
+
+		<p style="text-align: center;"><strong>BAB VIII<br /> LARANGAN</strong></p>
+		<ol>
+			<li>Larangan-larangan bagi Mitra Usaha.<br />
+				<ol type="a">
+					<li>Mitra Usaha dilarang menggunakan cara apa pun yang tidak baik dan atau tidak legal.</li>
+					<li>Mitra Usaha dilarang membuat pernyataan yang tidak baik dan/atau bertentangan dengan hukum serta menjelekkan Perusahaan, Produk, Manajemen Perusahaan dan Mitra Usaha lainnya.</li>
+					<li>Mitra Usaha <strong>dilarang keras</strong> menjual semua produk yang dikeluarkan oleh Perusahaan:<br />
+						<ul>
+							<li><strong>Di bawah harga Mitra Usaha Satuan yang telah ditetapkan oleh Perusahaan pada lembar daftar Harga Mitra Usaha Satuan kepada sesama Mitra Usaha. </strong></li>
+							<li><strong>Di bawah Harga Konsumen Satuan yang telah diterapkan oleh Perusahaan pada lembar daftar Harga Konsumen Satuan kepada Konsumen, di manapun dan dalam bentuk apapun. </strong></li>
+						</ul>
+					</li>
+					<li>Mitra Usaha dilarang menggunakan nama Perusahaan, informasi, dokumen dan /atau buku-buku Perusahaan untuk kepentingan pihak lain.</li>
+					<li>Mitra Usaha dilarang mempengaruhi dan/atau mengambil Mitra Usaha dari jaringan lain untuk dijadikan <em>Down Line </em> atau dimasukkan ke dalam jaringan dengan cara dan alasan apapun.</li>
+					<li>Mitra Usaha dilarang mensponsori, menganjurkan, membujuk Mitra Usaha lain untuk pindah ke Perusahaan lain dengan cara dan alasan apapun.</li>
+					<li>Sesama Mitra Usaha dilarang untuk membicarakan Produk dari perusahaan lain, termasuk mengajak atau mempengaruhi Mitra Usaha lain untuk bergabung dengan Perusahaan lain yang bergerak di bidang Multi Level Marketing.</li>
+					<li>Mitra Usaha yang telah berperingkat Level MONOCEROS keatas dilarang terlibat langsung maupun tidak langsung dalam aktivitas perusahaan lain yang bergerak di bidang Multi Level Marketing.</li>
+					<li>Mitra Usaha <strong>tidak diperkenankan</strong> menjual produk perusahaan di luar sistem perusahaan langsung seperti <strong><em>marketplace</em>.</strong></li>
+					<li>Mitra Usaha tidak diperkenankan untuk mengemas ulang, menghapus, mencabut, merusak, mengganti segala label dan stiker yang tertera pada setiap kemasan Produk, brosur atau alat bantu jual lainnya yang dikeluarkan oleh perusahaan yang dapat menimbulkan salah pengertian bagi Konsumen.</li>
+					<li>Mitra Usaha tidak diperkenankan dengan alasan apapun juga, menjual Produk yang sudah kadaluarsa atau rusak.</li>
+				</ol>
+			</li>
+			<li>Larangan bagi perusahaan.<br />
+				<p>Perusahaan dilarang melakukan hal-hal sebagai berikut</p>
+				<ol type="a">
+					<li>Menjual barang atau jasa yang tidak benar atau berbeda atau bertentangan dengan keadaan yang sebenarnya.</li>
+					<li>Perusahaan tidak akan menarik atau mendapatkan keuntungan melalui uang pendaftaran keanggotaan dalam jumlah yang besar dan tidak rasional.</li>
+					<li>Melakukan perdagangan yang terkait dengan pemberian imbalan atau kompensasi yang tidak wajar.</li>
+					<li>Melakukan kegiatan usaha perdagangan di luar izin yang diberikan sesuai dengan legalitas Perusahaan.</li>
+				</ol>
+			</li>
+		</ol><br />
+
+		<p style="text-align: center;"><strong>BAB IX<br /> Program Pembinaan, Pelatihan dan Fasilitas Untuk Mitra </strong></p>
+		<p>Usaha sebagai bentuk tanggung jawab Perusahaan terhadap Mitra Usaha, maka Perusahaan mengadakan pembinaan dan pelatihan untuk meningkatkan kemampuan dan pengetahuan pada Mitra Usaha secara berkala, dalam bentuk kegiatan sebagai berikut:</p>
+		<ol>
+			<li>Pelatihan terkait pengetahuan tentang Produk diadakan 2 (dua) kali dalam sebulan untuk Mitra Usaha dan calon Mitra Usaha.</li>
+			<li>Pelatihan program pemasaran diadakan 2 (dua) kali dalam sebulan untuk Mitra Usaha dan calon Mitra Usaha.</li>
+			<li>Pelatihan pengembangan diri dan kepemimpinan diadakan 2 (dua) kali dalam sebulan untuk semua Mitra Usaha yang berperingkat minimal <strong>(AQUILA&hellip;).</strong></li>
+			<li>Pelatihan <em>public speaking</em> dan pelatihan lainnya diadakan 2 (dua) kali dalam setahun untuk Mitra Usaha yang berperingkat minimal <strong>(PAVO&hellip;).</strong></li>
+		</ol><br />
+
+		<p style="text-align: center;"><strong>BAB X<br /> ALUR PERJALANAN DAN KETENTUAN HARGA PRODUK </strong></p>
+		<ol>
+			<li>Jalur perjalanan produk Perusahaan yaitu melalui counter penjualan di kantor pusat perusahaan, Stockist Center dan melalui Mitra Usaha di seluruh Indonesia.</li>
+			<li>Harga Satuan Mitra Usaha dan Harga Satuan Konsumen ditetapkan oleh Perusahaan.</li>
+		</ol><br />
+
+		<p style="text-align: center;"><strong>BAB XI</strong><br /><strong>PENGGUNAAN NAMA DAGANG DAN MEREK DAGANG </strong></p>
+		<ol>
+			<li>Mitra Usaha tidak diperkenankan untuk menggunakan nama dagang dan atau merek merek dagang serta logo perusahaan tanpa adanya persetujuan tertulis terlebih dahulu dari perusahaan, termasuk penggunaan di dalam kartu nama Mitra Usaha. Penggunaan nama dagang dan atau merek-merek dagang serta logo Perusahaan tersebut harus pada tempatnya dan digunakan hanya untuk kepentingan kegiatan usaha Perusahaan.</li>
+			<li>Mitra perusahaan tidak diperkenankan untuk mengiklankan Produk-Produk dan /atau program perusahaan dengan menggunakan bahasa yang berbeda dari informasi atau literatur tertulis yang diterbitkan Perusahaan.</li>
+			<li>Materi iklan yang dibuat dan disebarluaskan oleh Mitra Usaha wajib mendapatkan persetujuan tertulis terlebih dahulu dari Perusahaan. Apabila Mitra Usaha melanggar ketentuan ini maka perusahaan berhak menerapkan sanksi sesuai dengan ketentuan pasal sebelumnya tentang sanksi dan Kode etik dan peraturan Mitra Usaha ini.</li>
+		</ol><br />
+
+		<p style="text-align: center;"><strong>BAB XII<br /> PERUBAHAN DATA MITRA USAHA </strong></p>
+		<ol>
+			<li>Perubahan terhadap data Mitra Usaha dimungkinkan apabila data pribadi Mitra Usaha berubah dari data awal yang didaftarkan, seperti nomor KTP, alamat KTP, alamat surat menyurat, alamat Email nomor telepon, nama ahli waris, informasi bank dan lainnya.</li>
+			<li>Perubahan data yang dimaksud harus dilaporkan secara resmi Kepada Manajemen Perusahaan dengan mengisi dan menandatangani Formulir perubahan Data Mitra Usaha.</li>
+			<li>Mekanisme teknis pelaporan perubahan data Mitra Usaha diatur ole Manajemen Perusahaan. (CHARLES)</li>
+		</ol><br />
+
+		<p style="text-align: center;"><strong>BAB XIII<br /> PENGALIHAN KEANGGOTAAN MITRA USAHA</strong></p>
+		<ol>
+			<li>Pengalihan keanggotaan Mitra Usaha berarti dialihkannya hak usaha dari Mitra Usaha di Perusahaan kepada orang lain (penerima pengalihan hak usaha).</li>
+			<li>Penerima pengalihan hak usaha adalah orang yang belum bergabung sebagai Mitra Usaha di Perusahaan atau Mitra Usaha yang telah mengundurkan diri atau berakhir keanggotaannya yang telah sekurang-kurangnya melewati 6 (enam) bulan sejak pengunduran diri / berakhir keanggotaan Mitra Usaha tersebut.</li>
+			<li>Syarat pemberi pengalihan hak usaha adalah Mitra Usaha lama yang dalam keadaan tidak memungkinkan untuk menjalankan kemitrausahaannya seperti dalam keadaan sakit keras, pindah kewarganegaraan atau perihal lainnya sesuai dengan pertimbangan Perusahaan.</li>
+			<li>Mekanisme pengalihan hak usaha dari Mitra Usaha lama kepada Calon Mitra Usaha baru diatur sebagai berikut:</li>
+			<ol type="a">
+				<li>Mitra Usaha lama wajib membuat surat pengunduran diri dan disetujui oleh Sponsornya.</li>
+				<li>Calon Mitra Usaha baru mengisi Formulir Permohonan Mitra Usaha dan melampirkan fotokopi KTP.</li>
+				<li>Calon Mitra Usaha membayar biaya pengalihan hak usaha kepada perusahaan sebesar Rp 600.000.</li>
+				<li>Manajemen Perusahaan berhak menerima atau menolak permohonan pengalihan keanggotaan Mitra Usaha sebagaimana dimaksud dalam bab XIV ini.</li>
+			</ol>
+		</ol><br />
+
+		<p style="text-align: center;"><strong>BAB XIV<br /> BERAKHIRNYA KEANGGOTAAN MITRA USAHA.</strong></p>
+		<ol>
+			<li>Masa keanggotaan Mitra Usaha berlaku selama seumur hidup.</li>
+			<li>Mitra Usaha dinyatakan berakhir keanggotaannya apabila meninggal dunia. Dengan demikian maka hak-hak Mitra Usaha akan diberikan oleh Perusahaan kepada ahli waris yang sah menurut ketentuan dan peraturan yang berlaku di wilayah hukum Negara Kesatuan Republik Indonesia.</li>
+			<li>Mitra Usaha mengundurkan diri sebagai Mitra Usaha Perusahaan atas keinginan sendiri dan tanpa adanya paksaan, yang diperkuat dengan surat resmi yang ditandatangani oleh Mitra Usaha di atas materai.</li>
+			<li>Keanggotaan Mitra Usaha dicabut oleh Manajemen Perusahaan apabila Mitra Usaha telah terbukti melanggar peraturan-peraturan, ketentuan-ketentuan, dan/atau Kode Etik dan Peraturan Mitra Usaha yang telah ditetapkan oleh perusahaan, yang berpotensi atau berakibat pada kerugian bagi Perusahaan, termasuk namun tidak terbatas pada tindakan menjelekkan Produk, reputasi dan nama baik Perusahaan. Keanggotaan Mitra Usaha juga dapat dicabut apabila Mitra Usaha memberikan keterangan palsu atau tidak benar dalam mengisi Formulir Permohonan Mitra Usaha serta apabila Mitra Usaha yang bersangkutan melakukan tindak pidana.</li>
+			<li>Apabila seorang Mitra Usaha yang telah dicabut keanggotaannya merangkap menjadi Stockist Center, Mobile Stockist, maka secara otomatis operasional SC tersebut akan ditutup oleh perusahaan.</li>
+			<li>Bagi Mitra Usaha yang keanggotaannya berakhir berdasarkan pasal 14.1 , 14.3 DAN 14.4 dalam BAB XIV di atas maka Mitra Usaha tidak lagi berhak menerima segala bonus yang seharusnya diterima oleh Mitra Usaha tersebut.</li>
+		</ol><br />
+
+		<p style="text-align: center;"><strong>BAB XV<br /> Warisan keanggotaan Mitra Usaha. </strong></p>
+		<ol>
+			<li>Apabila seorang Mitra Usaha meninggal dunia maka hak kemitrausahaannya sebagai Mitra Usaha dan hak-hak lain yang melekat atau timbul karena kemitrausahaannya tersebut akan beralih kepada ahli waris yang sah menurut ketentuan dan peraturan yang berlaku di wilayah hukum Negara Kesatuan Republik Indonesia.</li>
+			<li>Ahli waris yang dimaksud adalah pihak-pihak yang namanya tercantum dalam Formulir Permohonan Keanggotaan Mitra Usaha Perusahaan atau ahli waris yang ditunjuk sebelumnya melalui surat pernyataan diatas materai oleh Mitra Usaha yang meninggal tersebut. Apabila terdapat perbedaan nama ahli waris yang tercantum dalam formulir permohonan keanggotaan Mitra Usaha perusahaan atau nama ahli waris yang ditunjuk sebelumnya melalui Surat Pernyataan diatas materai oleh Mitra Usaha yang meninggal dengan nama ahli waris yang sah Menurut ketentuan dan peraturan yang berlaku di wilayah hukum negara Republik Indonesia, maka perusahaan akan memberlakukan ahli waris yang sah Menurut ketentuan dan peraturan yang berlaku di wilayah hukum Negara Kesatuan Republik Indonesia.</li>
+			<li>Ahli waris yang menjadi Mitra Usaha yang menggantikan seorang wirausaha yang meninggal dunia wajib memenuhi persyaratan administratif yang ditetapkan oleh perusahaan.</li>
+			<li>Apabila ahli waris yang berhak mewarisi ke mitrausahaan dari Mitra Usaha yang meninggal dunia belum berusia 18 tahun maka ke Mitra Usahanya hanya dapat dialihkan kepada ahli waris tersebut, yang menunjukkan perwaliannya berdasarkan penetapan atau putusan pengadilan.</li>
+			<li>Posisi ke Mitra Usaha dari orang yang menerima warisan, dalam <em>Marketing Plan</em> perusahaan adalah sesuai posisi Mitra Usaha yang mewariskan pada saat itu.</li>
+			<li>Ahli waris harus memenuhi syarat mempertahankan jumlah minimal Point produk-produk yang dibeli atau persyaratan lainnya agar memenuhi syarat untuk mendapatkan bonus.</li>
+		</ol><br />
+
+		<p style="text-align: center;"><strong>BAB XVI<br /> Pendaftaran kembali menjadi Mitra Usaha. </strong></p>
+		<ol>
+			<li>Mitra Usaha yang telah mengundurkan diri atau berakhir keanggotaannya diperbolehkan mendaftarkan diri kembali menjadi Mitra Usaha di perusahaan tersebut sekurang-kurangnya melewati 6 bulan sejak pengunduran diri berakhir kanggotan Mitra Usaha tersebut.</li>
+			<li>Pendaftaran kembali tersebut harus mengikuti mekanisme pendaftaran sebagian mana layaknya pendaftaran untuk Mitra Usaha baru dan tidak diperkenankan untuk menggantikan posisi seseorang yang telah menjadi Mitra Usaha di perusahaan.</li>
+		</ol><br />
+
+		<p style="text-align: center;"><strong>BAB XVII<br /> Stockist Center (SC) </strong></p>
+		<p>stockits center (SC) adalah Mitra Usaha yang telah memiliki jaringan dan ditunjuk oleh perusahaan menjadi Stockist Center. Stockist Center menjadi perpanjangan tangan perusahaan dalam melayani Mitra Usaha seperti penjualan ke Mitra Usaha pada wilayah tertentu.</p>
+		<ol>
+			<li>Syarat mengajukan Stockist Center PT VITO Global Indonesia adalah sebagai berikut:<br />
+				<ol type="a">
+					<li>Pemohon sudah terdaftar sebagai Mitra Usaha dengan minimal peringkat <strong>CYGNUS</strong></li>
+					<li>Mengisi formulir permohonan pengajuan Stockist Center.</li>
+					<li>Melampirkan fotokopi KTP dan NPWP masing-masing satu lembar.</li>
+					<li>Menguasai memahami, serta mampu memper hentikan sistem bisnis atau <em>Marketing Plan</em> yang telah ditetapkan perusahaan.</li>
+					<li>Memiliki tempat dan atau ruangan yang lengkap dengan segala fasilitasnya, gedung berstatus milik sendiri dan atau di kuasai, yang akan dijadikan kantor stockist untuk memberikan pelayanan dan pelatihan.</li>
+				</ol>
+			</li>
+			<li>Mekanisme menjadi Stockist Center:<br />
+				<ol type="a">
+					<li>SC yang baru terdaftar harus melakukan pembelanjaan awal minimal <strong>150 juta</strong>.</li>
+					<li>SC wajib melayani pembelian dan pendaftaran Mitra Usaha baik Mitra Usaha dari jaringan sendiri ataupun dari jaringan lain.</li>
+					<li>Selama masa perjanjian terikat dan setuju:</li>
+					<ul>
+						<li>Tidak bertindak mewakili dan tidak menyatakan diri sendiri sebagai karyawan perusahaan.</li>
+						<li>Tidak mempunyai kekuasaan atau kewenangan terhadap perjanjian yang dilakukan oleh perusahaan dan atau melakukan tindakan-tindakan lain yang dapat menimbulkan kewajiban bagi perusahaan.</li>
+						<li>Tidak berubah dan menambah Isi form, label serta kemasan pada produk perusahaan.</li>
+						<li>Tidak mengalihkan atau mencoba untuk mengalihkan hak dan kewajiban yang ada pada perjanjian tanpa adanya persetujuan tertulis dari perusahaan.</li>
+					</ul>
+					<li>Apabila terjadi pengakhiran perjanjian, maka SC wajib mengembalikan seluruh produk yang dibeli dalam tempo 7 hari setelah tanggal pengakhiran perjanjian kepada perusahaan. Produk yang dapat dikembalikan adalah stok SC yang belum di PV (belum terjual) atau belum dilaporkan sebagai penjualan dengan berpedoman pada kartu stok database SC dalam sistem perusahaan dan masih memiliki masa kadaluarsa minimal 1 tahun terhitung sejak tanggal pengakhiran perjanjian tersebut.</li>
+				</ol>
+			</li>
+			<li><strong>Keuntungan stokis Center SC:<br /></strong>
+				<ol type="a">
+				
+						<li>SC berhak mendapatkan komisi sebesar <strong>5%</strong> dari total PV pembelanjaan Mitra Usaha.</li>
+						<li>SC berhak mendapatkan fasilitas subsidi pengiriman Produk</li>
+					
+				</ol>
+				<strong><br /></strong>
+			</li>
+		</ol><br />
+
+		<p style="text-align: center;"><strong>BAB XVIII<br /> Sanksi </strong></p>
+		<ol>
+			<li>Perusahaan berhak untuk memberikan sanksi maupun melakukan peninjauan kembali terhadap sanksi yang telah dikeluarkan apabila dianggap perlu, tanpa pemberitahuan terlebih dahulu kepada Mitra Usaha.</li>
+			<li>Pemberian sanksi yang dijatuhkan oleh perusahaan kepada Mitra Usaha yang bersangkutan akan diberitahukan dalam bentuk tertulis.</li>
+			<li>Terhadap pengaduan palsu yang masuk ke perusahaan dikategorikan sebagai perbuatan yang tidak etis dan akan dikenakan tindakan indisipliner.</li>
+			<li>Dengan mempertimbangkan berat atau dengan sifat pelanggaran kode etik dan peraturan Mitra Usaha, maka perusahaan dapat mengenakan sanksi kepada pelanggan dalam bentuk:</li>
+			<ol type="a">
+				<li>Himbauan,</li>
+				<li>peringatan,</li>
+				<li>peringatan keras,</li>
+				<li>proses jalur hukum,</li>
+				<li>pemberhentian sementara waktu,</li>
+				<li>pencabutan keanggotaan Mitra Usaha secara tetap,</li>
+				<li>pembekuan adalah bonus yang seharusnya diterima oleh Mitra Usaha,</li>
+				<li>pembatalan segala bonus yang seharusnya diterima oleh Mitra Usaha.</li>
+			</ol>
+			<li>Pemberian sanksi tidak harus mengikuti tata urutan tersebut diatas namun sesuai dengan tingkat pelanggaran yang dilakukan oleh Mitra Usaha berdasarkan penilaian dari perusahaan. Dalam hal ini perusahaan memiliki hak penuh untuk menilai dan menentukan tingkat pelanggaran yang dilakukan wirausaha serta sanksi yang akan dikenakan kepada Mitra Usaha.</li>
+			<li>Sanksi pemberhentian sementara waktu atau pencabutan keanggotaan Mitra Usaha secara tetap akan diberikan kepada Mitra Usaha secara tetap akan diberikan apabila Mitra Usaha melakukan hal-hal sebagai berikut:</li>
+			<ol type="a">
+				<li>memberikan informasi yang tidak benar pada saat pengisian formulir permohonan Mitra Usaha berikut dengan perubahan-perubahannya.</li>
+				<li>Melanggar kode etik dan peraturan Mitra Usaha yang berpotensi akan mengakibatkan kerugian bagi Mitra Usaha lain dan atau perusahaan.</li>
+				<li>Mencemarkan nama baik perusahaan termasuk karyawan, Manajemen Perusahaan Mitra Usaha lain serta produk perusahaan.</li>
+				<li>Menjual produk yang dikeluarkan oleh perusahaan dengan harga dan sistem di luar ketentuan yang telah ditetapkan oleh perusahaan.</li>
+				<li>Mengatasnamakan perusahaan dalam aktivitas pertemuan tanpa izin tertulis dari perusahaan.</li>
+				<li>Mempengaruhi atau mengajak Mitra Usaha di perusahaan untuk menjadi anggota di perusahaan lain yang bergerak di bidang Multi Level Marketing ataupun memasarkan produk jenis yang merupakan produk kerajinan dari produk perusahaan.</li>
+				<li>Adanya pengaduan yang menyatakan bahwa Mitra Usaha melakukan pelanggaran terhadap hal-hal yang tidak diatur dalam kode etik dan peraturan Mitra Usaha.</li>
+			</ol>
+			<li>Bagi Mitra Usaha yang mendapatkan sanksi berupa pemberhentian sementara waktu atau pencabutan keanggotaan secara tetap, Perusahaan berhak untuk membekukan dan membatalkan segala bonus yang seharusnya diterima oleh Mitra Usaha tersebut.</li>
+			<li>Penjualan produk perusahaan di bawah harga yang telah ditentukan oleh perusahaan akan diberikan sanksi oleh perusahaan serta akan diproses secara hukum sesuai dengan undang-undang Republik Indonesia Nomor 5 tahun 1999 tentang larangan praktek monopoli dan persaingan usaha tidak sehat dan atau aturan hukum lainnya yang berlaku di negara kesatuan Republik Indonesia.</li>
+		</ol>
+
+		<p style="text-align: center;"><strong>BAB XIX <br /> Penyelesaian perselisihan </strong></p>
+		<ol>
+			<li>Apabila terjadi perselisihan atau perbedaan pendapat antara Mitra Usaha dengan perusahaan maka diupayakan untuk diselesaikan dengan jalan musyawarah dan kekeluargaan untuk mencapai mufakat dengan batas waktu 14 hari kerja.</li>
+			<li>Apabila upaya penyelesaian tersebut tidak membuahkan hasil, maka perusahaan dan Mitra Usaha sepakat untuk menempuh jalur hukum yang berlaku di pengadilan negeri Jakarta.</li>
+		</ol><br />
+
+		<p style="text-align: center;"><strong>BAB XX <br /> Penutup</strong></p>
+		<ol>
+			<li>Kode etik dan peraturan Mitra Usaha ini berlaku bagi seluruh Mitra Usaha yang terdaftar di seluruh Indonesia tanpa terkecuali.</li>
+			<li>Manajemen Perusahaan berhak untuk mengubah menambah mengurangi atau menghilangkan pasal-pasal tertentu dalam kode etik dan peraturan Mitra Usaha yang diberlakukan setelah mendapatkan persetujuan dari Kementerian Perdagangan.</li>
+			<li>Kode etik dan peraturan Mitra Usaha ditetapkan dan disahkan oleh Direktur Utama perusahaan dalam bentuk surat keputusan direksi perusahaan setelah melalui pembahasan dengan anggota eksekutif leader komite.</li>
+			<li>Dalam hal ini Perusahaan melakukan perubahan <em>Marketing Plan</em> dan atau kode etik dan peraturan Mitra Usaha harus mendapatkan persetujuan dari Kementerian Perdagangan Republik Indonesia.</li>
+			<li>Kode etik dan peraturan Mitra Usaha ini dapat ditinjau setiap saat sesuai dengan perubahan situasi dan kondisi. Segala perubahan dan penyempurnaan terhadap kode etik dan peraturan Mitra Usaha ini akan dilakukan dan disosialisasikan kepada Mitra Usaha sedikitnya 30 Hari.</li>
+			<li>Peraturan dan ketetapan yang dibuat secara terpisah dari kode etik dan peraturan Mitra Usaha merupakan satu kesatuan dan bagian yang tidak terpisahkan dari kode etik dan peraturan Mitra Usaha ini. Hal-hal lain yang belum tercakup dalam kode etik dan peraturan Mitra Usaha ini akan diatur dan ditetapkan di kemudian hari oleh perusahaan.</li>
+			<li>Apabila ada peraturan yang belum diatur dalam kode etik dan peraturan Mitra Usaha ini dan dianggap berpotensi menimbulkan permasalahan maka hal tersebut akan segera diputuskan berdasarkan pertimbangan dari manajemen perusahaan.</li>
+			<li>Apabila terdapat ketentuan di dalam kode etik dan peraturan di trafo ini menjadi batal atau tidak berlaku menurut keputusan atau penetapan pemerintah Republik Indonesia yang berwenang, maka hal tersebut tidak mengakibatkan kode etik dan peraturan Mitra Usaha ini menjadi batal atau tidak berlaku seluruhnya perusahaan akan mengganti dan atau membuat ketentuan baru apabila diperlukan agar kode etik dan peraturan Mitra Usaha ini tetap dapat dilaksanakan.</li>
+		</ol><br /-->
+
+</div>
+
+	<!-- <br /><br /><Br /><br /><Br /><br /> -->
+	<!--FOOTER desktop-->
+	<div class="container-fluid hidden-sm hidden-xs" style="background:#1A7DED">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left fontfooterma">&copy; Copyright 2021 - VITO - All Rights Reserved </div>
+				<div class="col-lg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right fontfooterma">Powered By: <a href="http://www.pineappletech.com" target="_blank" style="color:#fff">PineappleTech</a></div>
+			</div>
+		</div>
+	</div>
+	<!--end FOOTER desktop-->
+
+	<!--FOOTER mobile-->
+	<div class="container-fluid hidden-lg hidden-md" style="background:#1A7DED; width:100%; display:block">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center fontfooterma marginpadingnull" style="padding-bottom:0">&copy; Copyright 2021 - VITO - All Rights Reserved </div>
+				<div class="col-lg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center fontfooterma marginpadingnull" style="padding:0 0 6px 0">Powered By: <a href="http://www.pineappletech.com" target="_blank" style="color:#fff">PineappleTech</a></div>
+			</div>
+		</div>
+	</div>
+	<!--end FOOTER mobile-->
+
+	<script>
+		var slideIndex = 0;
+		showSlides();
+
+		function showSlides() {
+			var i;
+			var slides = document.getElementsByClassName("mySlides");
+			var dots = document.getElementsByClassName("dot");
+			for (i = 0; i < slides.length; i++) {
+				slides[i].style.display = "none";
+			}
+			slideIndex++;
+			if (slideIndex > slides.length) {
+				slideIndex = 1
+			}
+			for (i = 0; i < dots.length; i++) {
+				dots[i].className = dots[i].className.replace(" active", "");
+			}
+			slides[slideIndex - 1].style.display = "block";
+			dots[slideIndex - 1].className += " active";
+			setTimeout(showSlides, 3000); // Change image every 2 seconds
+		}
+
+	</script>
+</body>
+
+</html>
