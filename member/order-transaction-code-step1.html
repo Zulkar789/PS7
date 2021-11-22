@@ -1,0 +1,1281 @@
+
+
+ 
+
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<link rel="shortcut icon" href="/resources/assets/img/favicon.png" type="image/x-icon">
+<title>VITO</title> 
+        
+
+
+
+
+<!-- <link rel="shortcut icon" href="/resources/images/icon/favicon.ico" type="image/x-icon" /> -->
+<link rel="icon" href="/resources/assets/img/favicon.png" type="image/x-icon" />
+<link rel="stylesheet" href="/resources/css/member.css" />
+<link rel="stylesheet" href="/resources/css-memberarea/memberarea-bs.css">   
+<link rel="stylesheet" href="/resources/css-memberarea/styleDropDown.css">  
+<link rel="stylesheet" href="/resources/css-memberarea/member.css">  
+<link rel="stylesheet" href="/resources/css-memberarea/mobilemenu/new-navigation-mobile.css" type="text/css" media="screen" /> 
+<script type="text/javascript" src="/resources/js/mobilemenu/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="/resources/js/common.js"></script>
+
+<!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="/resources/css-memberarea/ie6.css" />
+    <![endif]-->
+
+<!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href="/resources/css-memberarea/ie8.css" />
+<![endif]-->
+
+<!-- PNG FIX for IE6 -->
+<!--[if lte IE 6]>
+        <script type="text/javascript" src="/resources/js/pngfix/supersleight-min.js"></script>
+<![endif]-->
+
+<script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/menu.js"></script>
+<script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/items1.js"></script>
+<script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/template1.js"></script>        
+<link rel="stylesheet" href="/resources/tigra/menu_files/menu.css" />
+
+
+<style>
+    .required{}
+    .numeric{}
+    .currency{}
+    .uppercase{}
+    .readonlySelect{}
+    span.error,label.error, span[id*="errors"]{
+        color: red;
+        font-size: 13px;
+        letter-spacing:.1px;
+        font-family:sanspro;
+        font-weight:100;
+        display:block;
+    }
+    .pointer{
+        cursor: pointer;
+    }
+    .pointer:hover{
+        color: #1a1a1a;
+    }
+    .underline{
+        text-decoration: underline;
+    }
+    .date{
+        padding-left: 4px;
+    }
+</style>
+
+<script>
+    function showHide(){
+        $('.secret').slideToggle('slow');
+    }
+    function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+</script>
+<style>
+    td.secret {
+        display:none;
+    }
+</style>
+
+<!--[if lte IE 8]>
+             <link rel="stylesheet" type="text/css" href="resources/css/ie/ie.css" />
+     <![endif]-->
+
+
+     
+     <script type="text/javascript">
+         lang = window.location.pathname.substring(0, 3);
+         now = new Date(1637571854641);
+         window.setInterval(function() {
+             now.setSeconds(now.getSeconds() + 1);
+         }, 1000)
+         $(document).ready(function() {
+             $('a.paddingurl').each(
+             function(idx, itm) {
+                 var oldurl = $(itm).attr('href');
+                 $(itm).attr('href', lang + oldurl);
+             }
+         )
+     
+         
+             
+                
+             
+              
+                 $(".uppercase").keyup(function() {
+                     $(this).val($(this).val().toUpperCase());
+                 });
+                 $('.readonlySelect>option:not(:selected)').remove();
+                 //$('span[id$="errors"]').each(function(idx,itm){$('#'+itm.id.split('.')[0]).change(function(){$(itm).remove()}).keyup(function(){$(itm).remove()}).focus()});
+                 $('span[id$="errors"]').each(function(idx, itm) {
+                     $('#' + itm.id.split('.')[0]).change(function() {
+                         $(itm).remove()
+                     }).focus()
+                 });
+             });
+       function digit_format( expr, decplaces ) {
+                 var str = "" + Math.round( eval( expr) * Math.pow(10,decplaces ))
+                 while (str.length <= decplaces ) {
+                     str = "0" + str
+                 }
+                 var decpoint = str.length - decplaces
+                 return str.substring(0,decpoint) + "." + str.substring(decpoint,str.length);	  
+             }
+             
+             function number_format( expr, decplaces ) {
+                 var str = digit_format(removeNumberFormat(expr+""),decplaces);
+                 var decpoint = str.length - decplaces;
+     
+                 var valpart = str.substring(0,decpoint-1);
+                 var decpart = str.substring(decpoint,str.length);
+                 var retStr = "";
+                 var nI = 0;
+                 var awal = 0;
+                 var tmpStr = "";
+           
+                 if( valpart.length > 3 ) {
+                     for( nI = valpart.length; nI > 0; nI-=3) {
+                         awal = nI - 3;
+                         if(awal < 0 ) awal = 0;
+                         tmpStr = valpart.substring(awal,nI);
+                         if( nI == valpart.length) {
+                             retStr = tmpStr;
+                         } else {
+                             retStr = tmpStr + "," + retStr;
+                         }
+                     }
+                     retStr = retStr + "." + decpart;
+                 } else {
+                     return str;
+                 }
+                 return retStr;
+             }
+             
+             function removeNumberFormat( expr_par ) {	
+                 var retStr ="";
+                 var nI = 0; 
+                 var expr = "";
+         
+                 var expr = expr_par + "";
+                 if( expr.length <= 0 ) return "";
+         
+                 while( nI < expr.length ) {
+             if( expr.charAt( nI ) != ","  ) {
+                         retStr += expr.charAt(nI);
+             }
+             nI++;
+                 }
+         
+                 return retStr;
+             }
+             
+             function number_formatfield(idfield){            
+                 if (!document.getElementById) 	return;		
+                 var field = document.getElementById(idfield);	
+                 field.value = number_formatfieldvalue(field.value);
+             }
+             
+             function number_formatfieldvalue(idfield){
+                 //format field yang sudah diinput by value field		
+                 if (!document.getElementById) 	return;		
+                 var field = idfield;//document.getElementById(idfield);	
+                 var ret = number_format(0,2);
+         
+                 if (cekInputIsNum(str2num(removeNumberFormat(field)))) {
+             field = str2num(removeNumberFormat(field));
+             ret = number_format(field,2);
+                 }
+                 return ret;
+           
+             }
+             
+             
+     function MM_findObj(n, d) { //v4.01
+       var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+         d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+       if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+       for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+       if(!x && d.getElementById) x=d.getElementById(n); return x;
+     }
+     
+     </script>
+
+        <script type="text/javascript" src="/resources/jquery-validation-1.9.0/jquery.validate.js"></script>
+        <script type="text/javascript" src="/resources/jquery-validation-1.9.0/additional-methods.js"></script>    
+        <link rel="stylesheet" type="text/css" href="/resources/css/epin-online.css">
+            <link rel="stylesheet" type="text/css" href="/resources/css/bootstrap.css">
+                <link rel="stylesheet" href="/resources/jquery-ui-1.8.18.custom/css/smoothness/jquery-ui-1.8.18.custom.css" />
+                <script type="text/javascript" src="/resources/jquery-ui-1.8.18.custom/js/jquery-ui-1.8.18.custom.min.js"></script>
+                <script type="text/javascript" src="/resources/js/jquery.dateFormat-1.0.js"></script>
+                <script type="text/javascript" src="/resources/jquery-validation-1.9.0/jquery.validate.js"></script>
+                <script type="text/javascript" src="/resources/jquery-validation-1.9.0/additional-methods.js"></script>
+                <script type="text/javascript" src="/resources/js/numericInput.js"></script>
+                <script type="text/javascript" src="/resources/js/numeral.min.js"></script>
+                <!-- <link rel="stylesheet" href="/resources/css/styleDropDown.css">    -->
+
+                
+
+                <script type="text/javascript">
+                    var total = '0';
+                    var totalPv = '';
+                     var totalQty = 0;
+                    function calculateSubTotal(counter, dp, qty, prdcd) {
+                        var temp = (dp * qty);
+                        total = 0;
+                        totalPv = 0;
+                          totalQty = 0;
+                        $('input[name^="qty"]').each(function () {
+                            var tempQty = $(this).val();
+                            if (tempQty == "") {
+                                tempQty = 0;
+                            }
+                            var tempId = $(this).attr('id');
+                            var tempPrice = $('#div' + tempId).text();
+                            var tempPv = $('#divpv' + tempId).text();
+                            total += (parseFloat(tempQty) * parseFloat(tempPrice));
+                            totalPv += (parseFloat(tempQty) * parseFloat(tempPv));
+                            
+                            totalQty += parseFloat(tempQty);
+                        });
+                        $('#div' + counter).text(numeral(temp).format('0,0.00'));
+                        $('#divTotal').text(numeral(total).format('0,0.00'));
+                        var type = $('input[name=type]:checked', '#form').val();
+                        if (type == "1") {
+                            $('#divTotalPv').text(numeral(totalPv).format('0,0.00'));
+                        } else {
+                            $("#divTotalPv").hide();
+                            $("#divFinalTotalPv").hide();
+                        }
+                        $("#tempQty").val(qty);
+                        $("#prdcd" + counter).val(prdcd);
+                        calculateFinalTotal();
+                    }
+
+                    function calculateFinalTotal() {
+                        var totalPin = parseInt($('#total_pin').val());
+                        $('#divFinalTotalText').text("Total " + totalPin + " ePin");
+                        $('#divFinalTotal').text(numeral(total * totalPin).format('0,0.00'));
+                        var type = $('input[name=type]:checked', '#form').val();
+                        if (type == "1") {
+                            //$('#divFinalTotalPv').text(numeral(totalPv * totalPin).format('0,0.00'));
+                            $('#divFinalTotalPv').text("");
+                        } else {
+                            $("#divTotalPv").hide();
+                            $("#divFinalTotalPv").hide();
+                        }
+                        $('#total').val(total);
+                        $('#totalPv').val(totalPv);
+                    }
+
+                    function validateEmail(email) {
+                        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                        return re.test(email);
+                    }
+
+                    function submitForm() {
+                        var receiver = $("#username_receiver").val();
+                        var totalPin = $("#total_pin").val();
+                        var type = $('input[name=type]:checked', '#form').val()
+                        var kittype = $('input[name=kittype]:checked', '#form').val()
+                        if (type == undefined) {
+                            alert("Type must be choosen");
+                            return false;
+                        }
+
+                        if (type == "1") {
+                            if (kittype == undefined) {
+                                alert("Kit Type must be selected");
+                                return false;
+                            }
+                        }
+                        if (totalPin == "" || totalPin == "0") {
+                            alert("Total ePIN must be filled");
+                            return false;
+                        }
+                        if (total == 0) {
+                            alert("Please choose product !");
+                            return false;
+                        }
+
+
+                        var email = $('#email').val();
+                        var confirmationEmail = $('#confirmationEmail').val();
+                        var cnt = 0;
+                        if (total == 0) {
+                            alert("Please choose packet !");
+                            return false;
+                        } else {
+                            /* if (!validateEmail(email)) {
+                             cnt = 1;
+                             } else {
+                             if (confirmationEmail != email) {
+                             cnt = 2;
+                             }
+                             }
+                             if (cnt == 1) {
+                             alert("Format email is invalid !");
+                             return false;
+                             } else if (cnt == 2) {
+                             alert("Email and confirmation email is not match !");
+                             return false;
+                             } else if (cnt == 0) {*/
+                       if (totalQty > 1 ) {
+                            if (confirm('Apakah anda yakin membeli '+totalPin+' ePIN dengan qty '+totalQty+' Produk  per 1 Pin ?')) {                                
+                                $("#form").submit();
+                            } else {
+                               return false;
+                            }
+                        }else{
+                            $("#form").submit();
+                        }
+                            //}
+                        }
+                    }
+
+                    function showHideKittype(type) {
+                        var q = 2;
+
+                        if (type == "1") {
+                            $("#divKittype").show();
+                              $("#divKittypeNote2").show();
+                            $("#divBv1").show();
+                            for (var i = 1; i <= q; i++) {
+                                $("#divBv2" + i).show();
+                            }
+                            $("#divBv3").show();
+                            $("#divBv4").show();
+                            $("#divTotalPv").show();
+                            $("#divFinalTotalPv").show();
+                        } else if (type == "A") {
+                            $("#divKittype").hide();
+                              $("#divKittypeNote2").hide();
+                            $("#divBv1").hide();
+                            for (var i = 1; i <= q; i++) {
+                                $("#divBv2" + i).hide();
+                            }
+                            $("#divBv3").hide();
+                            $("#divBv4").hide();
+                            $("#divTotalPv").hide();
+                            $("#divFinalTotalPv").hide();
+                        }
+                    }
+
+
+
+                    $(document).ready(function () {
+                        $("input[name^='qty']").click(
+                                function () {
+                                    var id = this.id;
+                                    var temp = $('#' + id).val();
+                                    $(this).val('');
+
+                                    if (temp == "0") {
+                                        $(this).val("");
+                                    } else {
+                                        if ($(this).val() == "")
+                                        {
+                                            $(this).val(temp);
+                                        }
+                                    }
+                                });
+
+                        $("input[name^='qty']").blur(
+                                function () {
+                                    if ($(this).val() == "") {
+                                        $(this).val("0");
+                                    }
+                                });
+
+
+                        $("input[name^='total_pin']").click(
+                                function () {
+                                    var id = this.id;
+                                    var temp = $('#' + id).val();
+                                    $(this).val('');
+
+                                    if (temp == "0") {
+                                        $(this).val("");
+                                    } else {
+                                        if ($(this).val() == "")
+                                        {
+                                            $(this).val(temp);
+                                        }
+                                    }
+                                });
+
+                        $("input[name^='total_pin']").blur(
+                                function () {
+                                    if ($(this).val() == "") {
+                                        $(this).val("0");
+                                    }
+                                });
+
+
+                    });
+
+                </script>
+                <style>
+                    .form {
+                        height: 30px;
+                    }
+                </style>
+                </head>    
+
+                <!-- tedy - 27/08/2019 -->
+                <body class="home-page">
+                    <!--HEADER desktop-->
+                    
+
+
+<!--MOBILE MENU-->
+<!-- <link rel="stylesheet" href="/resources/css/new-navigation-mobile.css" type="text/css" media="screen" />  -->
+<link rel="stylesheet" href="/resources/css/bootstrap.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/resources/css/bootstrap-min.css" type="text/css" media="screen" />
+<!-- <link rel="stylesheet" href="/resources/css/newstyle2019.css" type="text/css" media="screen" />  -->
+<style>
+    @font-face {
+        font-family: opensans;
+        src: url(/resources/font/OpenSans-Regular.ttf);
+    }
+
+    @font-face {
+        font-family: opensans-semi;
+        src: url(/resources/font/OpenSans-Semibold.ttf);
+    }
+
+    .namamemberIG {
+        font-family: opensans-semi;
+        font-size: 11px;
+        color: #252525;
+        text-align: left;
+        line-height: 12px;
+        padding-bottom: 0;
+        letter-spacing: .5px
+    }
+
+    .memberidIG {
+        font-family: opensans-semi;
+        font-size: 9px;
+        text-align: left;
+        color: #979797;
+        letter-spacing: .5px
+    }
+
+    .menu-item2 {
+        padding: 15px;
+    }
+
+    .menu-item2 a {
+        color: #1a1a1a;
+    }
+
+    .sub-menu-gmbr {
+        z-index: 2000;
+        position: relative;
+        background: #eaeaea;
+    }
+
+    ul.dropdown ul li {
+        border: none !important;
+    }
+
+    .ul.dropdown {
+        margin-left: 0px;
+        margin-top: 63px;
+    }
+
+    .putArrow-icon {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    @media screen and (max-width: 1200px) {
+        .sub-menu-gmbr {
+            width: 100% !important;
+        }
+
+        ul.dropdown {
+            margin-left: -75px;
+        }
+
+        .sub-md-account {
+            margin-left: 0px !important;
+        }
+
+        .sub-md-utility {
+            margin-left: -154px !important;
+            width: 239px !important;
+        }
+    }
+
+    @media screen and (min-width: 960px) and (max-width: 992px) {
+        /* .nav-container {
+            display: none;
+        }
+
+        .nav-toggle {
+    display: none;
+    float: right;
+    line-height: 1;
+    display: inline-block;
+    border: none;
+    background-color: #fff;
+}
+.nav-toggle .icon-menu {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    fill: none;
+} */
+    }
+
+</style>
+<!--end MOBILE MENU-->
+
+<!--EDIT 22072019-->
+<div class="container-fluid borderheaader-ma-1 bgcolor">
+    <div class="container-memberarea">
+        <!--Dekstop View-->
+        <div class="row displayie6-DESKTOP">
+            <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+                <a href="/">
+                    <img src="/resources/images/logo.png" alt="VITO" title="VITO" style="margin-top: 20px; margin-bottom: 10px; width: 100px;" align="left" />
+                </a>
+            </div>
+            <div class="col-lg-10 col-md-8 col-sm-12 col-xs-12">
+                <ul class="dropdown">
+                    <li  class="putArrow-icon" style="padding-left:10px; padding-right:10px; height: 32px;"><a href="/member" >Home</a></li>
+                    <li  class="putArrow-icon" style="padding-left:10px; padding-right:10px;  height: 32px;"><a href="#" >Account</a>
+                        <ul class="sub_menu" style="width:300px">
+                            <div class="col-lg-12 row sub-menu-gmbr" style="width: 570px; padding-right: 0px;
+                                 margin-right: 0px;
+                                 padding-left: 0px;
+                                 margin-left: -10px;
+                                 border-radius:5px;">
+                                <div class="col-lg-4 col-md-6" style="white-space: nowrap; padding-top:10px">
+                                    <li><a href="/member/edit-profile">Edit Profile</a></li>
+                                    <li><a href="/member/register">Register New Member</a></li>
+									<li><a href="/member/upgrade">Upgrade</a></li>        
+                                    <li><a href="/member/repeat-order">Repeat Order</a></li> 
+                                </div>
+
+                                <div class="col-lg-8 hidden-md" align="center" style="padding-right: 0px;">
+                                    <img src="/resources/images/memberarea-bs/gmbr-1.jpg" alt="VITO" title="VITO" style="width: 100%; padding:10px 0 10px 10px;" />
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="active" class="putArrow-icon" style="padding-left:10px; padding-right:10px;  height: 32px;"><a href="#" class="active">Transaction</a>
+                        <ul class="sub_menu" style="width:300px">
+                            <div class="col-lg-12 row sub-menu-gmbr" style="width: 675px; padding-right: 0px;
+                                 margin-right: 0px;
+                                 padding-left: 0px;
+                                 margin-left: -13px;
+                                 border-radius:5px;">
+                                <div class="col-lg-5 col-md-12" style="white-space: nowrap; padding-top:10px">
+                                    <li><a href="/member/order-transaction-code-step1">Purchase ePin</a></li>
+ 
+                                    <li><a href="/member/history-order-transaction-code/1">Purchase Report</a></li>
+                                    <li><a href="/member/transfer-pin-step1">Transfer ePIN</a></li>
+                                    <li><a href="/member/check-valid-pin2">Transfer ePin Report</a></li>
+                                    <li><a href="/member/check-transaction-code">Check Status ePin</a></li>
+                                    <li><a href="/member/check-valid-pin3">List ePin</a></li>
+                                </div>
+
+                                <div class="col-lg-7 hidden-md" align="center">
+                                    <img src="/resources/images/epin.jpg" alt="VITO" title="VITO" style="width: 100%; padding:10px; " />
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+
+
+
+
+
+                    <li  class="putArrow-icon" style="padding-left:10px; padding-right:10px;  height: 32px;"><a href="#" >Bonus</a>
+                        <ul class="sub_menu" style="width:325px;">
+                            <div class="col-lg-12 row sub-menu-gmbr" style="width: 675px; padding-right: 0px;
+                                 margin-right: 0px;
+                                 padding-left: 0px;
+                                 margin-left: -160px;
+                                 border-radius:5px;">
+                                <div class="col-lg-5 col-md-12" style="white-space: nowrap; padding-top:10px">
+
+                                    <li><a href="/member/bonus-daily-new">Daily Bonus </a></li>
+                                     <li><a href="/member/bonus-monthly-new">Monthly Bonus </a></li>
+                                    <li><a href="/member/wallet-bonus-statement">Bonus Account Statement</a></li>
+                                    
+                                   
+                                    <li><a href="/member/reward">Reward PV</a></li>       
+
+                                </div>
+                                <div class="col-lg-7 hidden-md" align="center">
+                                    <img src="/resources/images/bonus.jpg" alt="VITO" title="VITO" style="width: 100%; padding:10px;" />
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+
+                    <li  class="putArrow-icon" style="padding-left:10px; padding-right:10px;  height: 32px;"><a href="#" >Report</a>
+                        <ul class="sub_menu" style="width:325px;">
+                            <div class="col-lg-12 row sub-menu-gmbr" style="width: 675px; padding-right: 0px;
+                                 margin-right: 0px;
+                                 padding-left: 0px;
+                                 margin-left: -160px;
+                                 border-radius:5px;">
+                                <div class="col-lg-5 col-md-12" style="white-space: nowrap; padding-top:10px;">
+                                    <li><a href="/member/genealogy">Geneology (Placement)</a></li>
+                                    <li><a href="/member/report-pair-volume-ro">Network Performance Report</a></li>
+                                    <li><a href="/member/check-omzet">Omzet Report</a></li>
+                                    <li><a href="/member/list-direct-sponsor">Direct Sponsor Report</a></li>
+                                    <li><a href="/member/personal-purchase-report">Personal Purchase Report</a></li>
+
+                                </div>
+                                <div class="col-lg-7 hidden-md" align="center">
+                                    <img src="/resources/images/report.jpg" alt="VITO" title="VITO" style="width: 100%; padding:10px;" />
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    
+                        
+                        
+
+                        
+                    
+                    <li  class="putArrow-icon" style="padding-left:10px; padding-right:10px;  height: 32px;"><a href="#" >Utility</a>
+                        <ul class="sub_menu" style="">
+                            <div class="col-lg-12 row sub-menu-gmbr sub-md-utility" style="width: 675px; padding-right: 0px;
+                                 margin-right: 0px;
+                                 padding-left: 0px;
+                                 margin-left: -250px;
+                                 border-radius:5px;">
+                                <div class="col-lg-5 col-md-12" style="white-space: nowrap; padding-top:10px">
+                                    <li><a href="/member/change-password">Change Passsword</a></li>
+                                    <li><a href="/member/change-password-transaction">Change Passsword Transaction</a></li>
+                                    <li><a href="/member/download">Download</a></li>
+
+                                </div>
+                                <div class="col-lg-7 hidden-md" align="center">
+                                    <img src="/resources/images/utility.jpg" alt="VITO" title="VITO" style="width: 100%; padding:10px;" />
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="putArrow-icon" style="padding-left:10px; padding-right:10px;  height: 32px;"><a href="/member/logout">Sign Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <!--End Dekstop View-->
+
+    <!--Mobile View-->
+    <div class="row displayie6-MOBILE">
+        <!--MOBILE view - logo-->
+        <div class="container-fluid settingheight hidden-lg hidden-md">
+            <table width="100%">
+                <tr>
+                    <td>
+                        <table width="100%" border="0">
+                            <tr>
+                                <td width="10%"><a href="/"><img src="/resources/images/logo.png" alt="VITO" title="VITO" style="width:80px; margin-top:15px; margin-bottom:15px;" align="left" /></a></td>
+                                <td width="90%">
+                                    <div style="border-left:1px solid #ccc; padding-left:5px">
+                                            <!-- <div class="namamemberIG">BERITA55 <img src="/resources/images/icon/indonesia_flag.jpg"  width="20px" height="15px"/></div>  -->
+                                        <div class="memberidIG">Ratna Mardiana</div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <!--MENU MOBILE-->
+                        <table width="100%">
+                            <tr>
+                                <td>
+                                    <table width="100%" border="0">
+                                        <tr>
+                                            <td width="50%">
+                                                <button class="nav-toggle">
+                                                    <div class="icon-menu"><img src="/resources/images/memberarea-bs/menu-navigation.png" align="right" alt="VITO" /></div>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <div class="nav-container" style="margin-top:45px;">
+                                        <ul class="nav-menu menu">
+                                            <li class="menu-item"> <a href="/member" class="menu-link">Home</a></li>
+                                            <li class="menu-item has-dropdown"> <a href="#" class="menu-link">Account</a>
+                                                <ul class="nav-dropdown menu" style="border:none">
+                                                    <a href="/member/edit-profile">
+                                                        <li class="menu-item2" style="border-bottom:none">Edit Profile </li>
+                                                    </a>
+                                                    <a href="/member/register">
+                                                        <li class="menu-item2" style="border-bottom:none">Register New Member</li>
+                                                    </a>
+													     <a href="/member/upgrade">
+                                                        <li class="menu-item2" style="border-bottom:none">Upgrade</li>
+                                                    </a>
+                                                    <a href="/member/repeat-order">
+                                                        <li class="menu-item2" style="border-bottom:none">Repeat Order</li>
+                                                    </a>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item has-dropdown"> <a href="#" class="menu-link" >Transaction</a>
+                                                <ul class="nav-dropdown menu" style="border:none">
+                                                    <a href="/member/order-transaction-code-step1">
+                                                        <li class="menu-item2" style="border-bottom:none">Purchase ePin (Registration) </li>
+                                                    </a>
+                                               
+                                                    <a href="/member/history-order-transaction-code/1">
+                                                        <li class="menu-item2" style="border-bottom:none"> Purchase Report</li>
+                                                    </a>
+                                                    <a href="/member/transfer-pin-step1">
+                                                        <li class="menu-item2" style="border-bottom:none"> Transfer ePin </li>
+                                                    </a>
+                                                    <a href="/member/check-valid-pin2">
+                                                        <li class="menu-item2" style="border-bottom:none"> Transfer ePin Report</li>
+                                                    </a>
+                                                    <a href="/member/check-transaction-code">
+                                                        <li class="menu-item2" style="border-bottom:none"> Check Status ePin </li>
+                                                    </a>
+                                                    <a href="/member/check-valid-pin3">
+                                                        <li class="menu-item2" style="border-bottom:none"> List ePin </li>
+                                                    </a>
+
+                                                </ul>
+                                            </li>
+
+                                            <li class="menu-item has-dropdown"> <a href="#" class="menu-link">Bonus</a>
+                                                <ul class="nav-dropdown menu" style="border:none">
+
+                                                    <a href="/member/bonus-daily-new">
+                                                        <li class="menu-item2" style="border-bottom:none"> Daily Bonus </li>
+                                                    </a>
+                                                    
+                                                     <a href="/member/bonus-monthly-new">
+                                                        <li class="menu-item2" style="border-bottom:none"> Monthly Bonus </li>
+                                                    </a>
+                                                    
+                                                    
+                                                                                        
+
+                                                    <a href="/member/wallet-bonus-statement">
+                                                        <li class="menu-item2" style="border-bottom:none">Bonus Account Statement </li>
+                                                    </a>
+                                                    
+                                                    
+                                                  
+
+                                                    <a href="/member/reward">
+                                                        <li class="menu-item2" style="border-bottom:none">Reward PV </li>
+                                                    </a>
+
+                                                </ul>
+                                            </li>
+
+                                            <li class="menu-item has-dropdown"> <a href="#" class="menu-link">Report</a>
+                                                <ul class="nav-dropdown menu" style="border:none">
+                                                    <a href="/member/genealogy">
+                                                        <li class="menu-item2" style="border-bottom:none">Geneology (Placement)</li>
+                                                    </a>
+                                                    <a href="/member/report-pair-volume-ro">
+                                                        <li class="menu-item2" style="border-bottom:none">Network Performance Report</li>
+                                                    </a>
+                                                    <a href="/member/check-omzet">
+                                                        <li class="menu-item2" style="border-bottom:none">Omzet Report</li>
+                                                    </a>
+                                                    <a href="/member/list-direct-sponsor">
+                                                        <li class="menu-item2" style="border-bottom:none">Direct Sponsor Report </li>
+                                                    </a>
+                                                    <a href="/member/personal-purchase-report">
+                                                        <li class="menu-item2" style="border-bottom:none">Personal Purchase Report </li>
+                                                    </a>
+
+
+                                                </ul>
+                                            </li>
+
+                                            
+                                                
+                                                
+
+                                                
+                                            
+
+
+                                            <li class="menu-item has-dropdown"> <a href="#" class="menu-link">Utility</a>
+                                                <ul class="nav-dropdown menu" style="border:none">
+                                                    <a href="/member/change-password">
+                                                        <li class="menu-item2" style="border-bottom:none">Change Passsword</li>
+                                                    </a>
+                                                    <a href="/member/change-password-transaction">
+                                                        <li class="menu-item2" style="border-bottom:none">Change Password Transaction</li>
+                                                    </a>
+                                                    <a href="/member/download">
+                                                        <li class="menu-item2" style="border-bottom:none">Download</li>
+                                                    </a>
+
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item"> <a href="/member/logout" class="menu-link">Sign Out</a> </li>
+
+                                        </ul>
+                                    </div>
+                                    </nav>
+
+                                    <script>
+                                        $(function () {
+                                            var html = $('html, body'),
+                                                    navContainer = $('.nav-container'),
+                                                    navToggle = $('.nav-toggle'),
+                                                    navDropdownToggle = $('.has-dropdown');
+
+                                            // Nav toggle
+                                            navToggle.on('click', function (e) {
+                                                var $this = $(this);
+                                                e.preventDefault();
+                                                $this.toggleClass('is-active');
+                                                navContainer.toggleClass('is-visible');
+                                                html.toggleClass('nav-open');
+                                            });
+
+                                            // Nav dropdown toggle
+                                            navDropdownToggle.on('click', function () {
+                                                var $this = $(this);
+                                                $this.toggleClass('is-active').children('ul').toggleClass('is-visible');
+                                            });
+
+                                            // Prevent click events from firing on children of navDropdownToggle
+                                            navDropdownToggle.on('click', '*', function (e) {
+                                                e.stopPropagation();
+                                            });
+                                        });
+
+                                    </script>
+                                </td>
+                            </tr>
+                        </table>
+                        <!--end MENU MOBILE-->
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--end logo-->
+    </div>
+    <!--end MOBILE-->
+</div>
+
+                    <!--end HEADER mobile-->
+
+                    <!--CONTENT-->
+                    <div class="container-fluid bg-fluid">
+                        <div class="container-memberarea" style="background:white">     
+                            <!--Sub Header  -->
+    <div class="row displayie6-DESKTOP welcomeheight">
+        <!-- <div class="col-lg-2 col-md-2 fontmemberarea"> 
+        </div>  -->
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="float:right">
+            <table width="100%" cellpadding="0" cellspacing="0" align="right">
+                <tr>
+                    <td width="835" class="welcome" style=" padding-top:7px"><strong>Welcome, <span style="color:#df7f18"><i><u>Ratna Mardiana</u></i></span></strong>
+                        &nbsp;&nbsp;                                                
+                    </td>
+                    <td width="13">&nbsp;</td>
+                    <td><a href="/member/edit-profile"><img src="/resources/images/icon-edit-profile.png" border="0"  alt="Edit Profile"  title="Edit Profile"/></a></td>
+                    <td width="13">&nbsp;</td>
+                    <td><a href="/member/wallet-bonus-statement"><img src="/resources/images/icon-ewallet.png" border="0" alt="Bonus Account Statement"  title="Bonus Account Statement"/></a></td>
+                    <td width="13">&nbsp;</td>
+                    <td><a href="/member/register"><img src="/resources/images/icon-register.png" border="0" alt="Register New Member"  title="Register New Member"/></a></td>
+                    <td width="13">&nbsp;</td>
+                    <td><a href="/member/bonus-daily-new"><img src="/resources/images/icon-daily-bonus.png" border="0" alt="Daily Bonus"  title="Daily Bonus"/></a></td>
+
+                    
+                    <td width="13">&nbsp;</td>
+                    <td><a href="/member/genealogy"><img src="/resources/images/icon-genealogy.png" border="0" alt="Genealogy"  title="Genealogy"/></a></td>
+                    <td width="13">&nbsp;</td>
+                    <td><a href="/member/list-direct-sponsor"><img src="/resources/images/icon-leadership.png" border="0" alt="Direct Sponsor Report"  title="Direct Sponsor Report"/></a></td>
+                    <td width="13">&nbsp;</td>
+                    <td><a href="/member/report-pair-volume-ro"><img src="/resources/images/icon-network-perform-report.png" border="0" alt="Network Performance Report"  title="Network Performance Report" /></a></td>   
+                    <td width="3">&nbsp;</td>              
+                </tr>
+            </table>
+        </div>
+    </div>             
+
+                            <div class="title-memberarea3"><img src="/resources/images/memberarea-bs/personal-page-icon.png" style="margin-top:-7px"/> &nbsp; <span class="titleatas-memberarea">Purchase ePIN - Step-1</span></div>
+                            <!--<div class="item-bg text-left"><span class="infont-memberarea font12px">Informasi Data Pribadi</span></div-->
+
+                            <form id="form" name="form" action="order-transaction-code-step1" method="post">
+
+
+                                <input type="hidden" name="total" id="total"  value="0.0"/>
+                                <input type="hidden" name="totalPv" id="totalPv" value="0.0"/>
+
+                                <div class="row" style="margin-top:19px"><!-- id="space02"-->
+                                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02 abu2">Type : </div>
+                                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 textma3 padd02">                                     
+
+                                        <label>
+                                            <input type="radio" name="type"  id="registration"  checked="true"  onchange="showHideKittype(this.value)"   value="1" />    Registration                                                                                   
+                                        </label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label>
+                                            <input type="radio" name="type"  id="recon"    onchange="showHideKittype(this.value)"   value="A" /> Repeat Order                                       
+                                        </label>
+                                    </div>
+                                </div> 
+
+                                <div class="row" style="margin-top:19px;display:block"   name="divKittype" id="divKittype" >
+                                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02 abu2">Kit Type <span class="merah">*</span> : </div>
+                                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 textma3 padd02">   
+                                        <!--<label>
+                                              <input type="radio" name="kittype"  id="member"       value="0" /> Member                                                                                   
+                                          </label>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+                                        <label>
+                                            <input type="radio" name="kittype"  id="bronze"   onchange="showDetailKittype(this.value)"     value="2" /> Silver (1 BV)                                                                                     
+                                        </label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label>
+                                            <input type="radio" name="kittype"  id="gold"    onchange="showDetailKittype(this.value)"     value="3" /> Gold  (5 BV)                                        
+                                        </label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label>
+                                            <input type="radio" name="kittype"  id="platinum"   onchange="showDetailKittype(this.value)"    value="4" />  Platinum (10 BV)                                                                                     
+                                        </label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label>
+                                            <input type="radio" name="kittype"  id="titanium"   onchange="showDetailKittype(this.value)"     value="5" />  Titanium (50 BV)                                                                                     
+                                        </label>
+
+
+                                    </div>
+                                </div> 
+
+
+
+                                <div class="row" style="margin-top:19px;display: none" name="divKittypeUpgrade" id="divKittypeUpgrade" >
+                                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02 abu2">Kit Type <span class="merah">*</span> : </div>
+                                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 textma3 padd02">                                     
+                                        <label>
+                                            <input type="radio" name="kittype"  id="classic"      value="1" />Classic                                                                                   
+                                        </label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label>
+                                            <input type="radio" name="kittype"  id="bronze"      value="2" />Bronze                                                                                   
+                                        </label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label>
+                                            <input type="radio" name="kittype"  id="silver"      value="3" />Silver                                       
+                                        </label>
+
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="row" style="margin-top:19px"><!-- id="space02"-->
+                                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02 abu2">Total PIN <span class="merah">*</span> : </div>
+                                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 textma3 padd02">                                     
+                                        <input type="text" name="total_pin" id="total_pin" class="textfield01 widthtextfieldreg-editprofile "  tabindex="3" 
+                                               onblur="return numericInput(this, event, 'false', 'false', '0');"
+                                               onKeyUp="return numericInput(this, event, 'false', 'false', '0');" 
+                                               onchange="calculateFinalTotal()"
+                                               value="1"
+                                               style="max-width:48px"/>
+                                    </div>
+                                </div> 
+                                               
+                                                <div style="display:block;margin-left:24px" class="merah" name="divKittypeNote2" id="divKittypeNote2">
+
+                                </div>      
+
+                                <input type="hidden" id="tempQty" value="">
+                                    
+                                    <table cellpadding="0" cellspacing="0" align="center" style="max-width:834px; width:100%; margin-top:5px">
+                                        <tr><td class="opensansemi font14px textcenter topheaderr white centertext leftrightbdr1" style="letter-spacing:.4px" colspan="5">Isi Produk per 1 PIN (SILVER / GOLD / PLATINUM / TITANIUM) atau 1 PIN RO</td></tr>
+                                        <tr>
+                                            <td width="49%" class="arialfont font13px topheader1 white centertext leftbdr" style="margin:0 auto">
+                                                Product                     	</td>
+                                            <td width="11%" class="arialfont font13px topheader1 white centertext" style="margin:0 auto">
+                                                QTY                    	</td>
+
+
+                                            <td width="13%"   class="arialfont font13px topheader1 white centertext" style="margin:0 auto;">
+                                                <div name="divBv1" id="divBv1">   BV </div>                  	</td>
+
+
+
+                                            <td width="13%" class="arialfont font13px topheader1 white centertext" style="margin:0 auto">
+                                                Price (Rp.)                    	</td>
+
+                                            <td width="13%" class="arialfont font13px topheader1 white centertext rightbdr" style="margin:0 auto">
+                                                Subtotal                    	</td>
+                                        </tr>
+                                        <!--START-->
+
+
+                                          
+                                        
+                                              
+                                            
+                                            
+                                            <tr>
+                                                <td class="leftbdr rightfont lineheightstep1 leftpaddingnum2">
+                                                    DETSLIM                                                                        
+                                                </td>
+                                                <td class="rightfont">   
+                                                    <div style="display: none"  id="divqty1">350000.0</div>
+                                                    <div style="display: none"  id="divpvqty1">1.0</div>
+                                                    <input type="hidden" name="prdcd" id="prdcd1" value="DS01" />
+                                                    <input type="text" name="qty" id="qty1" class="qtytextfield"  tabindex="4"
+                                                           
+                                                           value="0"   
+                                                           onblur="return numericInput(this, event, 'false', 'false', '350000.0');"
+                                                           onKeyUp="return numericInput(this, event, 'false', 'false', '350000.0');" 
+                                                           onchange="calculateSubTotal('1', '350000.0', this.value, 'DS01');"
+                                                           />                                                                                    
+                                                </td>
+
+                                                <td    class="rightside rightfont rightpaddingnum"><div name="divBv21" id="divBv21" >1.00</div></td>
+
+                                                <td class="rightside rightfont rightpaddingnum">350,000.00</td>
+
+                                                <td class="rightside rightfont rightpaddingnum rightbdr">
+                                                    <div id="div1">0.00</div>
+                                                </td>
+                                            </tr>
+
+                                              
+                                        
+                                              
+                                            
+                                            
+                                            <tr>
+                                                <td class="leftbdr rightfont lineheightstep1 leftpaddingnum2">
+                                                    DETSLIM REPEAT ORDER                                                                        
+                                                </td>
+                                                <td class="rightfont">   
+                                                    <div style="display: none"  id="divqty2">1750000.0</div>
+                                                    <div style="display: none"  id="divpvqty2">5.0</div>
+                                                    <input type="hidden" name="prdcd" id="prdcd2" value="RO01" />
+                                                    <input type="text" name="qty" id="qty2" class="qtytextfield"  tabindex="5"
+                                                           
+                                                           value="0"   
+                                                           onblur="return numericInput(this, event, 'false', 'false', '1750000.0');"
+                                                           onKeyUp="return numericInput(this, event, 'false', 'false', '1750000.0');" 
+                                                           onchange="calculateSubTotal('2', '1750000.0', this.value, 'RO01');"
+                                                           />                                                                                    
+                                                </td>
+
+                                                <td    class="rightside rightfont rightpaddingnum"><div name="divBv22" id="divBv22" >5.00</div></td>
+
+                                                <td class="rightside rightfont rightpaddingnum">1,750,000.00</td>
+
+                                                <td class="rightside rightfont rightpaddingnum rightbdr">
+                                                    <div id="div2">0.00</div>
+                                                </td>
+                                            </tr>
+
+                                              
+                                        
+
+
+
+
+
+
+
+                                        <tr><td colspan="5" height="2px" class="leftbdr rightbdr"></td></tr>
+
+                                        <tr><td colspan="5" height="2px" class="leftbdr rightbdr"></td></tr>
+                                        <tr>
+                                            <td class="leftbdr rightfont lineheightstep1 leftpaddingnum2 topheader1 rightbdr" style="font-weight:bold; color:#000" colspan="2">
+                                                 Total Produk per 1 ePIN 
+                                            </td>
+
+                                            <td    class="rightside rightfont rightpaddingnum topheader1 font14px" style="color:black; font-weight:bold">
+                                                <div id="divTotalPv"><div ame="divBv3" id="divBv3" >0.00</div>&nbsp;&nbsp;</div>
+
+                                            </td>
+
+                                            <td class="rightside rightfont rightpaddingnum topheader1 font14px" style="color:black; font-weight:bold">
+
+                                            </td>
+                                            <td class="rightside rightfont rightpaddingnum topheader1 font14px" style="color:black; font-weight:bold">
+                                                <div id="divTotal"> 0.00&nbsp;&nbsp;</div>
+                                            </td>
+                                        </tr>  
+
+                                        <tr><td colspan="5" height="2px" class="leftbdr rightbdr"></td></tr>
+                                        <tr>
+                                            <td class="leftbdr rightfont lineheightstep1 leftpaddingnum2 topheader1 rightbdr" style="font-weight:bold; color:#000" colspan="2">
+                                                <div name="divFinalTotalText" id="divFinalTotalText">Total 1 ePin</div>
+                                            </td>
+                                            <td      class="rightside rightfont rightpaddingnum topheader1 font14px" style="color:black; font-weight:bold">
+                                                <div id="divFinalTotalPv"><div name="divBv4" id="divBv4"><!--0.00--></div>&nbsp;&nbsp;</div>
+                                            </td>
+                                            <td class="rightside rightfont rightpaddingnum topheader1 font14px" style="color:black; font-weight:bold">
+
+                                            </td>
+                                            <td class="rightside rightfont rightpaddingnum topheader1 font14px" style="color:black; font-weight:bold">
+                                                <div id="divFinalTotal">0.00&nbsp;&nbsp;</div>
+                                            </td>
+                                        </tr>  
+
+
+                                        <tr><td colspan="5" class="leftbdr rightbdr">
+
+
+
+
+
+
+                                                <!--<tr><td colspan="5" class="leftbdr rightbdr">
+                                                        <table style="width:100%; margin-top:18px" cellpadding="0" cellspacing="0" align="center">
+                                                            <tr><td>
+                                                                    <div class="row" align="center">
+                                                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 lineheight9" align="center">
+                                                                            <div class="row">
+                                                                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 width9 bottomspace99" align="center">
+                                                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6  rightfont-txtfield widthstep1-row1 leftmarginnull">eMail receiver ePIN<span class="red">*</span> :</div>
+                                                                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 leftside leftfont rightmarginnull">                                                                                                            
+                                                <input id="email" name="email" class="String form textfieldepin required email" tabindex="1" type="text" value=""/>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 width9 bottomspace99" align="center">
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6  rightfont-txtfield widthstep1-row1 leftmarginnull">Confirmation eMail receiver ePIN<span class="red">*</span> :</div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 leftside leftfontnumber rightmarginnull">
+                                                <input id="confirmationEmail" name="confirmationEmail" class="String form textfieldepin required email" tabindex="2" type="text" value=""/>
+                                            </div>
+                                        </div>
+                                        <br/> <br/> <br/> <br/> 
+                                        Make sure your email is valid. <br/> 
+                                        For payment type by Credit Card, the ePIN will be send to that email<br/> 
+                                        Others type of payment, the ePIN will send to your member account in menu <a href="/member/check-valid-pin3">Transaction -> List ePIN</a>.
+                                        <br/>
+                                    </div>
+                                </div>                           
+                            </div>
+                        </td></tr>
+                </table>
+                        
+        
+        
+                        
+                        
+            </td></tr>-->
+
+
+
+                                                <tr><td colspan="5" >
+                                                        <table style="width:100%; margin-top:18px" cellpadding="0" cellspacing="0" align="center">
+                                                            <tr><td>
+
+                                                                </td></tr>
+                                                        </table>
+                                                    </td></tr>
+
+
+                                                <tr><td colspan="4" height="8px" class=""></td></tr>            
+                                                <!--END-->
+
+                                                <tr><td class=" bottombox" colspan="5">
+                                                        <div style="padding-top:15px">
+                                                            <div><!--class="row"-->
+
+                                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding-right:0; padding-left:0"><input value="Cancel" class="buttoncancel" onclick="javascript:window.location = '.'" type="button"></div>
+                                                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding-left:0; padding-right:0"><input tabindex="6" value="Next" class="buttonchangepaymentmethod" type="button" onclick="submitForm();"></div>
+                                                            </div>
+                                                        </div>
+                                                    </td></tr>
+
+                                                <br><br>						
+
+                                                        </table>   
+
+
+                                                    </form>
+                                                    </div>
+                                                    </div>
+
+
+                                                    
+<style>
+    .fontfooterma{color:#fff!important}
+</style>
+
+<!--FOOTER desktop-->
+<div class="container-fluid" style="background:#1A7DED">
+    <div class="container-footerma hidden-sm hidden-xs">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left fontfooterma">&copy; Copyright 2021 - VITO - All Rights Reserved </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right fontfooterma">Powered By: <a href="http://www.pineappletech.com" target="_blank" style="color:#fff">PineappleTech</a></div>
+        </div>
+    </div>
+</div>
+<!--end FOOTER desktop-->
+    
+<!--FOOTER mobile-->    
+<div class="container-fluid" style="background:#1A7DED">
+    <div class="container-footerma hidden-lg hidden-md" style="width:100%; display:block">
+        <div class="row">
+            <div class="col-lg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center fontfooterma marginpadingnull" style="padding-bottom:0">&copy;  Copyright 2021 - VITO - All Rights Reserved </div>
+            <div class="col-lg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center fontfooterma marginpadingnull" style="padding:0 0 6px 0">Powered By: <a href="http://www.pineappletech.com" style="color:#fff" target="_blank">PineappleTech</a></div>
+        </div>
+    </div>
+</div>
+<!--end FOOTER mobile-->
+    
+
+                                                    </body>
+                                                    </html>
+                                                   <script>
+
+                    showHideKittype('1');
+                    showDetailKittype('');
+                   function showDetailKittype(kittype) {
+                        if (kittype == "2") {
+                            $("#divKittypeNote2").show();
+                           
+                            $("#divKittypeNote2").html("CONTOH :<Br/>Untuk Kit Type SILVER<br/>Jika anda ingin pesan 1 PIN SILVER, maka kolom Total PIN di isi 1, dan Jumlah BV Produk = 1 BV<br/>Jika anda ingin pesan 2 PIN SILVER, maka Kolom Total PIN di isi 2, dan dan Jumlah BV Produk = 1 BV  ");
+                        } else if (kittype == "3") {
+                            $("#divKittypeNote2").show();
+                           
+                            $("#divKittypeNote2").html("CONTOH :<Br/>Untuk Kit Type GOLD<br/>Jika anda ingin pesan 1 PIN GOLD, maka kolom Total PIN di isi 1, dan Jumlah BV Produk = 5 BV<br/>Jika anda ingin pesan 2 PIN GOLD, maka Kolom Total PIN di isi 2, dan dan Jumlah BV Produk = 5 BV  ");
+                        } else if (kittype == "4") {
+                            $("#divKittypeNote2").show();
+                           
+                            $("#divKittypeNote2").html("CONTOH :<Br/>Untuk Kit Type PLATINUM<br/>Jika anda ingin pesan 1 PIN PLATINUM, maka kolom Total PIN di isi 1, dan Jumlah BV Produk = 10 BV<br/>Jika anda ingin pesan 2 PIN PLATINUM, maka Kolom Total PIN di isi 2, dan dan Jumlah BV Produk = 10 BV  ");
+                        } else if (kittype == "5") {
+                            $("#divKittypeNote2").show();
+                           
+                            $("#divKittypeNote2").html("CONTOH :<Br/>Untuk Kit Type TITANIUM<br/>Jika anda ingin pesan 1 PIN TITANIUM, maka kolom Total PIN di isi 1, dan Jumlah BV Produk = 50 BV<br/>Jika anda ingin pesan 2 PIN TITANIUM, maka Kolom Total PIN di isi 2, dan dan Jumlah BV Produk = 50 BV  ");
+
+                        }
+                    }
+                </script>   
