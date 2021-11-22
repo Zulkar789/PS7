@@ -5,6 +5,7 @@
     "jquery": "^3.6.0",
     "jquery-ui": "^1.13.0",
     "jquery-validation": "^1.19.3",
+    "jquery1.7.2": "^2.0.0",
     "jquery2.0.0": "^2.0.0",
     "menu": "^0.2.5",
     "mobile-menu": "^4.0.0"
