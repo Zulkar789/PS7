@@ -2,6 +2,7 @@
   "dependencies": {
     "common": "^0.2.5",
     "jquery": "^3.6.0",
+    "jquery-ui": "^1.13.0",
     "jquery-validation": "^1.19.3",
     "menu": "^0.2.5"
   }
