@@ -1,0 +1,966 @@
+
+
+
+
+ 
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<link rel="shortcut icon" href="/resources/assets/img/favicon.png" type="image/x-icon">
+<title>VITO</title> 
+    
+
+
+
+
+<!-- <link rel="shortcut icon" href="/resources/images/icon/favicon.ico" type="image/x-icon" /> -->
+<link rel="icon" href="/resources/assets/img/favicon.png" type="image/x-icon" />
+<link rel="stylesheet" href="/resources/css/member.css" />
+<link rel="stylesheet" href="/resources/css-memberarea/memberarea-bs.css">   
+<link rel="stylesheet" href="/resources/css-memberarea/styleDropDown.css">  
+<link rel="stylesheet" href="/resources/css-memberarea/member.css">  
+<link rel="stylesheet" href="/resources/css-memberarea/mobilemenu/new-navigation-mobile.css" type="text/css" media="screen" /> 
+<script type="text/javascript" src="/resources/js/mobilemenu/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="/resources/js/common.js"></script>
+
+<!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="/resources/css-memberarea/ie6.css" />
+    <![endif]-->
+
+<!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href="/resources/css-memberarea/ie8.css" />
+<![endif]-->
+
+<!-- PNG FIX for IE6 -->
+<!--[if lte IE 6]>
+        <script type="text/javascript" src="/resources/js/pngfix/supersleight-min.js"></script>
+<![endif]-->
+
+<script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/menu.js"></script>
+<script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/items1.js"></script>
+<script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/template1.js"></script>        
+<link rel="stylesheet" href="/resources/tigra/menu_files/menu.css" />
+
+
+<style>
+    .required{}
+    .numeric{}
+    .currency{}
+    .uppercase{}
+    .readonlySelect{}
+    span.error,label.error, span[id*="errors"]{
+        color: red;
+        font-size: 13px;
+        letter-spacing:.1px;
+        font-family:sanspro;
+        font-weight:100;
+        display:block;
+    }
+    .pointer{
+        cursor: pointer;
+    }
+    .pointer:hover{
+        color: #1a1a1a;
+    }
+    .underline{
+        text-decoration: underline;
+    }
+    .date{
+        padding-left: 4px;
+    }
+</style>
+
+<script>
+    function showHide(){
+        $('.secret').slideToggle('slow');
+    }
+    function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+</script>
+<style>
+    td.secret {
+        display:none;
+    }
+</style>
+
+<!--[if lte IE 8]>
+             <link rel="stylesheet" type="text/css" href="resources/css/ie/ie.css" />
+     <![endif]-->
+
+
+     
+     <script type="text/javascript">
+         lang = window.location.pathname.substring(0, 3);
+         now = new Date(1637568042674);
+         window.setInterval(function() {
+             now.setSeconds(now.getSeconds() + 1);
+         }, 1000)
+         $(document).ready(function() {
+             $('a.paddingurl').each(
+             function(idx, itm) {
+                 var oldurl = $(itm).attr('href');
+                 $(itm).attr('href', lang + oldurl);
+             }
+         )
+     
+         
+             
+                
+             
+              
+                 $(".uppercase").keyup(function() {
+                     $(this).val($(this).val().toUpperCase());
+                 });
+                 $('.readonlySelect>option:not(:selected)').remove();
+                 //$('span[id$="errors"]').each(function(idx,itm){$('#'+itm.id.split('.')[0]).change(function(){$(itm).remove()}).keyup(function(){$(itm).remove()}).focus()});
+                 $('span[id$="errors"]').each(function(idx, itm) {
+                     $('#' + itm.id.split('.')[0]).change(function() {
+                         $(itm).remove()
+                     }).focus()
+                 });
+             });
+       function digit_format( expr, decplaces ) {
+                 var str = "" + Math.round( eval( expr) * Math.pow(10,decplaces ))
+                 while (str.length <= decplaces ) {
+                     str = "0" + str
+                 }
+                 var decpoint = str.length - decplaces
+                 return str.substring(0,decpoint) + "." + str.substring(decpoint,str.length);	  
+             }
+             
+             function number_format( expr, decplaces ) {
+                 var str = digit_format(removeNumberFormat(expr+""),decplaces);
+                 var decpoint = str.length - decplaces;
+     
+                 var valpart = str.substring(0,decpoint-1);
+                 var decpart = str.substring(decpoint,str.length);
+                 var retStr = "";
+                 var nI = 0;
+                 var awal = 0;
+                 var tmpStr = "";
+           
+                 if( valpart.length > 3 ) {
+                     for( nI = valpart.length; nI > 0; nI-=3) {
+                         awal = nI - 3;
+                         if(awal < 0 ) awal = 0;
+                         tmpStr = valpart.substring(awal,nI);
+                         if( nI == valpart.length) {
+                             retStr = tmpStr;
+                         } else {
+                             retStr = tmpStr + "," + retStr;
+                         }
+                     }
+                     retStr = retStr + "." + decpart;
+                 } else {
+                     return str;
+                 }
+                 return retStr;
+             }
+             
+             function removeNumberFormat( expr_par ) {	
+                 var retStr ="";
+                 var nI = 0; 
+                 var expr = "";
+         
+                 var expr = expr_par + "";
+                 if( expr.length <= 0 ) return "";
+         
+                 while( nI < expr.length ) {
+             if( expr.charAt( nI ) != ","  ) {
+                         retStr += expr.charAt(nI);
+             }
+             nI++;
+                 }
+         
+                 return retStr;
+             }
+             
+             function number_formatfield(idfield){            
+                 if (!document.getElementById) 	return;		
+                 var field = document.getElementById(idfield);	
+                 field.value = number_formatfieldvalue(field.value);
+             }
+             
+             function number_formatfieldvalue(idfield){
+                 //format field yang sudah diinput by value field		
+                 if (!document.getElementById) 	return;		
+                 var field = idfield;//document.getElementById(idfield);	
+                 var ret = number_format(0,2);
+         
+                 if (cekInputIsNum(str2num(removeNumberFormat(field)))) {
+             field = str2num(removeNumberFormat(field));
+             ret = number_format(field,2);
+                 }
+                 return ret;
+           
+             }
+             
+             
+     function MM_findObj(n, d) { //v4.01
+       var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+         d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+       if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+       for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+       if(!x && d.getElementById) x=d.getElementById(n); return x;
+     }
+     
+     </script>
+
+    <!-- <link rel="stylesheet" href="/resources/css/styleDropDown.css">  -->  
+    <link rel="stylesheet" href="/resources/jquery-ui-1.8.18.custom/css/smoothness/jquery-ui-1.8.18.custom.css" />
+    <script type="text/javascript" src="/resources/jquery-ui-1.8.18.custom/js/jquery-ui-1.8.18.custom.min.js"></script>
+    <script type="text/javascript" src="/resources/js/jquery.dateFormat-1.0.js"></script>
+    <style type="text/css">
+        .ui-datepicker-current{
+            color: black !important;
+            font-weight: bold !important;
+            float:right !important;
+        }
+        .ui-datepicker-close{
+            display: none !important;
+        }
+        .ui-datepicker-trigger{
+            border:0 !important;
+            background-color: transparent !important;
+            cursor:pointer !important;
+            vertical-align : middle !important;
+            margin-top:-5px !important;
+        }
+        @media screen and (min-device-width: 768px) and (max-device-width: 992px) { 
+
+        }
+    </style>
+    <script>
+        $(function () {
+            $(".date").datepicker({dateFormat: 'dd MM yy', minDate:new Date(1629792042674), maxDate:new Date(1637568042674), changeMonth: true, showOn: "both", buttonImage: "/resources/images/icon/calendar_empty2.png"});
+
+        });
+        function newPopup(url, windowName) {
+            var width = 900;
+            var height = 600;
+            var left = parseInt((screen.availWidth / 2) - (width / 2));
+            var top = parseInt((screen.availHeight / 2) - (height / 2));
+            var windowFeatures = "width=" + width + ",height=" + height +
+                    ",status,resizable,left=" + left + ",top=" + top +
+                    "screenX=" + left + ",screenY=" + top + ",scrollbars=yes";
+            //window.open(url,windowName,windowFeatures);
+            var myWindow = window.open(url, "", windowFeatures, true);
+        }
+        function cancelTransaction(trcd) {
+            if (confirm("Are you sure want to cancel this transaction" + trcd + " ? ") == true) {
+                $.get("/remote/cancelTransactionOrdtrh", {trcd: trcd}, function (data) {
+                    location.reload();
+                });
+            }
+        }
+    </script>
+</head>
+<body class="home-page">   
+    <!--HEADER desktop-->
+    
+
+
+<!--MOBILE MENU-->
+<!-- <link rel="stylesheet" href="/resources/css/new-navigation-mobile.css" type="text/css" media="screen" />  -->
+<link rel="stylesheet" href="/resources/css/bootstrap.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/resources/css/bootstrap-min.css" type="text/css" media="screen" />
+<!-- <link rel="stylesheet" href="/resources/css/newstyle2019.css" type="text/css" media="screen" />  -->
+<style>
+    @font-face {
+        font-family: opensans;
+        src: url(/resources/font/OpenSans-Regular.ttf);
+    }
+
+    @font-face {
+        font-family: opensans-semi;
+        src: url(/resources/font/OpenSans-Semibold.ttf);
+    }
+
+    .namamemberIG {
+        font-family: opensans-semi;
+        font-size: 11px;
+        color: #252525;
+        text-align: left;
+        line-height: 12px;
+        padding-bottom: 0;
+        letter-spacing: .5px
+    }
+
+    .memberidIG {
+        font-family: opensans-semi;
+        font-size: 9px;
+        text-align: left;
+        color: #979797;
+        letter-spacing: .5px
+    }
+
+    .menu-item2 {
+        padding: 15px;
+    }
+
+    .menu-item2 a {
+        color: #1a1a1a;
+    }
+
+    .sub-menu-gmbr {
+        z-index: 2000;
+        position: relative;
+        background: #eaeaea;
+    }
+
+    ul.dropdown ul li {
+        border: none !important;
+    }
+
+    .ul.dropdown {
+        margin-left: 0px;
+        margin-top: 63px;
+    }
+
+    .putArrow-icon {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    @media screen and (max-width: 1200px) {
+        .sub-menu-gmbr {
+            width: 100% !important;
+        }
+
+        ul.dropdown {
+            margin-left: -75px;
+        }
+
+        .sub-md-account {
+            margin-left: 0px !important;
+        }
+
+        .sub-md-utility {
+            margin-left: -154px !important;
+            width: 239px !important;
+        }
+    }
+
+    @media screen and (min-width: 960px) and (max-width: 992px) {
+        /* .nav-container {
+            display: none;
+        }
+
+        .nav-toggle {
+    display: none;
+    float: right;
+    line-height: 1;
+    display: inline-block;
+    border: none;
+    background-color: #fff;
+}
+.nav-toggle .icon-menu {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    fill: none;
+} */
+    }
+
+</style>
+<!--end MOBILE MENU-->
+
+<!--EDIT 22072019-->
+<div class="container-fluid borderheaader-ma-1 bgcolor">
+    <div class="container-memberarea">
+        <!--Dekstop View-->
+        <div class="row displayie6-DESKTOP">
+            <div class="col-lg-2 col-md-4 col-sm-12 col-xs-12">
+                <a href="/">
+                    <img src="/resources/images/logo.png" alt="VITO" title="VITO" style="margin-top: 20px; margin-bottom: 10px; width: 100px;" align="left" />
+                </a>
+            </div>
+            <div class="col-lg-10 col-md-8 col-sm-12 col-xs-12">
+                <ul class="dropdown">
+                    <li  class="putArrow-icon" style="padding-left:10px; padding-right:10px; height: 32px;"><a href="/member" >Home</a></li>
+                    <li  class="putArrow-icon" style="padding-left:10px; padding-right:10px;  height: 32px;"><a href="#" >Account</a>
+                        <ul class="sub_menu" style="width:300px">
+                            <div class="col-lg-12 row sub-menu-gmbr" style="width: 570px; padding-right: 0px;
+                                 margin-right: 0px;
+                                 padding-left: 0px;
+                                 margin-left: -10px;
+                                 border-radius:5px;">
+                                <div class="col-lg-4 col-md-6" style="white-space: nowrap; padding-top:10px">
+                                    <li><a href="/member/edit-profile">Edit Profile</a></li>
+                                    <li><a href="/member/register">Register New Member</a></li>
+									<li><a href="/member/upgrade">Upgrade</a></li>        
+                                    <li><a href="/member/repeat-order">Repeat Order</a></li> 
+                                </div>
+
+                                <div class="col-lg-8 hidden-md" align="center" style="padding-right: 0px;">
+                                    <img src="/resources/images/memberarea-bs/gmbr-1.jpg" alt="VITO" title="VITO" style="width: 100%; padding:10px 0 10px 10px;" />
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="active" class="putArrow-icon" style="padding-left:10px; padding-right:10px;  height: 32px;"><a href="#" class="active">Transaction</a>
+                        <ul class="sub_menu" style="width:300px">
+                            <div class="col-lg-12 row sub-menu-gmbr" style="width: 675px; padding-right: 0px;
+                                 margin-right: 0px;
+                                 padding-left: 0px;
+                                 margin-left: -13px;
+                                 border-radius:5px;">
+                                <div class="col-lg-5 col-md-12" style="white-space: nowrap; padding-top:10px">
+                                    <li><a href="/member/order-transaction-code-step1">Purchase ePin</a></li>
+ 
+                                    <li><a href="/member/history-order-transaction-code/1">Purchase Report</a></li>
+                                    <li><a href="/member/transfer-pin-step1">Transfer ePIN</a></li>
+                                    <li><a href="/member/check-valid-pin2">Transfer ePin Report</a></li>
+                                    <li><a href="/member/check-transaction-code">Check Status ePin</a></li>
+                                    <li><a href="/member/check-valid-pin3">List ePin</a></li>
+                                </div>
+
+                                <div class="col-lg-7 hidden-md" align="center">
+                                    <img src="/resources/images/epin.jpg" alt="VITO" title="VITO" style="width: 100%; padding:10px; " />
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+
+
+
+
+
+                    <li  class="putArrow-icon" style="padding-left:10px; padding-right:10px;  height: 32px;"><a href="#" >Bonus</a>
+                        <ul class="sub_menu" style="width:325px;">
+                            <div class="col-lg-12 row sub-menu-gmbr" style="width: 675px; padding-right: 0px;
+                                 margin-right: 0px;
+                                 padding-left: 0px;
+                                 margin-left: -160px;
+                                 border-radius:5px;">
+                                <div class="col-lg-5 col-md-12" style="white-space: nowrap; padding-top:10px">
+
+                                    <li><a href="/member/bonus-daily-new">Daily Bonus </a></li>
+                                     <li><a href="/member/bonus-monthly-new">Monthly Bonus </a></li>
+                                    <li><a href="/member/wallet-bonus-statement">Bonus Account Statement</a></li>
+                                    
+                                   
+                                    <li><a href="/member/reward">Reward PV</a></li>       
+
+                                </div>
+                                <div class="col-lg-7 hidden-md" align="center">
+                                    <img src="/resources/images/bonus.jpg" alt="VITO" title="VITO" style="width: 100%; padding:10px;" />
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+
+                    <li  class="putArrow-icon" style="padding-left:10px; padding-right:10px;  height: 32px;"><a href="#" >Report</a>
+                        <ul class="sub_menu" style="width:325px;">
+                            <div class="col-lg-12 row sub-menu-gmbr" style="width: 675px; padding-right: 0px;
+                                 margin-right: 0px;
+                                 padding-left: 0px;
+                                 margin-left: -160px;
+                                 border-radius:5px;">
+                                <div class="col-lg-5 col-md-12" style="white-space: nowrap; padding-top:10px;">
+                                    <li><a href="/member/genealogy">Geneology (Placement)</a></li>
+                                    <li><a href="/member/report-pair-volume-ro">Network Performance Report</a></li>
+                                    <li><a href="/member/check-omzet">Omzet Report</a></li>
+                                    <li><a href="/member/list-direct-sponsor">Direct Sponsor Report</a></li>
+                                    <li><a href="/member/personal-purchase-report">Personal Purchase Report</a></li>
+
+                                </div>
+                                <div class="col-lg-7 hidden-md" align="center">
+                                    <img src="/resources/images/report.jpg" alt="VITO" title="VITO" style="width: 100%; padding:10px;" />
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    
+                        
+                        
+
+                        
+                    
+                    <li  class="putArrow-icon" style="padding-left:10px; padding-right:10px;  height: 32px;"><a href="#" >Utility</a>
+                        <ul class="sub_menu" style="">
+                            <div class="col-lg-12 row sub-menu-gmbr sub-md-utility" style="width: 675px; padding-right: 0px;
+                                 margin-right: 0px;
+                                 padding-left: 0px;
+                                 margin-left: -250px;
+                                 border-radius:5px;">
+                                <div class="col-lg-5 col-md-12" style="white-space: nowrap; padding-top:10px">
+                                    <li><a href="/member/change-password">Change Passsword</a></li>
+                                    <li><a href="/member/change-password-transaction">Change Passsword Transaction</a></li>
+                                    <li><a href="/member/download">Download</a></li>
+
+                                </div>
+                                <div class="col-lg-7 hidden-md" align="center">
+                                    <img src="/resources/images/utility.jpg" alt="VITO" title="VITO" style="width: 100%; padding:10px;" />
+                                </div>
+                            </div>
+                        </ul>
+                    </li>
+                    <li class="putArrow-icon" style="padding-left:10px; padding-right:10px;  height: 32px;"><a href="/member/logout">Sign Out</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <!--End Dekstop View-->
+
+    <!--Mobile View-->
+    <div class="row displayie6-MOBILE">
+        <!--MOBILE view - logo-->
+        <div class="container-fluid settingheight hidden-lg hidden-md">
+            <table width="100%">
+                <tr>
+                    <td>
+                        <table width="100%" border="0">
+                            <tr>
+                                <td width="10%"><a href="/"><img src="/resources/images/logo.png" alt="VITO" title="VITO" style="width:80px; margin-top:15px; margin-bottom:15px;" align="left" /></a></td>
+                                <td width="90%">
+                                    <div style="border-left:1px solid #ccc; padding-left:5px">
+                                            <!-- <div class="namamemberIG">BERITA55 <img src="/resources/images/icon/indonesia_flag.jpg"  width="20px" height="15px"/></div>  -->
+                                        <div class="memberidIG">Ratna Mardiana</div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>
+                        <!--MENU MOBILE-->
+                        <table width="100%">
+                            <tr>
+                                <td>
+                                    <table width="100%" border="0">
+                                        <tr>
+                                            <td width="50%">
+                                                <button class="nav-toggle">
+                                                    <div class="icon-menu"><img src="/resources/images/memberarea-bs/menu-navigation.png" align="right" alt="VITO" /></div>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <div class="nav-container" style="margin-top:45px;">
+                                        <ul class="nav-menu menu">
+                                            <li class="menu-item"> <a href="/member" class="menu-link">Home</a></li>
+                                            <li class="menu-item has-dropdown"> <a href="#" class="menu-link">Account</a>
+                                                <ul class="nav-dropdown menu" style="border:none">
+                                                    <a href="/member/edit-profile">
+                                                        <li class="menu-item2" style="border-bottom:none">Edit Profile </li>
+                                                    </a>
+                                                    <a href="/member/register">
+                                                        <li class="menu-item2" style="border-bottom:none">Register New Member</li>
+                                                    </a>
+													     <a href="/member/upgrade">
+                                                        <li class="menu-item2" style="border-bottom:none">Upgrade</li>
+                                                    </a>
+                                                    <a href="/member/repeat-order">
+                                                        <li class="menu-item2" style="border-bottom:none">Repeat Order</li>
+                                                    </a>
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item has-dropdown"> <a href="#" class="menu-link" >Transaction</a>
+                                                <ul class="nav-dropdown menu" style="border:none">
+                                                    <a href="/member/order-transaction-code-step1">
+                                                        <li class="menu-item2" style="border-bottom:none">Purchase ePin (Registration) </li>
+                                                    </a>
+                                               
+                                                    <a href="/member/history-order-transaction-code/1">
+                                                        <li class="menu-item2" style="border-bottom:none"> Purchase Report</li>
+                                                    </a>
+                                                    <a href="/member/transfer-pin-step1">
+                                                        <li class="menu-item2" style="border-bottom:none"> Transfer ePin </li>
+                                                    </a>
+                                                    <a href="/member/check-valid-pin2">
+                                                        <li class="menu-item2" style="border-bottom:none"> Transfer ePin Report</li>
+                                                    </a>
+                                                    <a href="/member/check-transaction-code">
+                                                        <li class="menu-item2" style="border-bottom:none"> Check Status ePin </li>
+                                                    </a>
+                                                    <a href="/member/check-valid-pin3">
+                                                        <li class="menu-item2" style="border-bottom:none"> List ePin </li>
+                                                    </a>
+
+                                                </ul>
+                                            </li>
+
+                                            <li class="menu-item has-dropdown"> <a href="#" class="menu-link">Bonus</a>
+                                                <ul class="nav-dropdown menu" style="border:none">
+
+                                                    <a href="/member/bonus-daily-new">
+                                                        <li class="menu-item2" style="border-bottom:none"> Daily Bonus </li>
+                                                    </a>
+                                                    
+                                                     <a href="/member/bonus-monthly-new">
+                                                        <li class="menu-item2" style="border-bottom:none"> Monthly Bonus </li>
+                                                    </a>
+                                                    
+                                                    
+                                                                                        
+
+                                                    <a href="/member/wallet-bonus-statement">
+                                                        <li class="menu-item2" style="border-bottom:none">Bonus Account Statement </li>
+                                                    </a>
+                                                    
+                                                    
+                                                  
+
+                                                    <a href="/member/reward">
+                                                        <li class="menu-item2" style="border-bottom:none">Reward PV </li>
+                                                    </a>
+
+                                                </ul>
+                                            </li>
+
+                                            <li class="menu-item has-dropdown"> <a href="#" class="menu-link">Report</a>
+                                                <ul class="nav-dropdown menu" style="border:none">
+                                                    <a href="/member/genealogy">
+                                                        <li class="menu-item2" style="border-bottom:none">Geneology (Placement)</li>
+                                                    </a>
+                                                    <a href="/member/report-pair-volume-ro">
+                                                        <li class="menu-item2" style="border-bottom:none">Network Performance Report</li>
+                                                    </a>
+                                                    <a href="/member/check-omzet">
+                                                        <li class="menu-item2" style="border-bottom:none">Omzet Report</li>
+                                                    </a>
+                                                    <a href="/member/list-direct-sponsor">
+                                                        <li class="menu-item2" style="border-bottom:none">Direct Sponsor Report </li>
+                                                    </a>
+                                                    <a href="/member/personal-purchase-report">
+                                                        <li class="menu-item2" style="border-bottom:none">Personal Purchase Report </li>
+                                                    </a>
+
+
+                                                </ul>
+                                            </li>
+
+                                            
+                                                
+                                                
+
+                                                
+                                            
+
+
+                                            <li class="menu-item has-dropdown"> <a href="#" class="menu-link">Utility</a>
+                                                <ul class="nav-dropdown menu" style="border:none">
+                                                    <a href="/member/change-password">
+                                                        <li class="menu-item2" style="border-bottom:none">Change Passsword</li>
+                                                    </a>
+                                                    <a href="/member/change-password-transaction">
+                                                        <li class="menu-item2" style="border-bottom:none">Change Password Transaction</li>
+                                                    </a>
+                                                    <a href="/member/download">
+                                                        <li class="menu-item2" style="border-bottom:none">Download</li>
+                                                    </a>
+
+                                                </ul>
+                                            </li>
+                                            <li class="menu-item"> <a href="/member/logout" class="menu-link">Sign Out</a> </li>
+
+                                        </ul>
+                                    </div>
+                                    </nav>
+
+                                    <script>
+                                        $(function () {
+                                            var html = $('html, body'),
+                                                    navContainer = $('.nav-container'),
+                                                    navToggle = $('.nav-toggle'),
+                                                    navDropdownToggle = $('.has-dropdown');
+
+                                            // Nav toggle
+                                            navToggle.on('click', function (e) {
+                                                var $this = $(this);
+                                                e.preventDefault();
+                                                $this.toggleClass('is-active');
+                                                navContainer.toggleClass('is-visible');
+                                                html.toggleClass('nav-open');
+                                            });
+
+                                            // Nav dropdown toggle
+                                            navDropdownToggle.on('click', function () {
+                                                var $this = $(this);
+                                                $this.toggleClass('is-active').children('ul').toggleClass('is-visible');
+                                            });
+
+                                            // Prevent click events from firing on children of navDropdownToggle
+                                            navDropdownToggle.on('click', '*', function (e) {
+                                                e.stopPropagation();
+                                            });
+                                        });
+
+                                    </script>
+                                </td>
+                            </tr>
+                        </table>
+                        <!--end MENU MOBILE-->
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--end logo-->
+    </div>
+    <!--end MOBILE-->
+</div>
+
+    <!--end HEADER mobile-->
+    
+    <div class="container-fluid bg-fluid">
+        <div class="container-memberarea" style="background:white">   
+            <!--Sub Header  -->
+    <div class="row displayie6-DESKTOP welcomeheight">
+        <!-- <div class="col-lg-2 col-md-2 fontmemberarea"> 
+        </div>  -->
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="float:right">
+            <table width="100%" cellpadding="0" cellspacing="0" align="right">
+                <tr>
+                    <td width="835" class="welcome" style=" padding-top:7px"><strong>Welcome, <span style="color:#df7f18"><i><u>Ratna Mardiana</u></i></span></strong>
+                        &nbsp;&nbsp;                                                
+                    </td>
+                    <td width="13">&nbsp;</td>
+                    <td><a href="/member/edit-profile"><img src="/resources/images/icon-edit-profile.png" border="0"  alt="Edit Profile"  title="Edit Profile"/></a></td>
+                    <td width="13">&nbsp;</td>
+                    <td><a href="/member/wallet-bonus-statement"><img src="/resources/images/icon-ewallet.png" border="0" alt="Bonus Account Statement"  title="Bonus Account Statement"/></a></td>
+                    <td width="13">&nbsp;</td>
+                    <td><a href="/member/register"><img src="/resources/images/icon-register.png" border="0" alt="Register New Member"  title="Register New Member"/></a></td>
+                    <td width="13">&nbsp;</td>
+                    <td><a href="/member/bonus-daily-new"><img src="/resources/images/icon-daily-bonus.png" border="0" alt="Daily Bonus"  title="Daily Bonus"/></a></td>
+
+                    
+                    <td width="13">&nbsp;</td>
+                    <td><a href="/member/genealogy"><img src="/resources/images/icon-genealogy.png" border="0" alt="Genealogy"  title="Genealogy"/></a></td>
+                    <td width="13">&nbsp;</td>
+                    <td><a href="/member/list-direct-sponsor"><img src="/resources/images/icon-leadership.png" border="0" alt="Direct Sponsor Report"  title="Direct Sponsor Report"/></a></td>
+                    <td width="13">&nbsp;</td>
+                    <td><a href="/member/report-pair-volume-ro"><img src="/resources/images/icon-network-perform-report.png" border="0" alt="Network Performance Report"  title="Network Performance Report" /></a></td>   
+                    <td width="3">&nbsp;</td>              
+                </tr>
+            </table>
+        </div>
+    </div>  
+            <div class="title-memberarea3">
+                <img src="/resources/images/memberarea-bs/personal-page-icon.png" style="margin-top:-7px"/> &nbsp;
+                <span class="titleatas-memberarea">Purchase Report</span>
+            </div>
+
+            <!-- Dekstop View -->
+            <div class="displayie6-DESKTOP">  
+                <form>
+                    <input type="hidden" name="sourceDesktop" id="sourceDesktop" value="1" />
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="topspace">
+                        <tr>
+                            <td width="25px">&nbsp;</td>
+                            <td width="60px" class="opensans font12px">Period&nbsp;</td>
+                            <td width="210px">                             
+                                <input type="text" id="startdt" name="startdt" value="01 November 2021" readonly="" size="18" class="textfield01 height30px font12px widthBH date"/>
+                            </td>
+                            <td width="34px" class="opensans font12px">to&nbsp;</td>
+                            <td width="182px">                     
+                                <input type="text" id="enddt" name="enddt" value="22 November 2021" readonly="" size="18" class="textfield01 height30px font12px widthBH date"/>                                   
+                            </td>
+                            <td>
+                                <form>
+                                    Status : 
+                                    <select name="status" id="status">
+                                        <option value="">-ALL-</option>
+                                        
+                                        <option value="4" 
+                                                
+                                                >Canceled</option>
+                                        
+                                        <option value="1" 
+                                                
+                                                >Paid</option>
+                                        
+                                        <option value="3" 
+                                                
+                                                >Rejected</option>
+                                        
+                                        <option value="0" 
+                                                
+                                                >Waiting Payment</option>
+                                        
+                                    </select>
+                            </td>
+                            <td><input type="submit" class="abu input-fontbutton-periodesd" value="View" style="margin-left:0px; background:#050521;"/> </td>
+                        </tr>
+                    </table>
+                </form>
+
+                <div class="cat opensans font11px text-left" id="abuabu3"><strong class="merahh">Note:</strong> Maximum period is 90 days</div>
+                <div class="row lineheight24px bdrspace-BH">
+                    <div class="col-lg-5 col-md-5 col-sm-6 col-xs-6">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-rightthenleft opensans font12px abu2">Member ID :</div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 opensans font12px text-left paddingnull3">BERITA55</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 opensans font12px text-rightthenleft abu2">Member Name :</div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 opensans font12px text-left paddingnull3">Ratna Mardiana</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-6 col-xs-6">
+                    </div>
+                </div> 
+
+                <div class="ijo-bg text-center">Purchase Report </div> 
+                <h5 style="text-align: center;">Period : 01 November 2021 to 22 November 2021</h5>
+
+                <div class="row" id="borderbtm">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="color:#606060; font-size:12px">Show <span class="semiopensans">0 - 0 from 0 data</span></div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="text-align:right; color:#606060; font-size:13px"> </div>
+                </div>
+                <table width="100%" cellpadding="0" cellspacing="0" style="line-height:24px" align="center" class="displayie6-DESKTOP">
+                    <tr class="abubgmobile">
+                        <td width="30" class="opensans font12px text-center spacetitleabu bdrleft bdrbottom paddingtopbottomtable" id="abuabu3">No</td>
+                        <td width="120" class="opensans font12px text-center spacetitleabu bdrleft bdrbottom paddingtopbottomtable" id="abuabu3" style="border-left:1px solid #ddd">Transaction Date</td>
+                        <td width="150" class="opensans font12px text-center spacetitleabu bdrleft bdrbottom paddingtopbottomtable" id="abuabu3">Invoice No.</td>
+                        <td width="200" class="opensans font12px text-center spacetitleabu bdrleft bdrbottom paddingtopbottomtable" id="abuabu3">Type </td>
+                        <td width="160" class="opensans font12px text-center spacetitleabu bdrleft bdrbottom paddingtopbottomtable " id="abuabu3">Total</td>                          
+                        <td width="190" class="opensans font12px text-center spacetitleabu bdrleft bdrright bdrbottom paddingtopbottomtable" id="abuabu2">Status</td>
+                        <td width="130" class="opensans font12px text-center spacetitleabu bdrleft bdrright bdrbottom paddingtopbottomtable" id="abuabu2">Note</td>
+                        <td width="180" class="opensans font12px text-center spacetitleabu bdrleft bdrright bdrbottom paddingtopbottomtable" id="abuabu2">Shipping</td>
+                    </tr>
+                    
+                    <tr><td colspan="6" height="30px"></td></tr>
+                </table>
+                <div class="row" id="borderbtm">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="color:#606060; font-size:12px">Show <span class="semiopensans">0 - 0 from 0 data</span></div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="text-align:right; color:#606060; font-size:13px"> </div>
+                </div>
+                <br /><br/>
+            </div>
+
+            <!-- Mobile View -->
+            <div class="displayie6-MOBILE visible-sm visible-xs">     
+                <table width="100%" cellpadding="0" cellspacing="0" class="topspace bdrlihatperiode">
+                    <tr>
+                        <td class="paddingkanankiriperiode font12px opensans text-left" id="black">View Period</td>
+                        <td class="paddingkanankiriperiode font12px opensans text-right gold"><a href="#" onclick="showHide()" style="color:#050521; text-decoration:underline">Filter</a></td>
+                    </tr>
+                    <form>
+                        <input type="hidden" name="sourceMobile" id="sourceMobile" value="1" />
+                        <tr>
+                            <td colspan="2" class="secret paddingkanankiriperiode">                        	
+                                <table width="100%" border="0" cellpadding="0" cellspacing="0" style="line-height:30px; padding-bottom:10px">
+                                    <tr>
+                                        <td class="opensans font13px">Period&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" id="startdt2" name="startdt2" value="01 November 2021" readonly="" size="18" class="textfield01 height30px font12px width100 date"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="opensans font13px">to&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" id="enddt2" name="enddt2" value="22 November 2021" readonly="" size="18" class="textfield01 width100 date"/>  </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="opensans font13px">Status&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td width="210px" style="padding-bottom:10px;">                             
+                                            <select name="status" id="status" onchange="showHide(this.value)" class="textfield01 width100">
+                                                <option value="">All</option>
+                                                <option value="0">Pending</option>
+                                                <option value="1">Complete</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="submit" id="emas" style="color:#fff; background:#050521;" class="input-button-periodesd input-fontbutton-periodesd buttonwidth100" value="View"/> </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </form>
+                    <tr><td colspan="2" class="secret paddingkanankiriperiode paddingtopbottomnull" style="padding-bottom:10px"><div class="opensans font11px text-left" id="abuabu3"><strong class="merahh">Note:</strong> Maximum period is 90 days </div></td></tr>
+
+                    <tr><td colspan="2" height="2px"></td></tr>
+                </table>
+
+                <div class="row lineheight24px bdrspace-BH">
+                    <div class="col-lg-5 col-md-5 col-sm-6 col-xs-6">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-rightthenleft opensans font12px abu2">Member Name :</div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 opensans font12px text-left paddingnull3">BERITA55</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 opensans font12px text-rightthenleft abu2">Member Name :</div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 opensans font12px text-left paddingnull3">Ratna Mardiana</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-6 col-xs-6">
+                    </div>
+                </div> 
+
+                <div class="ijo-bg text-center">Purchase Report </div> 
+                <h5 style="text-align: center;">Period : 01 November 2021 to 22 November 2021</h5>
+                <div class="table-responsive">
+                    <div class="row" id="borderbtm">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="color:#606060; margin: 10px 0 10px 10px; font-size:12px">Show <span class="semiopensans">0 - 0 from 0 data</span></div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="text-align:left; margin: 0 0 10px 10px; color:#606060; font-size:13px"> </div>
+                    </div>
+                    <table width="100%" cellpadding="0" cellspacing="0" style="line-height:24px" align="center" class="table">
+                        <tr class="abubgmobile">
+                            <td width="30" class="opensans font12px text-center spacetitleabu bdrleft bdrbottom paddingtopbottomtable" id="abuabu3">No</td>
+                            <td width="200" class="opensans font12px text-center spacetitleabu bdrleft bdrbottom paddingtopbottomtable" id="abuabu3" style="border-left:1px solid #ddd">Transaction Date</td>
+                            <td width="200" class="opensans font12px text-center spacetitleabu bdrleft bdrbottom paddingtopbottomtable" id="abuabu3">Invoice No.</td>
+                            <td width="200" class="opensans font12px text-center spacetitleabu bdrleft bdrbottom paddingtopbottomtable" id="abuabu3">Type </td>
+                            <td width="200" class="opensans font12px text-center spacetitleabu bdrleft bdrbottom paddingtopbottomtable " id="abuabu3">Total</td>                          
+                            <td width="200" class="opensans font12px text-center spacetitleabu bdrleft bdrright bdrbottom paddingtopbottomtable" id="abuabu2">Status</td>
+                            <td width="200" class="opensans font12px text-center spacetitleabu bdrleft bdrright bdrbottom paddingtopbottomtable" id="abuabu2">Note</td>
+                            <td width="200" class="opensans font12px text-center spacetitleabu bdrleft bdrright bdrbottom paddingtopbottomtable" id="abuabu2">Shipping</td>
+                        </tr>
+                        
+                        <tr><td colspan="6" height="30px"></td></tr>
+                    </table>
+                    <div class="row" id="borderbtm">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="color:#606060; margin-left:5px; margin-bottom:10px; font-size:12px">Show <span class="semiopensans">0 - 0 from 0 data</span></div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" style="text-align:left; margin-left:5px; margin-bottom:10px; color:#606060; font-size:13px"> </div>
+                    </div>
+                </div>
+                <br/><br/>
+            </div>
+        </div>
+    </div>
+    
+<style>
+    .fontfooterma{color:#fff!important}
+</style>
+
+<!--FOOTER desktop-->
+<div class="container-fluid" style="background:#1A7DED">
+    <div class="container-footerma hidden-sm hidden-xs">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left fontfooterma">&copy; Copyright 2021 - VITO - All Rights Reserved </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right fontfooterma">Powered By: <a href="http://www.pineappletech.com" target="_blank" style="color:#fff">PineappleTech</a></div>
+        </div>
+    </div>
+</div>
+<!--end FOOTER desktop-->
+    
+<!--FOOTER mobile-->    
+<div class="container-fluid" style="background:#1A7DED">
+    <div class="container-footerma hidden-lg hidden-md" style="width:100%; display:block">
+        <div class="row">
+            <div class="col-lg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center fontfooterma marginpadingnull" style="padding-bottom:0">&copy;  Copyright 2021 - VITO - All Rights Reserved </div>
+            <div class="col-lg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center fontfooterma marginpadingnull" style="padding:0 0 6px 0">Powered By: <a href="http://www.pineappletech.com" style="color:#fff" target="_blank">PineappleTech</a></div>
+        </div>
+    </div>
+</div>
+<!--end FOOTER mobile-->
+    
+<body>    
+</html>

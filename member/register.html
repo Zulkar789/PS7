@@ -1,0 +1,991 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+<link rel="shortcut icon" href="/resources/assets/img/favicon.png" type="image/x-icon">
+<title>VITO</title> 
+        
+
+
+
+
+<!-- <link rel="shortcut icon" href="/resources/images/icon/favicon.ico" type="image/x-icon" /> -->
+<link rel="icon" href="/resources/assets/img/favicon.png" type="image/x-icon" />
+<link rel="stylesheet" href="/resources/css/member.css" />
+<link rel="stylesheet" href="/resources/css-memberarea/memberarea-bs.css">   
+<link rel="stylesheet" href="/resources/css-memberarea/styleDropDown.css">  
+<link rel="stylesheet" href="/resources/css-memberarea/member.css">  
+<link rel="stylesheet" href="/resources/css-memberarea/mobilemenu/new-navigation-mobile.css" type="text/css" media="screen" /> 
+<script type="text/javascript" src="/resources/js/mobilemenu/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="/resources/js/common.js"></script>
+
+<!--[if IE 6]>
+    <link rel="stylesheet" type="text/css" href="/resources/css-memberarea/ie6.css" />
+    <![endif]-->
+
+<!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href="/resources/css-memberarea/ie8.css" />
+<![endif]-->
+
+<!-- PNG FIX for IE6 -->
+<!--[if lte IE 6]>
+        <script type="text/javascript" src="/resources/js/pngfix/supersleight-min.js"></script>
+<![endif]-->
+
+<script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/menu.js"></script>
+<script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/items1.js"></script>
+<script language="JavaScript" type="text/javascript" src="/resources/tigra/menu_files/template1.js"></script>        
+<link rel="stylesheet" href="/resources/tigra/menu_files/menu.css" />
+
+
+<style>
+    .required{}
+    .numeric{}
+    .currency{}
+    .uppercase{}
+    .readonlySelect{}
+    span.error,label.error, span[id*="errors"]{
+        color: red;
+        font-size: 13px;
+        letter-spacing:.1px;
+        font-family:sanspro;
+        font-weight:100;
+        display:block;
+    }
+    .pointer{
+        cursor: pointer;
+    }
+    .pointer:hover{
+        color: #1a1a1a;
+    }
+    .underline{
+        text-decoration: underline;
+    }
+    .date{
+        padding-left: 4px;
+    }
+</style>
+
+<script>
+    function showHide(){
+        $('.secret').slideToggle('slow');
+    }
+    function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+</script>
+<style>
+    td.secret {
+        display:none;
+    }
+</style>
+
+<!--[if lte IE 8]>
+             <link rel="stylesheet" type="text/css" href="resources/css/ie/ie.css" />
+     <![endif]-->
+
+
+     
+     <script type="text/javascript">
+         lang = window.location.pathname.substring(0, 3);
+         now = new Date(1637565551155);
+         window.setInterval(function() {
+             now.setSeconds(now.getSeconds() + 1);
+         }, 1000)
+         $(document).ready(function() {
+             $('a.paddingurl').each(
+             function(idx, itm) {
+                 var oldurl = $(itm).attr('href');
+                 $(itm).attr('href', lang + oldurl);
+             }
+         )
+     
+         
+             
+                
+             
+              
+                 $(".uppercase").keyup(function() {
+                     $(this).val($(this).val().toUpperCase());
+                 });
+                 $('.readonlySelect>option:not(:selected)').remove();
+                 //$('span[id$="errors"]').each(function(idx,itm){$('#'+itm.id.split('.')[0]).change(function(){$(itm).remove()}).keyup(function(){$(itm).remove()}).focus()});
+                 $('span[id$="errors"]').each(function(idx, itm) {
+                     $('#' + itm.id.split('.')[0]).change(function() {
+                         $(itm).remove()
+                     }).focus()
+                 });
+             });
+       function digit_format( expr, decplaces ) {
+                 var str = "" + Math.round( eval( expr) * Math.pow(10,decplaces ))
+                 while (str.length <= decplaces ) {
+                     str = "0" + str
+                 }
+                 var decpoint = str.length - decplaces
+                 return str.substring(0,decpoint) + "." + str.substring(decpoint,str.length);	  
+             }
+             
+             function number_format( expr, decplaces ) {
+                 var str = digit_format(removeNumberFormat(expr+""),decplaces);
+                 var decpoint = str.length - decplaces;
+     
+                 var valpart = str.substring(0,decpoint-1);
+                 var decpart = str.substring(decpoint,str.length);
+                 var retStr = "";
+                 var nI = 0;
+                 var awal = 0;
+                 var tmpStr = "";
+           
+                 if( valpart.length > 3 ) {
+                     for( nI = valpart.length; nI > 0; nI-=3) {
+                         awal = nI - 3;
+                         if(awal < 0 ) awal = 0;
+                         tmpStr = valpart.substring(awal,nI);
+                         if( nI == valpart.length) {
+                             retStr = tmpStr;
+                         } else {
+                             retStr = tmpStr + "," + retStr;
+                         }
+                     }
+                     retStr = retStr + "." + decpart;
+                 } else {
+                     return str;
+                 }
+                 return retStr;
+             }
+             
+             function removeNumberFormat( expr_par ) {	
+                 var retStr ="";
+                 var nI = 0; 
+                 var expr = "";
+         
+                 var expr = expr_par + "";
+                 if( expr.length <= 0 ) return "";
+         
+                 while( nI < expr.length ) {
+             if( expr.charAt( nI ) != ","  ) {
+                         retStr += expr.charAt(nI);
+             }
+             nI++;
+                 }
+         
+                 return retStr;
+             }
+             
+             function number_formatfield(idfield){            
+                 if (!document.getElementById) 	return;		
+                 var field = document.getElementById(idfield);	
+                 field.value = number_formatfieldvalue(field.value);
+             }
+             
+             function number_formatfieldvalue(idfield){
+                 //format field yang sudah diinput by value field		
+                 if (!document.getElementById) 	return;		
+                 var field = idfield;//document.getElementById(idfield);	
+                 var ret = number_format(0,2);
+         
+                 if (cekInputIsNum(str2num(removeNumberFormat(field)))) {
+             field = str2num(removeNumberFormat(field));
+             ret = number_format(field,2);
+                 }
+                 return ret;
+           
+             }
+             
+             
+     function MM_findObj(n, d) { //v4.01
+       var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+         d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+       if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+       for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+       if(!x && d.getElementById) x=d.getElementById(n); return x;
+     }
+     
+     </script>
+
+        <script src="/resources/js/jquery-migrate-1.0.0.js"></script>
+        <!-- <link rel="stylesheet" href="/resources/css/register.css"/> -->
+        <link rel="stylesheet" href="/resources/css/bootstrap.css" />
+        <link rel="stylesheet" href="/resources/jquery-ui-1.8.18.custom/css/smoothness/jquery-ui-1.8.18.custom.css" />
+        <script type="text/javascript" src="/resources/jquery-ui-1.8.18.custom/js/jquery-ui-1.8.18.custom.min.js"></script>
+        <script type="text/javascript" src="/resources/jquery-validation-1.9.0/jquery.validate.js"></script>
+        <script type="text/javascript" src="/resources/jquery-validation-1.9.0/additional-methods.js"></script>
+        <script type="text/javascript" src="/resources/js/jquery.dateFormat-1.0.js"></script>
+        <script src="/resources/js/jquery-country-dropdown/jquery.ddslick.min.js"></script>
+        <script src="/resources/js/jquery-country-dropdown/phonenumber.js"></script>
+        <link rel="stylesheet" href="/resources/js/jquery-country-dropdown/phonenumber.css"/>
+        <style>
+            .servertime2{    
+                font-size: 11px;
+                color: #9c9c9c;
+                text-transform: capitalize;
+                letter-spacing: 0.9px;
+            }
+            .signin{padding:16px 0}			
+            .leftpaddingdeskmob{padding-left:158px!important}	
+            ul.dd-options{overflow:auto!important}	
+            #bankid{
+                width:220px !important;
+                margin-left: 3px;
+            }
+            .padd02{
+                padding-left:0px;
+            }
+            .progressbarnew li {
+                width: 33%;
+            }
+            .vertical-menu {
+            /* width: 100%; */
+            height: 150px;
+            overflow-y: auto;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 10px;
+            border: 1px solid lightgray;
+            }
+            /* width */
+            ::-webkit-scrollbar {
+            width: 10px;
+            }
+
+            /* Track */
+            ::-webkit-scrollbar-track {
+            background: #1234; 
+            border-radius: 10px;
+            }
+            
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+            background: #888; 
+            border-radius: 10px;
+            }
+
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+            }
+        </style>
+
+        <script type="text/javascript">
+            servertime = new Date(1637565551155);
+            window.setInterval(function () {
+                servertime.setSeconds(servertime.getSeconds() + 1);
+                $('#servertime').text($.format.date(servertime, 'dd MMMM yyyy HH:mm:ss'))
+            }, 1000)
+            $(document).ready(function () {
+                $(".date").datepicker({dateFormat: 'dd MM yy', maxDate: new Date(new Date(1101107951155)), changeMonth: true, changeYear: true, yearRange: "c-100:c", showOn: "both", buttonImage: "/resources/images/icon/calendar_empty2.png"});
+                $(".ui-datepicker-trigger").css({
+                    border: 0,
+                    backgroundColor: 'transparent',
+                    cursor: 'pointer',
+                    "vertical-align": 'middle',
+                    "margin-top": "-5px"
+                });
+                $('form').submit(function () {
+                    if (!$(this).valid())
+                        return false;
+                    if ($('#agreement:checked').size() == 0) {
+                        $('#agreement').focus();
+                        alert('Please accept Terms and Agreement of Membership');
+                        return false;
+                    }
+
+                    var kittype = $('#kittype').val();
+                    var ctr = 0;
+                    for (var i = 1; i <= 50; i++) {
+                        if ($('#trxCode' + i).val() != "") {
+                            ctr++;
+                        }
+                    }
+                    if (kittype == "0") {
+                        if (ctr == 1) {
+                            alert("ePin must be filled");
+                            return false;
+                        }
+                    } else if (kittype == "1") {
+                        if (ctr == 1) {
+                            alert("ePin must be filled");
+                            return false;
+                        }
+                    } else if (kittype == "2") {
+                        if (ctr == 5) {
+                            alert("ePin must be filled");
+                            return false;
+                        }
+                    } else if (kittype == "3") {
+                        if (ctr == 10) {
+                            alert("ePin must be filled");
+                            return false;
+                        }
+                    } else if (kittype == "4") {
+                        if (ctr == 50) {
+                            alert("ePin must be filled");
+                            return false;
+                        }
+                    }
+
+
+                    alert('Please check again the data that you input before confirmation.\nMake sure your Sponsor and Placement is already correct.\nThis information (Member Name, ID Placement dan ID Sponsor) is can not be changed for any reason after confirmation.');
+                    return true;
+                })
+                $('input[name="placemode"]').click(function () {
+                    $('#placemode\\.errors').remove()
+                })
+                $("form").validate({
+                    errorPlacement: function (error, element) {
+                        //<![CDATA[
+                        //$('<tr></tr>').html($('<td></td>').attr('align','center').attr('colspan','7').html(error)).insertAfter(element.parent().parent().parent());
+                        $('<tr></tr>').html($('<td></td>').attr('colspan', '3').html(error)).insertAfter(element.parent().parent().parent()).prepend('<td colspan="4"></td>');
+                        //]]>
+                    },
+                    messages: {
+                        passwordConfirm: {
+                            equalTo: "Password is not match"
+                        },
+                        memberid: {
+                            required: "Username must be filled",
+                            minlength: "Member ID is minimum 3 chacacter length"
+                        },
+                        password: {
+                            required: "Password must be filled",
+                            minlength: "Password is minimum 5 chacacter length"
+                        },
+                        passwordConfirm: {
+                            required: "Confirmation password must be filled",
+                            equalTo: "Password is not match"
+                        },
+                        regtrxcode: {
+                            required: "ePin must be filled"
+                        },
+                        trxCode1: {
+                            required: "ePin must be filled"
+                        },
+                        trxCode2: {
+                            required: "ePin must be filled"
+                        },
+                        trxCode3: {
+                            required: "ePin must be filled"
+                        },
+                        trxCode4: {
+                            required: "ePin must be filled"
+                        },
+                        trxCode5: {
+                            required: "ePin must be filled"
+                        },
+                        memberidSponsor: {
+                            required: "ID Sponsor must be filled"
+                        },
+                        memberidUpline: {
+                            required: "ID Placement must be filled"
+                        },
+                        placemode: {
+                            required: "Position must be filled"
+                        },
+                        fullnm: {
+                            required: "Full name must be filled"
+                        },
+                        telHp: {
+                            required: "No. Handphone must be filled",
+                            pattern: "Format No. Handphone is invalid"
+                        },
+                        email: {
+                            required: "Email must be filled",
+                            email: "Format Email is invalid"
+                        },
+                        kittype: {
+                            required: "Type must be choosen"
+                        },
+                        country: {
+                            required: "Country must be choosen"
+                        },
+                        idno: {
+                            required: "ID no. must be filled"
+                        },
+                        bc: {
+                            required: "BC must be filled"
+                        },
+                        bankaccno: {
+                            required: "Bank Account No. must be filled",
+                            pattern: "Format Bank Account No. is invalid"
+                        },
+                        bankaccnm: {
+                            required: "Bank Account Name is invalid"
+                        },
+                        bankid: {
+                            required: "Bank must be filled"
+                        },
+                        bankbranch: {
+                            required: "Bank branch must be filled"
+                        },
+                        captcha: {
+                            required: "Verification code must be filled"
+                        }
+                    }
+                });
+                var curcode = $('#hpCncd').val()
+                var curidxcountry = 96;
+                for (var i = 0; i < ccode_purge.length; i++) {
+                    if (ccode_purge[i] == curcode) {
+                        curidxcountry = i;
+                    }
+                }
+                $('#cntry').ddslick({
+                    data: data,
+                    width: 25,
+                    imagePosition: "left",
+                    defaultSelectedIndex: curidxcountry,
+                    onSelected: function (data) {
+                        input = $('#hpCncd').val(data.selectedData.ccode_purge);
+                    }
+                });
+
+            })
+
+            function updateState() {
+                var idCountry = $('#country').val();
+                $.get("/remote/getListStateByCountry", {idCountry: idCountry}, function (data) {
+                    $('#state option').remove();
+                    $('#city option').remove();
+                    //$('#state').append($('<option>').val('').html('    '));
+                    var flag = 0;
+                    $.each(data, function (k, v) {
+                        flag++;
+                        $('#state').append($('<option>').val(v.stId).html(v.description))
+                    });
+                    $('#state').append($('<option>').val("").html("---Not Available---"));
+                    if (flag == 1 && $('#state').val() == "") {
+                        $('#city').append($('<option>').val("").html("---Not Available---"));
+                    }
+                    updateCity();
+                });
+            }
+
+            function updateCity() {
+                var idState = $('#state').val();
+                $.get("/remote/getListCityByState", {idState: idState}, function (data) {
+                    $('#city option').remove();
+                    //$('#city').append($('<option>').val('').html('    '));
+                    var flag = 0;
+                    $.each(data, function (k, v) {
+                        flag++;
+                        $('#city').append($('<option>').val(v.description).html(v.description))
+                    });
+                });
+            }
+
+            function setValueBankName(data)
+            {
+                $('#bankaccnm').val(data.value);
+            }
+
+            function getBC()
+            {
+                var memberidUpline = $("#memberidUpline").val();
+
+                var optionsClass = '';
+
+                $.get('/remote/getListBC', {memberidUpline: memberidUpline}, function (data) {
+                    if (data.length > 0)
+                    {
+                        for (var i = 0; i < data.length; i++)
+                        {
+                            optionsClass += '<option value="' + data[i] + '">' + data[i] + '</option>';
+                        }
+                    }
+                    $('#bc').html(optionsClass);
+                });
+            }
+        </script>
+
+    </head>
+    <body class="home-page">
+        <!--HEADER desktop-->
+        <div class="container-fluid borderheaader-ma-1 bgcolor ">
+            <div class="container">
+                <div class="row" style="margin-top:60px;">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                        <a href="/">
+                            <img src="/resources/images/logo.png" align="left" alt="VITO" title="VITO" class="leftlogo-memberarea" style="width:100px; margin-top:-25px; margin-bottom: 10px;"/>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 signin text-right right-titlepagema" id="ijo">Registration<br />
+                        <span id="servertime" class="servertime2"></span></div>
+                </div>
+            </div>
+        </div>
+        <!--end HEADER mobile-->
+
+        <form id="member" action="/member/register" method="post" autocomplete="off">
+            <input id="dfno" name="dfno" type="hidden" value="1"/>
+            <input id="createnm" name="createnm" type="hidden" value="1006016"/>
+            <input id="bc" name="bc" type="hidden" value=""/>
+            <input id="memberidUpline" name="memberidUpline" type="hidden" value="DEF"/>
+            <div class="container" style=""><br/><br/>
+                <!-- <div align="center" class="register-desktopnew"><img src="/resources/images/memberarea-bs/sambutan-1.png" class="img-responsive" /></div>
+                <div align="left" class="register-mobilenew"><img src="/resources/images/memberarea-bs/sambutan-m-1.png" class="img-responsive" /></div> -->
+
+                <div align="center">
+                    <ul class="progressbarnew">
+                        <li class="active">Fill Data</li>
+                        <li>Confirmation</li>
+                        <li>Welcome Letter</li>
+                    </ul>
+                </div>
+                <br/><br/><br/><br/>
+                <div class="title-regitrasi-ma padding-title-regitrasi-ma text-center-ma">ePin Information</div>
+                <div class="row" id="space02">
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Type<span class="merah">*</span></div>
+                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left textma3 bullet" id="marginpadingnull2">                                                   
+
+                        <label style="font-weight:normal">
+                            <input id="kittype1" name="kittype" class="required" onchange="getFieldEpin(this.value)" type="radio" value="2"/> Silver
+                        </label>
+                        &nbsp;&nbsp;&nbsp;    
+                        <label style="font-weight:normal">
+                            <input id="kittype2" name="kittype" class="required" onchange="getFieldEpin(this.value)" type="radio" value="3"/> Gold
+                        </label>
+                        &nbsp;&nbsp;&nbsp;    
+                        <label style="font-weight:normal">
+                            <input id="kittype3" name="kittype" class="required" onchange="getFieldEpin(this.value)" type="radio" value="4"/> Platinum
+                        </label>
+                        &nbsp;&nbsp;&nbsp;    
+                        <label style="font-weight:normal">
+                            <input id="kittype4" name="kittype" class="required" onchange="getFieldEpin(this.value)" type="radio" value="5"/> Titanium
+                        </label>
+                        &nbsp;&nbsp;&nbsp;    
+
+                        <br/>
+                        <label for="kittype" generated="true" class="error"></label>
+                         
+                    </div>
+                </div>
+                <div class="row" id="space02"  >
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">ePin<span class="merah">*</span></div>
+                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">
+                        <div class="vertical-menu widthtextfieldreg"  name="divEPin" id="divEPin">
+                            
+                            
+                        </div>
+                        <table width="100%" cellpadding="0" cellspacing="0" style="font-size:11px; padding-top:11px">
+                            <tr>
+                                <td width="1%" valign="top"><span class="red">*</span></td>
+                                <td width="99%" class="textma4">Please input 1 RGS For Registration <strong>SILVER</strong></td>
+                            </tr>
+                            <tr>
+                                <td width="1%" valign="top"><span class="red">*</span></td>
+                                <td width="99%" class="textma4">Please input 1 RGG or 5 RGS For Registration <strong>GOLD</strong></td>
+                            </tr>
+                            <tr>
+                                <td width="1%" valign="top"><span class="red">*</span></td>
+                                <td width="99%" class="textma4">Please input 1 RGP or 2 RGG or 10 RGS For Registration  <strong>PLATINUM</strong></td>
+                            </tr>
+                            <tr>
+                                <td width="1%" valign="top"><span class="red">*</span></td>
+                                <td width="99%" class="textma4">  Please input 1 RGT or 5 RGP or 10 RGG or 50 RGS For Registration <strong>TITANIUM</strong></td>
+                            </tr>
+ 
+                        </table>
+                    </div>
+                </div>  
+
+                <div class="title-regitrasi-ma padding-title-regitrasi-ma text-center-ma">User & Sponsor Information</div>
+                <!--START-->
+                <div class="row" id="space02">
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Member ID<span class="merah">*</span></div>
+                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">                    
+                        <input id="memberid" name="memberid" class="textfield01 widthtextfieldreg uppercase required" tabindex="2" minlength="3" pattern="^[A-Z0-9\._]+$" type="text" value="" size="27" maxlength="20"/>
+                        
+                        <br/>
+                        <label for="memberid" generated="true" class="error"></label>            
+                    </div>
+                </div>        
+                <div class="row" id="space02">
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Password<span class="merah">*</span></div>
+                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">
+                        <input id="password" name="password" class="textfield01 widthtextfieldreg required" tabindex="3" minlength="5" type="password" value="" size="20" maxlength="20"/>
+                         
+                        <br/>
+                        <label for="password" generated="true" class="error"></label>                   
+                    </div>
+                </div>        
+                <div class="row" id="space02">
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Password Confirmation<span class="merah">*</span></div>
+                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">
+                        <input type="password" id="passwordConfirm" name="passwordConfirm" size="20" class="textfield01 widthtextfieldreg required" equalTo="#password" tabindex="4"/>          
+                        <br/>
+                        <label for="passwordConfirm" generated="true" class="error"></label>          
+                    </div>
+                </div>    
+
+                
+                
+                    <div class="row" id="space02">
+                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">ID Sponsor<span class="merah">*</span></div>
+                        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left marginreg-1 abuabu2" id="marginpadingnull2">                            
+                            <input id="memberidSponsor" name="memberidSponsor" class="textfield01 widthtextfieldreg required uppercase" tabindex="5" type="text" value="BERITA55" maxlength="20"/>
+                                                        
+                            <label for="memberidSponsor" generated="true" class="error"></label>     
+                        </div>
+                    </div>
+                
+
+
+                
+                    <div class="row" id="space02">
+                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Position<span class="merah">*</span></div>
+                        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left textma3 bullet" id="marginpadingnull2">                        
+                            <label style="font-weight:normal">
+                                <input id="placemode1" name="placemode" class="required" type="radio" value="L"/>
+                                Left   
+                            </label>
+                            &nbsp;&nbsp;&nbsp;                       
+                            <label style="font-weight:normal">
+                                <input id="placemode2" name="placemode" type="radio" value="R"/>
+                                Right  
+                            </label>
+                            &nbsp;
+                            
+                            <label for="placemode" class="error" style="display: none;">Position must be filled</label>
+                        </div>
+                    </div>
+                   
+                        
+                        
+
+
+
+                <div class="title-regitrasi-ma padding-title-regitrasi-ma text-center-ma">Personal Information</div>
+                <div class="row" id="space02">
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Full Name<span class="merah">*</span></div>
+                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">                        
+                        <input id="fullnm" name="fullnm" class="textfield01 widthtextfieldreg required uppercase" tabindex="7" onblur="setValueBankName(this)" type="text" value="" size="30" maxlength="100"/>
+                        
+                        <span class="block"><span class="merah">*</span><span class="cth"><i>Full name must be equal to name in bank account</i></span></span>
+                        <br/>
+                        <label for="fullnm" generated="true" class="error"></label>
+                    </div>
+                </div> 
+                <div class="row" id="space02">
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">No. Handphone<span class="merah">*</span></div>
+                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                <select id="cntry"></select>
+                            </div>
+
+                            <div class="col-lg-11 col-md-11 col-sm-11 col-xs-11 paddingnull3">
+                                <input id="hpCncd" name="hpCncd" type="hidden" value=""/>
+                                <input id="telHp" name="telHp" class="textfield01 widthtextfieldreg required fieldnohpregister" tabindex="8" pattern="^0\d+$" type="text" value="" maxlength="30"/>                        
+                                
+                                <br/>
+                                <label for="telHp" generated="true" class="error"></label>  
+                            </div>
+                        </div>
+
+                        <span class="block"><span class="merah">*</span><span class="cth"><i>Example : 0812xxxxxxx</i></span></span>
+                    </div>
+                </div>    
+                <div class="row" id="space02">
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Email<span class="merah">*</span></div>
+                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">                            
+                        <input id="email" name="email" class="textfield01 widthtextfieldreg required email" tabindex="9" type="text" value="" size="30" maxlength="50"/>
+                        
+                        <br/>
+                        <label for="email" generated="true" class="error"></label>       
+                    </div>
+                </div>
+                <div class="row" id="space02" style="display:block; width:100%">
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Country<span class="merah">*</span></div>
+                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">
+                        <select id="country" name="country" class="textfield01 widthtextfieldreg required whitebg" tabindex="10" onchange="updateState();">
+                            <option value="">Choose Country</option>
+                            <option value="ID" selected="selected">INDONESIA</option><option value="MY">MALAYSIA</option><option value="TH">THAILAND</option><option value="PH">PHILIPINA</option><option value="SG">SINGAPORE</option><option value="VN">VIETNAM</option><option value="BN">BRUNEI DARUSSALAM</option><option value="AF">AFGHANISTAN</option><option value="AG">ARGENTINA</option><option value="AR">ARMENIA</option><option value="AU">AUSTRALIA</option><option value="BI">BRITIST INDIAN OCEAN TERRITORY</option><option value="BR">BRUNEI</option><option value="ET">EAST TIMOR</option><option value="HK">HONGKONG</option><option value="IN">INDIA</option><option value="IR">IRAN</option><option value="KS">SOUTH KOREA</option><option value="KW">KUWAIT</option><option value="KR">KYRGYSTAN</option><option value="MC">MACAU</option><option value="ML">MALDIVES</option><option value="NZ">NEW ZELAND</option><option value="SA">SAUDI ARABIA</option><option value="TW">TAIWAN</option><option value="TR">TURKEY</option><option value="UA">UNITED EMIRAT ARAB</option>
+                        </select>
+                        
+                        <br/>
+                        <label for="country" generated="true" class="error"></label>       
+                    </div>
+                </div>
+                <div class="row" id="space02" style="display:block; width:100%">
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">State</div>
+                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">
+                        <select id="state" name="state" class="textfield01 widthtextfieldreg whitebg" tabindex="11" onchange="updateCity();">
+                            <option value="">- Choose State -</option>
+                            <option value="01" selected="selected">ACEH</option><option value="02">BALI</option><option value="03">BANTEN</option><option value="04">BENGKULU</option><option value="34">DI YOGYAKARTA</option><option value="06">DKI JAKARTA</option><option value="05">GORONTALO</option><option value="07">JAMBI</option><option value="08">JAWA BARAT</option><option value="09">JAWA TENGAH</option><option value="10">JAWA TIMUR</option><option value="11">KALIMANTAN BARAT</option><option value="12">KALIMANTAN SELATAN</option><option value="13">KALIMANTAN TENGAH</option><option value="14">KALIMANTAN TIMUR</option><option value="15">KALIMANTAN UTARA</option><option value="16">KEPULAUAN BANGKA BELITUNG</option><option value="17">KEPULAUAN RIAU</option><option value="18">LAMPUNG</option><option value="19">MALUKU</option><option value="20">MALUKU UTARA</option><option value="21">NUSA TENGGARA BARAT</option><option value="22">NUSA TENGGARA TIMUR</option><option value="23">PAPUA</option><option value="24">PAPUA BARAT</option><option value="25">RIAU</option><option value="26">SULAWESI BARAT</option><option value="27">SULAWESI SELATAN</option><option value="28">SULAWESI TENGAH</option><option value="29">SULAWESI TENGGARA</option><option value="30">SULAWESI UTARA</option><option value="31">SUMATERA BARAT</option><option value="32">SUMATERA SELATAN</option><option value="33">SUMATERA UTARA</option>
+                        </select>
+                        
+                    </div>
+                </div>
+                <div class="row" id="space02" style="display:block; width:100%">
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">City</div>
+                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">
+                        <select id="city" name="city" class="textfield01 widthtextfieldreg whitebg" tabindex="12">
+                            <option value="">- Choose City -</option>
+                            <option value="ACEH BARAT">ACEH BARAT</option><option value="ACEH BARAT DAYA">ACEH BARAT DAYA</option><option value="ACEH BESAR">ACEH BESAR</option><option value="ACEH JAYA">ACEH JAYA</option><option value="ACEH SELATAN">ACEH SELATAN</option><option value="ACEH SINGKIL">ACEH SINGKIL</option><option value="ACEH TAMIANG">ACEH TAMIANG</option><option value="ACEH TENGAH">ACEH TENGAH</option><option value="ACEH TENGGARA">ACEH TENGGARA</option><option value="ACEH TIMUR">ACEH TIMUR</option><option value="ACEH UTARA">ACEH UTARA</option><option value="BANDA ACEH">BANDA ACEH</option><option value="BENER MERIAH">BENER MERIAH</option><option value="BIEREUN">BIEREUN</option><option value="GAYO LUES">GAYO LUES</option><option value="LANGSA">LANGSA</option><option value="LHOKSEUMAWE">LHOKSEUMAWE</option><option value="NAGAN RAYA">NAGAN RAYA</option><option value="PIDIE">PIDIE</option><option value="PIDIE JAYA">PIDIE JAYA</option><option value="SABANG">SABANG</option><option value="SIMEULUE">SIMEULUE</option><option value="SUBULUSSALAM">SUBULUSSALAM</option><option value="---Not Available---">---Not Available---</option>
+                        </select>
+                        
+                    </div>
+                </div>
+                <div class="row" id="space02" style="display:block; width:100%">
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Identity No. <span class="merah">*</span></div>
+                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">
+                        <table width="252px">
+                            <tr>
+                                <td width="35%" valign="top"><select id="idtype" name="idtype" class="textfield01 noidentitas1  whitebg width100" tabindex="13"><option value="1">KTP</option><option value="2">SIM</option><option value="3">PASSPORT</option></select></td>
+                                <td width="8%">  &nbsp &nbsp;/&nbsp; </td>
+                                <td width="57%" align="left" valign="top">                            
+                                    <input id="idno" name="idno" class="textfield01 noidentitas2 required  width100" tabindex="13" type="text" value="" maxlength="50"/>
+                                    <label for="idno" generated="true" class="error"></label>      
+                                </td>
+                            </tr>
+                            <tr><td colspan="2"></td></tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row" id="space02">
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Birth Date</div>
+                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">
+                        <input id="birthdt" name="birthdt" class="date textfield01 widthtextfieldregcalendar2" tabindex="14" type="text" value=""/>
+                        
+                    </div>
+                </div>
+                <div class="row" id="space02">
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Sex</div>
+                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left textma3 jeniskelamin" id="marginpadingnull2">                        
+                        <label style="font-weight:normal"> <input id="sex1" name="sex" type="radio" value="M"/> Male</label>
+                        &nbsp;&nbsp;&nbsp;
+                        <label style="font-weight:normal">  <input id="sex2" name="sex" type="radio" value="F"/> Female</label>
+                        &nbsp;
+                                               
+                    </div>
+                </div>
+                    
+                    
+                     <div class="title-regitrasi-ma padding-title-regitrasi-ma text-center-ma ">Beneficiary</div>
+                        <div class="row" id="space02">
+                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Name</div>
+                            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">                        
+                                <input id="benfullnm" name="benfullnm" class="textfield01 widthtextfieldreg-editprofile " tabindex="21" type="text" value="" size="30" maxlength="50"/>
+                            </div>
+                        </div>   
+                        <div class="row" id="space02">
+                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Relation</div>
+                            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">                        
+                                <input id="benrelation" name="benrelation" class="textfield01 widthtextfieldreg-editprofile " tabindex="22" type="text" value="" size="30" maxlength="50"/>
+                            </div>
+                        </div>   
+
+                <div class="title-regitrasi-ma padding-title-regitrasi-ma text-center-ma">Bank Information</div>
+                <div class="pastikan hidden-lg hidden-md"><i>Make sure your bank account no. is valid so that bonus can be transfered</i></div>
+                <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="width11">&nbsp;</td>
+                        <td class="width12">       
+                            <div class="col-lg-12" id="marginpadingnull2">
+                                <div class="row" id="space02">
+                                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Bank<span class="merah">*</span></div>
+                                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">
+                                        <select id="bankid" name="bankid" class="textfield-kurawal noidentitas1 required whitebg" tabindex="15" onchange="checkBank(this.value)">
+                                            <option value="">Choose Bank</option>
+                                            <option value="9999">Bank Not Available</option><option value="B053">Bank Ekspor Indonesia</option><option value="B026">Telkomsel Tcash</option><option value="B055">Bank Arta Niaga Kencana</option><option value="B057">American Express Bank LTD</option><option value="B059">JP. Morgan Chase Bank, N.A</option><option value="B060">Bank of America, N.A</option><option value="B061">ING Indonesia Bank</option><option value="B064">Bank Credit Agricole Indosuez</option><option value="B065">The Bangkok Bank Comp. LTD</option><option value="B068">Bank Sumitomo Mitsui Indonesia</option><option value="B070">Bank Resona Perdania</option><option value="B071">Bank Mizuho Indonesia</option><option value="B073">Bank ABN Amro</option><option value="B074">Bank Keppel Tatlee Buana</option><option value="B076">Bank BNP Paribas Indonesia</option><option value="B078">Korea Exchange Bank Danamon</option><option value="B081">Deutsche Bank AG.</option><option value="B085">Bank Ekonomi</option><option value="B087">Bank Haga</option><option value="B088">Bank IFI</option><option value="B089">Bank&nbsp;JTRUST</option><option value="B096">Bank Hagakita</option><option value="B098">Bank Windu Kentjana</option><option value="B013">Bank Tabungan Negara (BTN)</option><option value="B003">Bank BNI</option><option value="B008">Bank CIMB Niaga Syariah</option><option value="B024">Citibank</option><option value="B045">Bank NTB, NTB Syariah</option><option value="B021">Bank Bukopin</option><option value="B084">Bank Bumi Arta</option><option value="B036">Bank Riau</option><option value="B069">Bank DBS Indonesia</option><option value="B079">Bank BJB Syariah</option><option value="B093">Bank Mestika Dharma</option><option value="B029">BPD DIY</option><option value="B054">Bank Panin</option><option value="B075">Bank Capital Indonesia</option><option value="B050">Bank Bengkulu</option><option value="B019">Bank Commonwealth</option><option value="B097">Bank Ganesha</option><option value="B015">Bank Danamon</option><option value="B039">Bank Kalsel</option><option value="B031">Bank Jatim</option><option value="B086">Bank Antardaerah</option><option value="B010">Bank Tabungan Pensiunan Nasional (BTPN)</option><option value="B037">Bank Sumsel Babel</option><option value="B034">Bank Sumut</option><option value="B033">BPD Aceh, BPD Aceh Syariah</option><option value="B080">Bank ANZ Indonesia</option><option value="B063">Bank Artha Graha Internasional</option><option value="B046">BPD Bali</option><option value="B001">Bank BCA</option><option value="B022">Bank BCA Syariah</option><option value="B016">Bank BII Maybank</option><option value="B004">Bank BNI Syariah</option><option value="B083">Bank OF China&nbsp;</option><option value="B005">Bank BRI</option><option value="B012">Bank BRI Syariah</option><option value="B023">Bank Lippo</option><option value="B007">Bank CIMB Niaga</option><option value="B028">Bank DKI</option><option value="B066">The Hongkong &amp; Shanghai B.C. (Bank HSBC)</option><option value="B092">Bank of India Indonesia</option><option value="B032">BPD Jambi</option><option value="B042">Bank Kalteng</option><option value="B041">Bank Kalimantan Timur dan Utara</option><option value="B038">Bank Lampung</option><option value="B062">Link Aja</option><option value="B048">Bank Maluku Malut</option><option value="B002">Bank Mandiri</option><option value="B095">Bank Maspion Indonesia</option><option value="B090">Bank Mayapada</option><option value="B009">Bank Muamalat</option><option value="B047">Bank NTT</option><option value="B020">Bank OCBC NISP</option><option value="B049">Bank Papua</option><option value="B014">Permata Bank</option><option value="B094">Bank Metro Express (Bank Shinhan Indonesia)</option><option value="B072">Standard Chartered Bank</option><option value="B051">Bank Sulawesi Tengah</option><option value="B052">Bank Sultra</option><option value="B035">Bank Nagari</option><option value="B067">The Bank of Tokyo Mitsubishi UFJ LTD</option><option value="B056">Bank&nbsp;UOB Indonesia</option><option value="B077">Bank UOB Indonesia</option><option value="B082">Bank Woori Indonesia</option><option value="B058">Citibank N.A</option><option value="B100">Bank Harmoni International</option><option value="B102">Bank Himpunan Saudara 1906</option><option value="B103">Bank Swaguna</option><option value="B105">Bank Bisnis Internasional</option><option value="B106">Bank Sri Partha</option><option value="B108">Bank Bintang Manunggal</option><option value="B117">Bank Harfa</option><option value="B119">Bank Persyarikatan Indonesia</option><option value="B120">Bank Akita</option><option value="B121">Liman International Bank</option><option value="B122">Anglomas Internasional Bank</option><option value="B126">Bank Purba Danarta</option><option value="B135">BPR KS</option><option value="B137">Bank Merincorp</option><option value="B132">Bank Fama Internasional</option><option value="B141">Bank Syariah Indonesia</option><option value="B136">Bank&nbsp;Agris</option><option value="B111">Bank&nbsp;BRI Agro</option><option value="B125">Bank Artos IND</option><option value="B027">Bank Jabar dan Banten (BJB)</option><option value="B006">Bank Syariah Mandiri</option><option value="B140">Bank CTBC (China Trust) Indonesia</option><option value="B130">Centratama Nasional Bank</option><option value="B134">Bank Harda</option><option value="B099">Halim Indonesia Bank (Bank ICBC Indonesia)</option><option value="B116">Bank Ina Perdana</option><option value="B129">Bank Index Selindo</option><option value="B104">Bank Jasa Jakarta</option><option value="B107">Bank Jasa Jakarta</option><option value="B030">Bank Jateng</option><option value="B040">Bank Kalimantan Barat</option><option value="B124">Bank Kesejahteraan Ekonomi</option><option value="B133">Bank&nbsp;Mandiri Taspen Pos</option><option value="B127">Bank Multi Arta Sentosa</option><option value="B128">Bank Mayora Indonesia</option><option value="B017">Bank Mega</option><option value="B115">Bank Syariah Mega</option><option value="B114">Bank Alfindo (Bank National Nobu)</option><option value="B091">Bank Nusantara Parahyangan</option><option value="B139">Bank OCBC &ndash; Indonesia</option><option value="B118">Prima Master Bank</option><option value="B101">Bank QNB Kesawan (Bank QNB Indonesia)</option><option value="B113">Bank Royal Indonesia</option><option value="B123">Bank Dipo International (Bank Sahabat Sampoerna)</option><option value="B112">Bank Indomonex (Bank SBI Indonesia)</option><option value="B018">Bank Sinarmas</option><option value="B044">Bank Sulut Gorontalo</option><option value="B131">Bank Victoria International</option><option value="B110">Bank Yudha Bhakti</option><option value="B109">Bank MNC / Bank Bumiputera</option><option value="B011">JENIUS</option><option value="B138">Bank Maybank Indocorp</option><option value="B043">Bank Sulsel dan Barat</option><option value="B142">BANK DANAMON SYARIAH</option><option value="B143">BPD SULAWESI UTARA DAN GORONTALO</option>
+                                        </select>
+                                        
+                                        <br/>
+                                        <label for="bankid" generated="true" class="error"></label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12" id="marginpadingnull2" style="display: block">
+                                <div class="row" id="space02">
+                                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Bank Account Name<span class="merah">*</span></div>
+                                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">                                        
+                                        <input id="bankaccnm" name="bankaccnm" class="textfield-kurawal required" style="display:block" readonly="readonly" type="text" value="" size="30" maxlength="50"/>
+                                        
+                                        <br/>
+                                        <label for="bankaccnm" generated="true" class="error"></label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12" id="marginpadingnull2" style="display: block">
+                                <div class="row" id="space02">
+                                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Bank Account No.<span class="merah">*</span></div>
+                                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">                                        
+                                        <input id="bankaccno" name="bankaccno" class="textfield-kurawal required" tabindex="16" pattern="^[a-zA-Z0-9]+$" style="display:block" type="text" value="" size="30" maxlength="50"/>
+                                        
+                                        <br/>
+                                        <label for="bankaccno" generated="true" class="error"></label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-lg-12" id="marginpadingnull2" style="display:block; width:100%;display: block">
+                                <div class="row" id="space02">
+                                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Bank Branch<span class="merah">*</span></div>
+                                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">                                        
+                                        <input id="bankbranch" name="bankbranch" class="textfield-kurawal required" tabindex="17" style="display:block" type="text" value="" size="30" maxlength="50"/>
+                                        
+                                        <br/>
+                                        <label for="bankbranch" generated="true" class="error"></label>
+                                    </div>                                        
+                                </div>
+                            </div>
+                            <div class="col-lg-12" id="marginpadingnull2" style="display:block; width:100%;display: block">
+                                <div class="row" id="space02">
+                                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Bank City</div>
+                                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">                                            
+                                        <input id="bankcity" name="bankcity" class="textfield-kurawal" tabindex="18" style="display:block" type="text" value="" size="30" maxlength="50"/>
+                                        
+                                        <br/>
+                                        <label for="bankcity" generated="true" class="error"></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="width13">                        	
+                            <table width="100%" cellpadding="0" cellspacing="0" style="margin-top:0px">
+                                <tr>
+                                    <td><img src="/resources/images/kurawa.png" style="height: 210px;"/></td>
+                                    <td class="text-left kurawal" style="padding-left:10px;"><i>Make sure your bank account no. is valid so that bonus can be transfered</i></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>    
+
+                <div class="title-regitrasi-ma padding-title-regitrasi-ma text-center-ma">Membership Approval</div> 
+                <table width="100%" cellpadding="0" cellspacing="0" class="leftpaddingdeskmob">
+                    <tr>
+                        <td class="persetujuan1" align="right" valign="top"><input type="checkbox" id="agreement"/> &nbsp; </td>
+                        <td align="left" class="persetujuan2 text-left textma3" valign="top">I have read and aggree with <a href="/register/termncond" target="_blank"  style="color:#727171" >Terms and condition VITO membership</a></td>
+                    </tr>
+                </table>
+
+                <div class="row" id="space02">
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02">Verification Code<span class="merah">*</span></div>
+                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">                            
+                        <input type="text" id="captcha" name="captcha" tabindex="19" class="textfield01 widthtextfieldreg required" autocomplete="off"/>
+                        <br/>
+                        <label for="captcha" generated="true" class="error"></label>
+                    </div>
+                </div>
+
+                <div class="row" id="space02">
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02 hidden-sm hidden-xs" style="font-size:12px; color:#848484"><i>Click code<br/> to get new code</i></div>
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 col textma3 aligntextreg padd02 hidden-lg hidden-md" style="font-size:11px; color:#848484"><i>Click code to get new code</i></div>
+                    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">                        
+                        <!-- <img src="/kaptcha.jpg"  class="img-responsive" name="captchaImg" id="captchaImg"  class="captchaImg" onclick="$(this).attr('src', '/kaptcha.jpg?' + Math.random(10000))"/> -->
+                        <img src="/kaptcha.jpg" onclick="$(this).attr('src', '/kaptcha.jpg?' + Math.random(10000))"/>
+                    </div>
+                </div>
+
+                <div align="left" class="datawajib"><span class="merah">*</span><i>This data is required</i> </div>
+
+                <br /><br />
+                <div class="row" id="space02" style="margin-bottom:100px;">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right" id="marginpadingnull2">
+                        <a href="/" class="button-reg" style="float:right"><span class="font-button-reg" style="text-transform:uppercase">Cancel</span></a>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left" id="marginpadingnull2">                           
+                        <input type="submit" id="yellow" tabindex="20" value="Next" class="input-button-ma input-font-button-ma" style="float:left; text-transform:uppercase"/>
+                    </div>
+                </div>
+                <!--end-->
+            </div>
+        </form>
+
+        
+<style>
+    .fontfooterma{color:#fff!important}
+</style>
+
+<!--FOOTER desktop-->
+<div class="container-fluid" style="background:#1A7DED">
+    <div class="container-footerma hidden-sm hidden-xs">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left fontfooterma">&copy; Copyright 2021 - VITO - All Rights Reserved </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right fontfooterma">Powered By: <a href="http://www.pineappletech.com" target="_blank" style="color:#fff">PineappleTech</a></div>
+        </div>
+    </div>
+</div>
+<!--end FOOTER desktop-->
+    
+<!--FOOTER mobile-->    
+<div class="container-fluid" style="background:#1A7DED">
+    <div class="container-footerma hidden-lg hidden-md" style="width:100%; display:block">
+        <div class="row">
+            <div class="col-lg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center fontfooterma marginpadingnull" style="padding-bottom:0">&copy;  Copyright 2021 - VITO - All Rights Reserved </div>
+            <div class="col-lg-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center fontfooterma marginpadingnull" style="padding:0 0 6px 0">Powered By: <a href="http://www.pineappletech.com" style="color:#fff" target="_blank">PineappleTech</a></div>
+        </div>
+    </div>
+</div>
+<!--end FOOTER mobile-->
+    
+
+    </body>
+</html>
+
+<script>
+
+
+    function checkBank(bankid) {
+
+        if (bankid == "9999") {
+            $("#bankaccno").css("display", "none");
+            $('#bankaccnm').hide();
+            $('#bankbranch').hide();
+            $('#bankcity').hide();
+        } else {
+            $("#bankaccno").css("display", "block");
+            $('#bankaccnm').show();
+            $('#bankbranch').show();
+            $('#bankcity').show();
+        }
+
+    }
+
+
+    function  getFieldEpin(currentType) {
+        var temp = "";
+        var jum = 1;
+        if (currentType == "0" || currentType == "1") {
+            jum = 1;
+        } else if (currentType == "2") {
+            jum = 1;
+        } else if (currentType == "3") {
+            jum = 5;
+        } else if (currentType == "4") {
+            jum = 10;
+        }
+        else if (currentType == "5") {
+            jum = 50;
+        }
+        $('#jum').val(jum);
+        for (var i = 1; i <= jum; i++) {
+            temp += "<input type='text' id='trxCode" + i + "' name='trxCode' class=\"textfield01   \"  /> ";
+            if (i != jum) {
+                temp += "<br/><br/>";
+            }
+        }
+        $('#divEPin').html(temp);
+
+
+
+    }
+
+</script>
+
